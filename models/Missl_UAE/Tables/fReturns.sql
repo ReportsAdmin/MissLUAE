@@ -1,6 +1,6 @@
 select OrderId  ,cast(RefundStatus as string) RefundStatus,	cast(ReturnReason as string) ReturnReason,
      cast(ReturnRequestID as string) ReturnRequestID,cast(ReturnStatus as string) ReturnStatus,	cast(userId as string) userId,
-     'MissL' Halo_Country
+     'MissLUAE' Halo_Country
 
 from(
 
@@ -23,7 +23,7 @@ null ReceivedQuantity,
 null RefundAmount,
 null RefundedAmount,
 null UpdatedDate
-from `noted-computing-279322.halo_1_1.magento_transaction` as ord
+from `noted-computing-279322.halo_1_1_UAE.magento_transaction` as ord
 ---Record count incresred as each order_id can have multiple track_number or title
 
 )

@@ -1,4 +1,4 @@
-select *,'MissL' Halo_Country from
+select *,'MissLUAE' Halo_Country from
 (
        
                 select
@@ -7,7 +7,7 @@ select *,'MissL' Halo_Country from
                 'total_item_price_auth' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -667,7 +667,7 @@ select *,'MissL' Halo_Country from
                 'AOV' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
                 'total_item_price_auth,orders_auth' KPI_DEPENDENTS,
                 'safe_divide(total_item_price_auth,orders_auth)' KPI_CALC,
                 'safe_divide(total_item_price_auth_prevX,orders_auth_prevX)' KPI_CALC_PREVX,
@@ -1058,10 +1058,10 @@ select *,'MissL' Halo_Country from
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
                 'Google Return on Ad Spend' KPI_DESCRIPTION,
-                'google_cust_revenue,google_cust_spend' KPI_DEPENDENTS,
-                'safe_divide(google_cust_revenue,google_cust_spend)' KPI_CALC,
-                'safe_divide(google_cust_revenue_prevX,google_cust_spend_prevX)' KPI_CALC_PREVX,
-                'safe_divide(google_cust_revenue_PrevyearsameX,google_cust_spend_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'Revenue_G,Spend_G' KPI_DEPENDENTS,
+                'safe_divide(Revenue_G,Spend_G)' KPI_CALC,
+                'safe_divide(Revenue_G_prevX,Spend_G_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Revenue_G_PrevyearsameX,Spend_G_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
@@ -2227,7 +2227,7 @@ select *,'MissL' Halo_Country from
                 'Total_Sales_Value_Without_VAT' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'Total Sales Value (Without VAT in SAR)' KPI_DESCRIPTION,
+                'Total Sales Value (Without VAT in AED)' KPI_DESCRIPTION,
                 'total_item_price_auth,tax_amount' KPI_DEPENDENTS,
                 'total_item_price_auth-tax_amount' KPI_CALC,
                 'total_item_price_auth_prevX-tax_amount_prevX' KPI_CALC_PREVX,
@@ -2854,10 +2854,10 @@ select *,'MissL' Halo_Country from
                 select
                 1900 KPI_ID,
                 1 LAYER,
-                'Instagram_Unpaid_sessions' KPI_VARIABLE,
+                'Others_Sessions' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Instagram Unpaid Sessions' KPI_DESCRIPTION,
+                'Others Sessions' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -2872,7 +2872,7 @@ select *,'MissL' Halo_Country from
                 'influencersrevenue' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Influencers Sales Value (in SAR)' KPI_DESCRIPTION,
+                'Influencers Sales Value (in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -2882,7 +2882,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                1930 KPI_ID,
+                1920 KPI_ID,
                 3 LAYER,
                 'Snapchat_paid_sessions_per' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -2897,7 +2897,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                1940 KPI_ID,
+                1930 KPI_ID,
                 3 LAYER,
                 'Snapchat_unpaid_sessions_per' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -2912,7 +2912,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                1950 KPI_ID,
+                1940 KPI_ID,
                 3 LAYER,
                 'Facebook_Inhouse_Paid_sessions_per' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -2927,7 +2927,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                1960 KPI_ID,
+                1950 KPI_ID,
                 3 LAYER,
                 'Facebook_Dynamic_Remarketing_sessions_per' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -2942,7 +2942,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                1970 KPI_ID,
+                1960 KPI_ID,
                 3 LAYER,
                 'Facebook_Unpaid_sessions_per' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -2957,7 +2957,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                1980 KPI_ID,
+                1970 KPI_ID,
                 3 LAYER,
                 'Instagram_paid_sessions_per' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -2972,22 +2972,52 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                2000 KPI_ID,
+                1980 KPI_ID,
                 3 LAYER,
-                'Others_Sessions_per' KPI_VARIABLE,
+                'Instagram_Unpaid_sessions_per' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'Others (%)' KPI_DESCRIPTION,
-                'Others_Sessions,sessions' KPI_DEPENDENTS,
-                'safe_divide(Others_Sessions,sessions)' KPI_CALC,
-                'safe_divide(Others_Sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Others_Sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'Instagram Unpaid (%)' KPI_DESCRIPTION,
+                'Instagram_Unpaid_sessions,sessions' KPI_DEPENDENTS,
+                'safe_divide(Instagram_Unpaid_sessions,sessions)' KPI_CALC,
+                'safe_divide(Instagram_Unpaid_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Instagram_Unpaid_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2000 KPI_ID,
+                3 LAYER,
+                'TikTok_paid_sessions_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'TikTok Paid (%)' KPI_DESCRIPTION,
+                'TikTok_paid_sessions,sessions' KPI_DEPENDENTS,
+                'safe_divide(TikTok_paid_sessions,sessions)' KPI_CALC,
+                'safe_divide(TikTok_paid_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
+                'safe_divide(TikTok_paid_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
                 2010 KPI_ID,
+                3 LAYER,
+                'TikTok_Unpaid_sessions_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'TikTok Unpaid (%)' KPI_DESCRIPTION,
+                'TikTok_Unpaid_sessions,sessions' KPI_DEPENDENTS,
+                'safe_divide(TikTok_Unpaid_sessions,sessions)' KPI_CALC,
+                'safe_divide(TikTok_Unpaid_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
+                'safe_divide(TikTok_Unpaid_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                5990 KPI_ID,
                 3 LAYER,
                 'Influencers_codes_per' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -2997,6 +3027,21 @@ select *,'MissL' Halo_Country from
                 'safe_divide(influencersrevenue,total_item_price_auth)' KPI_CALC,
                 'safe_divide(influencersrevenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
                 'safe_divide(influencersrevenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2020 KPI_ID,
+                3 LAYER,
+                'Others_Sessions_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Others (%)' KPI_DESCRIPTION,
+                'Others_Sessions,sessions' KPI_DEPENDENTS,
+                'safe_divide(Others_Sessions,sessions)' KPI_CALC,
+                'safe_divide(Others_Sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Others_Sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
@@ -3127,7 +3172,7 @@ select *,'MissL' Halo_Country from
                 'avgdailysales' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'Average Daily Sales (in SAR)' KPI_DESCRIPTION,
+                'Average Daily Sales (in AED)' KPI_DESCRIPTION,
                 'total_item_price_auth,daylevel' KPI_DEPENDENTS,
                 'safe_divide(total_item_price_auth,daylevel)' KPI_CALC,
                 'safe_divide(total_item_price_auth_prevX,daylevel_prevX)' KPI_CALC_PREVX,
@@ -3157,7 +3202,7 @@ select *,'MissL' Halo_Country from
                 'Total_revenue' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Overall Sales Value (with VAT in SAR)' KPI_DESCRIPTION,
+                'Overall Sales Value (with VAT in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3172,7 +3217,7 @@ select *,'MissL' Halo_Country from
                 'unsucessful_revenue' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Unsuccessful Sales Value (with VAT in SAR)' KPI_DESCRIPTION,
+                'Unsuccessful Sales Value (with VAT in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3514,10 +3559,10 @@ select *,'MissL' Halo_Country from
                 select
                 2370 KPI_ID,
                 1 LAYER,
-                'TikTok_paid_newusers' KPI_VARIABLE,
+                'Others_newusers' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'TikTok Paid Newusers' KPI_DESCRIPTION,
+                'Others Newusers' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3662,36 +3707,6 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                2470 KPI_ID,
-                1 LAYER,
-                'MissL10_spend_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2480 KPI_ID,
-                1 LAYER,
-                'Husin10_spend_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
                 2490 KPI_ID,
                 1 LAYER,
                 'age_sessions' KPI_VARIABLE,
@@ -3724,10 +3739,10 @@ select *,'MissL' Halo_Country from
                 select
                 2510 KPI_ID,
                 1 LAYER,
-                'Feda10_spend_day' KPI_VARIABLE,
+                'MissL10_spend_day' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3739,10 +3754,10 @@ select *,'MissL' Halo_Country from
                 select
                 2520 KPI_ID,
                 1 LAYER,
-                'abrar21_spend_day' KPI_VARIABLE,
+                'Fozaza2u_spend_day' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3754,10 +3769,10 @@ select *,'MissL' Halo_Country from
                 select
                 2530 KPI_ID,
                 1 LAYER,
-                'feda21_spend_day' KPI_VARIABLE,
+                'Alia10_spend_day' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3769,10 +3784,10 @@ select *,'MissL' Halo_Country from
                 select
                 2540 KPI_ID,
                 1 LAYER,
-                'roh_n2_spend_day' KPI_VARIABLE,
+                'Ingy10_spend_day' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3784,10 +3799,10 @@ select *,'MissL' Halo_Country from
                 select
                 2550 KPI_ID,
                 1 LAYER,
-                'omseba10_spend_day' KPI_VARIABLE,
+                'Sahar10_spend_day' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3798,51 +3813,6 @@ select *,'MissL' Halo_Country from
         
                 select
                 2560 KPI_ID,
-                1 LAYER,
-                'marwa10_spend_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2570 KPI_ID,
-                1 LAYER,
-                'maha_140_spend_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2580 KPI_ID,
-                1 LAYER,
-                'shahad10_spend_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2590 KPI_ID,
                 1 LAYER,
                 'MissL10_orders' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -3857,9 +3827,54 @@ select *,'MissL' Halo_Country from
             
         
                 select
+                2570 KPI_ID,
+                1 LAYER,
+                'Fozaza2u_orders' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number Of Successful Orders' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2580 KPI_ID,
+                1 LAYER,
+                'Alia10_orders' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number Of Successful Orders' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2590 KPI_ID,
+                1 LAYER,
+                'Ingy10_orders' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number Of Successful Orders' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
                 2600 KPI_ID,
                 1 LAYER,
-                'Husin10_orders' KPI_VARIABLE,
+                'Sahar10_orders' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
                 'Number Of Successful Orders' KPI_DESCRIPTION,
@@ -3874,10 +3889,10 @@ select *,'MissL' Halo_Country from
                 select
                 2610 KPI_ID,
                 1 LAYER,
-                'Feda10_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
+                'MissL10_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3889,10 +3904,10 @@ select *,'MissL' Halo_Country from
                 select
                 2620 KPI_ID,
                 1 LAYER,
-                'abrar21_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
+                'Fozaza2u_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3904,10 +3919,10 @@ select *,'MissL' Halo_Country from
                 select
                 2630 KPI_ID,
                 1 LAYER,
-                'feda21_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
+                'Alia10_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3919,10 +3934,10 @@ select *,'MissL' Halo_Country from
                 select
                 2640 KPI_ID,
                 1 LAYER,
-                'roh_n2_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
+                'Ingy10_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3934,10 +3949,10 @@ select *,'MissL' Halo_Country from
                 select
                 2650 KPI_ID,
                 1 LAYER,
-                'omseba10_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
+                'Sahar10_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -3948,206 +3963,11 @@ select *,'MissL' Halo_Country from
         
                 select
                 2660 KPI_ID,
-                1 LAYER,
-                'marwa10_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2670 KPI_ID,
-                1 LAYER,
-                'maha_140_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2680 KPI_ID,
-                1 LAYER,
-                'shahad10_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2690 KPI_ID,
-                1 LAYER,
-                'MissL10_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2700 KPI_ID,
-                1 LAYER,
-                'Husin10_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2710 KPI_ID,
-                1 LAYER,
-                'Feda10_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2720 KPI_ID,
-                1 LAYER,
-                'abrar21_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2730 KPI_ID,
-                1 LAYER,
-                'feda21_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2740 KPI_ID,
-                1 LAYER,
-                'roh_n2_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2750 KPI_ID,
-                1 LAYER,
-                'omseba10_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2760 KPI_ID,
-                1 LAYER,
-                'marwa10_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2770 KPI_ID,
-                1 LAYER,
-                'maha_140_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2780 KPI_ID,
-                1 LAYER,
-                'shahad10_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2790 KPI_ID,
                 3 LAYER,
-                'CostperorderMissL10_per' KPI_VARIABLE,
+                'Costperorder_MissL10' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
+                'CPO (in AED)' KPI_DESCRIPTION,
                 'MissL10_spend_day,MissL10_orders' KPI_DEPENDENTS,
                 'safe_divide(MissL10_spend_day,MissL10_orders)' KPI_CALC,
                 'safe_divide(MissL10_spend_day_prevX,MissL10_orders_prevX)' KPI_CALC_PREVX,
@@ -4157,147 +3977,72 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                2800 KPI_ID,
+                2670 KPI_ID,
                 3 LAYER,
-                'CostperorderHusin10_per' KPI_VARIABLE,
+                'Costperorder_Fozaza2u' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'Husin10_spend_day,Husin10_orders' KPI_DEPENDENTS,
-                'safe_divide(Husin10_spend_day,Husin10_orders)' KPI_CALC,
-                'safe_divide(Husin10_spend_day_prevX,Husin10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Husin10_spend_day_PrevyearsameX,Husin10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'Fozaza2u_spend_day,Fozaza2u_orders' KPI_DEPENDENTS,
+                'safe_divide(Fozaza2u_spend_day,Fozaza2u_orders)' KPI_CALC,
+                'safe_divide(Fozaza2u_spend_day_prevX,Fozaza2u_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Fozaza2u_spend_day_PrevyearsameX,Fozaza2u_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                2810 KPI_ID,
+                2680 KPI_ID,
                 3 LAYER,
-                'CostperorderFeda10_per' KPI_VARIABLE,
+                'Costperorder_Alia10' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'Feda10_spend_day,Feda10_orders' KPI_DEPENDENTS,
-                'safe_divide(Feda10_spend_day,Feda10_orders)' KPI_CALC,
-                'safe_divide(Feda10_spend_day_prevX,Feda10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Feda10_spend_day_PrevyearsameX,Feda10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'Alia10_spend_day,Alia10_orders' KPI_DEPENDENTS,
+                'safe_divide(Alia10_spend_day,Alia10_orders)' KPI_CALC,
+                'safe_divide(Alia10_spend_day_prevX,Alia10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Alia10_spend_day_PrevyearsameX,Alia10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                2820 KPI_ID,
+                2690 KPI_ID,
                 3 LAYER,
-                'CostperorderAbrar21_per' KPI_VARIABLE,
+                'Costperorder_Ingy10' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'abrar21_spend_day,abrar21_orders' KPI_DEPENDENTS,
-                'safe_divide(abrar21_spend_day,abrar21_orders)' KPI_CALC,
-                'safe_divide(abrar21_spend_day_prevX,abrar21_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(abrar21_spend_day_PrevyearsameX,abrar21_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'Ingy10_spend_day,Ingy10_orders' KPI_DEPENDENTS,
+                'safe_divide(Ingy10_spend_day,Ingy10_orders)' KPI_CALC,
+                'safe_divide(Ingy10_spend_day_prevX,Ingy10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Ingy10_spend_day_PrevyearsameX,Ingy10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                2830 KPI_ID,
+                2700 KPI_ID,
                 3 LAYER,
-                'Costperorderfeda21_per' KPI_VARIABLE,
+                'Costperorder_Sahar10' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'feda21_spend_day,feda21_orders' KPI_DEPENDENTS,
-                'safe_divide(feda21_spend_day,feda21_orders)' KPI_CALC,
-                'safe_divide(feda21_spend_day_prevX,feda21_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(feda21_spend_day_PrevyearsameX,feda21_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'Sahar10_spend_day,Sahar10_orders' KPI_DEPENDENTS,
+                'safe_divide(Sahar10_spend_day,Sahar10_orders)' KPI_CALC,
+                'safe_divide(Sahar10_spend_day_prevX,Sahar10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Sahar10_spend_day_PrevyearsameX,Sahar10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                2840 KPI_ID,
+                2710 KPI_ID,
                 3 LAYER,
-                'CostperorderRohN2_per' KPI_VARIABLE,
+                'ATV_MissL10' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'roh_n2_spend_day,roh_n2_orders' KPI_DEPENDENTS,
-                'safe_divide(roh_n2_spend_day,roh_n2_orders)' KPI_CALC,
-                'safe_divide(roh_n2_spend_day_prevX,roh_n2_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(roh_n2_spend_day_PrevyearsameX,roh_n2_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2850 KPI_ID,
-                3 LAYER,
-                'Costperorderomseba10_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'omseba10_spend_day,omseba10_orders' KPI_DEPENDENTS,
-                'safe_divide(omseba10_spend_day,omseba10_orders)' KPI_CALC,
-                'safe_divide(omseba10_spend_day_prevX,omseba10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(omseba10_spend_day_PrevyearsameX,omseba10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2860 KPI_ID,
-                3 LAYER,
-                'Costperordermarwa10_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'marwa10_spend_day,marwa10_orders' KPI_DEPENDENTS,
-                'safe_divide(marwa10_spend_day,marwa10_orders)' KPI_CALC,
-                'safe_divide(marwa10_spend_day_prevX,marwa10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(marwa10_spend_day_PrevyearsameX,marwa10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2870 KPI_ID,
-                3 LAYER,
-                'CostperorderMaha140_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'maha_140_spend_day,maha_140_orders' KPI_DEPENDENTS,
-                'safe_divide(maha_140_spend_day,maha_140_orders)' KPI_CALC,
-                'safe_divide(maha_140_spend_day_prevX,maha_140_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(maha_140_spend_day_PrevyearsameX,maha_140_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2880 KPI_ID,
-                3 LAYER,
-                'CostperorderShahad10_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'shahad10_spend_day,shahad10_orders' KPI_DEPENDENTS,
-                'safe_divide(shahad10_spend_day,shahad10_orders)' KPI_CALC,
-                'safe_divide(shahad10_spend_day_prevX,shahad10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(shahad10_spend_day_PrevyearsameX,shahad10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2890 KPI_ID,
-                3 LAYER,
-                'ATV Customer Acq MissL' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
                 'MissL10_revenue,MissL10_orders' KPI_DEPENDENTS,
                 'safe_divide(MissL10_revenue,MissL10_orders)' KPI_CALC,
                 'safe_divide(MissL10_revenue_prevX,MissL10_orders_prevX)' KPI_CALC_PREVX,
@@ -4307,144 +4052,69 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                2900 KPI_ID,
+                2720 KPI_ID,
                 3 LAYER,
-                'ATV Customer Acq Husin10' KPI_VARIABLE,
+                'ATV_Fozaza2u' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Husin10_revenue,Husin10_orders' KPI_DEPENDENTS,
-                'safe_divide(Husin10_revenue,Husin10_orders)' KPI_CALC,
-                'safe_divide(Husin10_revenue_prevX,Husin10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Husin10_revenue_PrevyearsameX,Husin10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'Fozaza2u_revenue,Fozaza2u_orders' KPI_DEPENDENTS,
+                'safe_divide(Fozaza2u_revenue,Fozaza2u_orders)' KPI_CALC,
+                'safe_divide(Fozaza2u_revenue_prevX,Fozaza2u_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Fozaza2u_revenue_PrevyearsameX,Fozaza2u_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                2910 KPI_ID,
+                2730 KPI_ID,
                 3 LAYER,
-                'ATV Customer Acq Feda10' KPI_VARIABLE,
+                'ATV_Alia10' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Feda10_revenue,Feda10_orders' KPI_DEPENDENTS,
-                'safe_divide(Feda10_revenue,Feda10_orders)' KPI_CALC,
-                'safe_divide(Feda10_revenue_prevX,Feda10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Feda10_revenue_PrevyearsameX,Feda10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'Alia10_revenue,Alia10_orders' KPI_DEPENDENTS,
+                'safe_divide(Alia10_revenue,Alia10_orders)' KPI_CALC,
+                'safe_divide(Alia10_revenue_prevX,Alia10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Alia10_revenue_PrevyearsameX,Alia10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                2920 KPI_ID,
+                2740 KPI_ID,
                 3 LAYER,
-                'ATV Customer Acq Abrar21' KPI_VARIABLE,
+                'ATV_Ingy10' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'abrar21_revenue,abrar21_orders' KPI_DEPENDENTS,
-                'safe_divide(abrar21_revenue,abrar21_orders)' KPI_CALC,
-                'safe_divide(abrar21_revenue_prevX,abrar21_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(abrar21_revenue_PrevyearsameX,abrar21_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'Ingy10_revenue,Ingy10_orders' KPI_DEPENDENTS,
+                'safe_divide(Ingy10_revenue,Ingy10_orders)' KPI_CALC,
+                'safe_divide(Ingy10_revenue_prevX,Ingy10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Ingy10_revenue_PrevyearsameX,Ingy10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                2930 KPI_ID,
+                2750 KPI_ID,
                 3 LAYER,
-                'ATV Customer Acq Feda21' KPI_VARIABLE,
+                'ATV_Sahar10' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'feda21_revenue,feda21_orders' KPI_DEPENDENTS,
-                'safe_divide(feda21_revenue,feda21_orders)' KPI_CALC,
-                'safe_divide(feda21_revenue_prevX,feda21_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(feda21_revenue_PrevyearsameX,feda21_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'Sahar10_revenue,Sahar10_orders' KPI_DEPENDENTS,
+                'safe_divide(Sahar10_revenue,Sahar10_orders)' KPI_CALC,
+                'safe_divide(Sahar10_revenue_prevX,Sahar10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Sahar10_revenue_PrevyearsameX,Sahar10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                2940 KPI_ID,
+                2760 KPI_ID,
                 3 LAYER,
-                'ATV Customer Acq RohN2' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'roh_n2_revenue,roh_n2_orders' KPI_DEPENDENTS,
-                'safe_divide(roh_n2_revenue,roh_n2_orders)' KPI_CALC,
-                'safe_divide(roh_n2_revenue_prevX,roh_n2_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(roh_n2_revenue_PrevyearsameX,roh_n2_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2950 KPI_ID,
-                3 LAYER,
-                'ATV Customer Acq Omseba10' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'omseba10_revenue,omseba10_orders' KPI_DEPENDENTS,
-                'safe_divide(omseba10_revenue,omseba10_orders)' KPI_CALC,
-                'safe_divide(omseba10_revenue_prevX,omseba10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(omseba10_revenue_PrevyearsameX,omseba10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2960 KPI_ID,
-                3 LAYER,
-                'ATV Customer Acq Marwa10' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'marwa10_revenue,marwa10_orders' KPI_DEPENDENTS,
-                'safe_divide(marwa10_revenue,marwa10_orders)' KPI_CALC,
-                'safe_divide(marwa10_revenue_prevX,marwa10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(marwa10_revenue_PrevyearsameX,marwa10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2970 KPI_ID,
-                3 LAYER,
-                'ATV Customer Acq Maha140' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'maha_140_revenue,maha_140_orders' KPI_DEPENDENTS,
-                'safe_divide(maha_140_revenue,maha_140_orders)' KPI_CALC,
-                'safe_divide(maha_140_revenue_prevX,maha_140_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(maha_140_revenue_PrevyearsameX,maha_140_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2980 KPI_ID,
-                3 LAYER,
-                'ATV Customer Acq Shahad10' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'shahad10_revenue,shahad10_orders' KPI_DEPENDENTS,
-                'safe_divide(shahad10_revenue,shahad10_orders)' KPI_CALC,
-                'safe_divide(shahad10_revenue_prevX,shahad10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(shahad10_revenue_PrevyearsameX,shahad10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                2990 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per MissL10' KPI_VARIABLE,
+                'Shareofsales_MissL10' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
                 'Share Of Sales (%)' KPI_DESCRIPTION,
@@ -4457,142 +4127,67 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                3000 KPI_ID,
+                2770 KPI_ID,
                 3 LAYER,
-                'Shareofsales_per Husin10' KPI_VARIABLE,
+                'Shareofsales_Fozaza2u' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
                 'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Husin10_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Husin10_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Husin10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Husin10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'Fozaza2u_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(Fozaza2u_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(Fozaza2u_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Fozaza2u_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                3010 KPI_ID,
+                2780 KPI_ID,
                 3 LAYER,
-                'Shareofsales_per Feda10' KPI_VARIABLE,
+                'Shareofsales_Alia10' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
                 'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Feda10_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Feda10_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Feda10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Feda10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'Alia10_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(Alia10_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(Alia10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Alia10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                3020 KPI_ID,
+                2790 KPI_ID,
                 3 LAYER,
-                'Shareofsales_per Abrar21' KPI_VARIABLE,
+                'Shareofsales_Ingy10' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
                 'Share Of Sales (%)' KPI_DESCRIPTION,
-                'abrar21_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(abrar21_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(abrar21_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(abrar21_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'Ingy10_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(Ingy10_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(Ingy10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Ingy10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                3030 KPI_ID,
+                2800 KPI_ID,
                 3 LAYER,
-                'Shareofsales_per Feda21' KPI_VARIABLE,
+                'Shareofsales_Sahar10' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
                 'Share Of Sales (%)' KPI_DESCRIPTION,
-                'feda21_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(feda21_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(feda21_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(feda21_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+                'Sahar10_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(Sahar10_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(Sahar10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Sahar10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
                 union all
             
         
                 select
-                3040 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per RohN2' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'roh_n2_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(roh_n2_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(roh_n2_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(roh_n2_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3050 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per Omseba10' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'omseba10_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(omseba10_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(omseba10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(omseba10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3060 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per Marwa10' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'marwa10_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(marwa10_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(marwa10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(marwa10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3070 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per Maha140' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'maha_140_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(maha_140_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(maha_140_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(maha_140_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3080 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per Shahad10' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'shahad10_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(shahad10_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(shahad10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(shahad10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3090 KPI_ID,
+                2810 KPI_ID,
                 1 LAYER,
                 'Facebook_cust_traffic' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -4607,7 +4202,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                3100 KPI_ID,
+                2820 KPI_ID,
                 1 LAYER,
                 'Instagram_cust_traffic' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -4622,22 +4217,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                3110 KPI_ID,
-                1 LAYER,
-                'Snapchat_cust_traffic' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Traffic' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3120 KPI_ID,
+                2830 KPI_ID,
                 1 LAYER,
                 'Adwords_cust_traffic' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -4652,7 +4232,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                3130 KPI_ID,
+                2840 KPI_ID,
                 1 LAYER,
                 'Roi_hunter_cust_traffic' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -4667,2422 +4247,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                3140 KPI_ID,
-                1 LAYER,
-                'Facebook_cust_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3150 KPI_ID,
-                1 LAYER,
-                'Instagram_cust_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3160 KPI_ID,
-                1 LAYER,
-                'Snapchat_cust_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3170 KPI_ID,
-                1 LAYER,
-                'Adwords_cust_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3180 KPI_ID,
-                1 LAYER,
-                'Roi_hunter_cust_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3190 KPI_ID,
-                1 LAYER,
-                'Facebook_cust_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3200 KPI_ID,
-                1 LAYER,
-                'Instagram_cust_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3210 KPI_ID,
-                1 LAYER,
-                'Snapchat_cust_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3220 KPI_ID,
-                1 LAYER,
-                'Adwords_cust_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3230 KPI_ID,
-                1 LAYER,
-                'Roi_hunter_cust_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3240 KPI_ID,
-                1 LAYER,
-                'Facebook_cust_spend' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3250 KPI_ID,
-                1 LAYER,
-                'google_cust_adspend' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                6250 KPI_ID,
-                1 LAYER,
-                'google_cust_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Revenue (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3260 KPI_ID,
-                1 LAYER,
-                'Instagram_cust_spend' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3270 KPI_ID,
-                1 LAYER,
-                'roi_hunter_cust_spend' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3280 KPI_ID,
-                1 LAYER,
-                'snapchat_cust_spend' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3290 KPI_ID,
-                3 LAYER,
-                'Costperorder_Facebook' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'Facebook_cust_spend,Facebook_cust_orders' KPI_DEPENDENTS,
-                'safe_divide(Facebook_cust_spend,Facebook_cust_orders)' KPI_CALC,
-                'safe_divide(Facebook_cust_spend_prevX,Facebook_cust_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Facebook_cust_spend_PrevyearsameX,Facebook_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3300 KPI_ID,
-                3 LAYER,
-                'Costperorder_Instagram' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'Instagram_cust_spend,Instagram_cust_orders' KPI_DEPENDENTS,
-                'safe_divide(Instagram_cust_spend,Instagram_cust_orders)' KPI_CALC,
-                'safe_divide(Instagram_cust_spend_prevX,Instagram_cust_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Instagram_cust_spend_PrevyearsameX,Instagram_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3310 KPI_ID,
-                3 LAYER,
-                'Costperorder_Snapchat' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'snapchat_cust_spend,Snapchat_cust_orders' KPI_DEPENDENTS,
-                'safe_divide(snapchat_cust_spend,Snapchat_cust_orders)' KPI_CALC,
-                'safe_divide(snapchat_cust_spend_prevX,Snapchat_cust_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(snapchat_cust_spend_PrevyearsameX,snapchat_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3320 KPI_ID,
-                3 LAYER,
-                'Costperorder_Adwords' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'google_cust_adspend,Adwords_cust_orders' KPI_DEPENDENTS,
-                'safe_divide(google_cust_adspend,Adwords_cust_orders)' KPI_CALC,
-                'safe_divide(google_cust_adspend_prevX,Adwords_cust_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(google_cust_adspend_PrevyearsameX,Adwords_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3330 KPI_ID,
-                3 LAYER,
-                'Costperorder_roi_hunter' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'roi_hunter_cust_spend,Roi_hunter_cust_orders' KPI_DEPENDENTS,
-                'safe_divide(roi_hunter_cust_spend,Roi_hunter_cust_orders)' KPI_CALC,
-                'safe_divide(roi_hunter_cust_spend_prevX,Roi_hunter_cust_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(roi_hunter_cust_spend_PrevyearsameX,Roi_hunter_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3340 KPI_ID,
-                3 LAYER,
-                'AOV_Facebook' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Facebook_cust_revenue,Facebook_cust_orders' KPI_DEPENDENTS,
-                'safe_divide(Facebook_cust_revenue,Facebook_cust_orders)' KPI_CALC,
-                'safe_divide(Facebook_cust_revenue_prevX,Facebook_cust_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Facebook_cust_revenue_PrevyearsameX,Facebook_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3350 KPI_ID,
-                3 LAYER,
-                'AOV_Instagram' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Instagram_cust_revenue,Instagram_cust_orders' KPI_DEPENDENTS,
-                'safe_divide(Instagram_cust_revenue,Instagram_cust_orders)' KPI_CALC,
-                'safe_divide(Instagram_cust_revenue_prevX,Instagram_cust_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Instagram_cust_revenue_PrevyearsameX,Instagram_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3360 KPI_ID,
-                3 LAYER,
-                'AOV_Snapchat' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Snapchat_cust_revenue,Snapchat_cust_orders' KPI_DEPENDENTS,
-                'safe_divide(Snapchat_cust_revenue,Snapchat_cust_orders)' KPI_CALC,
-                'safe_divide(Snapchat_cust_revenue_prevX,Snapchat_cust_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Snapchat_cust_revenue_PrevyearsameX,Snapchat_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3370 KPI_ID,
-                3 LAYER,
-                'AOV_Adwords' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Adwords_cust_revenue,Adwords_cust_orders' KPI_DEPENDENTS,
-                'safe_divide(Adwords_cust_revenue,Adwords_cust_orders)' KPI_CALC,
-                'safe_divide(Adwords_cust_revenue_prevX,Adwords_cust_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Adwords_cust_revenue_PrevyearsameX,Adwords_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3380 KPI_ID,
-                3 LAYER,
-                'AOV_roi_hunter' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Roi_hunter_cust_revenue,Roi_hunter_cust_orders' KPI_DEPENDENTS,
-                'safe_divide(Roi_hunter_cust_revenue,Roi_hunter_cust_orders)' KPI_CALC,
-                'safe_divide(Roi_hunter_cust_revenue_prevX,Roi_hunter_cust_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Roi_hunter_cust_revenue_PrevyearsameX,Roi_hunter_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3390 KPI_ID,
-                3 LAYER,
-                'Shareofsales_Facebook' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Facebook_cust_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Facebook_cust_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Facebook_cust_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Facebook_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3400 KPI_ID,
-                3 LAYER,
-                'Shareofsales_Instagram' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Instagram_cust_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Instagram_cust_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Instagram_cust_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Instagram_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3410 KPI_ID,
-                3 LAYER,
-                'Shareofsales_Snapchat' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Snapchat_cust_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Snapchat_cust_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Snapchat_cust_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Snapchat_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3420 KPI_ID,
-                3 LAYER,
-                'Shareofsales_Adwords' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Adwords_cust_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Adwords_cust_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Adwords_cust_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Adwords_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3430 KPI_ID,
-                3 LAYER,
-                'Sahreofsales_roi_hunter' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Roi_hunter_cust_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Roi_hunter_cust_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Roi_hunter_cust_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Roi_hunter_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3440 KPI_ID,
-                3 LAYER,
-                'ConversionRate_Facebook' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Conversion Rate (%)' KPI_DESCRIPTION,
-                'Facebook_cust_orders,Facebook_cust_traffic' KPI_DEPENDENTS,
-                'safe_divide(Facebook_cust_orders,Facebook_cust_traffic)' KPI_CALC,
-                'safe_divide(Facebook_cust_orders_prevX,Facebook_cust_traffic_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Facebook_cust_orders_PrevyearsameX,Facebook_cust_traffic_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3450 KPI_ID,
-                3 LAYER,
-                'ConversionRate_Instagram' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Conversion Rate (%)' KPI_DESCRIPTION,
-                'Instagram_cust_orders,Instagram_cust_traffic' KPI_DEPENDENTS,
-                'safe_divide(Instagram_cust_orders,Instagram_cust_traffic)' KPI_CALC,
-                'safe_divide(Instagram_cust_orders_prevX,Instagram_cust_traffic_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Instagram_cust_orders_PrevyearsameX,Instagram_cust_traffic_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3460 KPI_ID,
-                3 LAYER,
-                'ConversionRate_Snapchat' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Conversion Rate (%)' KPI_DESCRIPTION,
-                'Snapchat_cust_orders,Snapchat_cust_traffic' KPI_DEPENDENTS,
-                'safe_divide(Snapchat_cust_orders,Snapchat_cust_traffic)' KPI_CALC,
-                'safe_divide(Snapchat_cust_orders_prevX,Snapchat_cust_traffic_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Snapchat_cust_orders_PrevyearsameX,Snapchat_cust_traffic_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3470 KPI_ID,
-                3 LAYER,
-                'ConversionRate_Adwords' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Conversion Rate (%)' KPI_DESCRIPTION,
-                'Adwords_cust_orders,Adwords_cust_traffic' KPI_DEPENDENTS,
-                'safe_divide(Adwords_cust_orders,Adwords_cust_traffic)' KPI_CALC,
-                'safe_divide(Adwords_cust_orders_prevX,Adwords_cust_traffic_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Adwords_cust_orders_PrevyearsameX,Adwords_cust_traffic_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3480 KPI_ID,
-                3 LAYER,
-                'ConversionRate_roi_hunter' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Conversion Rate (%)' KPI_DESCRIPTION,
-                'Roi_hunter_cust_orders,Roi_hunter_cust_traffic' KPI_DEPENDENTS,
-                'safe_divide(Roi_hunter_cust_orders,Roi_hunter_cust_traffic)' KPI_CALC,
-                'safe_divide(Roi_hunter_cust_orders_prevX,Roi_hunter_cust_traffic_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Roi_hunter_cust_orders_PrevyearsameX,Roi_hunter_cust_traffic_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3490 KPI_ID,
-                1 LAYER,
-                'TikTok_paid_sessions' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'TikTok Paid Sessions' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3500 KPI_ID,
-                1 LAYER,
-                'TikTok_Unpaid_sessions' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'TikTok Unpaid Sessions' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3510 KPI_ID,
-                1 LAYER,
-                'Other_Social_sessions' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Other Social Sessions' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3520 KPI_ID,
-                1 LAYER,
-                'Paid_Search_sessions' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Paid Search Sessions' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3530 KPI_ID,
-                1 LAYER,
-                'Internal_Referral_sessions' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Internal Referral Sessions' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3540 KPI_ID,
-                1 LAYER,
-                'Email_sessions' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Email Sessions' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3550 KPI_ID,
-                1 LAYER,
-                'Organic_Search_Sessions' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Organic Search Sessions' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3560 KPI_ID,
-                1 LAYER,
-                'Referral_Sessions' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Referral Sessions' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3570 KPI_ID,
-                1 LAYER,
-                'Direct_Sessions' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Direct Sessions' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3580 KPI_ID,
-                1 LAYER,
-                'Others_Sessions' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Others Sessions' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3590 KPI_ID,
-                3 LAYER,
-                'Instagram_Unpaid_sessions_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Instagram Unpaid (%)' KPI_DESCRIPTION,
-                'Instagram_Unpaid_sessions,sessions' KPI_DEPENDENTS,
-                'safe_divide(Instagram_Unpaid_sessions,sessions)' KPI_CALC,
-                'safe_divide(Instagram_Unpaid_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Instagram_Unpaid_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3600 KPI_ID,
-                3 LAYER,
-                'TikTok_paid_sessions_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'TikTok Paid (%)' KPI_DESCRIPTION,
-                'TikTok_paid_sessions,sessions' KPI_DEPENDENTS,
-                'safe_divide(TikTok_paid_sessions,sessions)' KPI_CALC,
-                'safe_divide(TikTok_paid_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
-                'safe_divide(TikTok_paid_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3610 KPI_ID,
-                3 LAYER,
-                'TikTok_Unpaid_sessions_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'TikTok Unpaid (%)' KPI_DESCRIPTION,
-                'TikTok_Unpaid_sessions,sessions' KPI_DEPENDENTS,
-                'safe_divide(TikTok_Unpaid_sessions,sessions)' KPI_CALC,
-                'safe_divide(TikTok_Unpaid_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
-                'safe_divide(TikTok_Unpaid_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3620 KPI_ID,
-                3 LAYER,
-                'Other_Social_sessions_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Other Social (%)' KPI_DESCRIPTION,
-                'Other_Social_sessions,sessions' KPI_DEPENDENTS,
-                'safe_divide(Other_Social_sessions,sessions)' KPI_CALC,
-                'safe_divide(Other_Social_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Other_Social_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3630 KPI_ID,
-                3 LAYER,
-                'Paid_Search_sessions_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Paid Search (%)' KPI_DESCRIPTION,
-                'Paid_Search_sessions,sessions' KPI_DEPENDENTS,
-                'safe_divide(Paid_Search_sessions,sessions)' KPI_CALC,
-                'safe_divide(Paid_Search_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Paid_Search_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3640 KPI_ID,
-                3 LAYER,
-                'Internal_Referral_sessions_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Internal Referral (%)' KPI_DESCRIPTION,
-                'Internal_Referral_sessions,sessions' KPI_DEPENDENTS,
-                'safe_divide(Internal_Referral_sessions,sessions)' KPI_CALC,
-                'safe_divide(Internal_Referral_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Internal_Referral_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3650 KPI_ID,
-                3 LAYER,
-                'Email_sessions_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Email (%)' KPI_DESCRIPTION,
-                'Email_sessions,sessions' KPI_DEPENDENTS,
-                'safe_divide(Email_sessions,sessions)' KPI_CALC,
-                'safe_divide(Email_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Email_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3660 KPI_ID,
-                3 LAYER,
-                'Organic_Search_Sessions_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Organic Search (%)' KPI_DESCRIPTION,
-                'Organic_Search_Sessions,sessions' KPI_DEPENDENTS,
-                'safe_divide(Organic_Search_Sessions,sessions)' KPI_CALC,
-                'safe_divide(Organic_Search_Sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Organic_Search_Sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3670 KPI_ID,
-                3 LAYER,
-                'Referral_Sessions_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Referral (%)' KPI_DESCRIPTION,
-                'Referral_Sessions,sessions' KPI_DEPENDENTS,
-                'safe_divide(Referral_Sessions,sessions)' KPI_CALC,
-                'safe_divide(Referral_Sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Referral_Sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3680 KPI_ID,
-                3 LAYER,
-                'Direct_Sessions_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Direct (%)' KPI_DESCRIPTION,
-                'Direct_Sessions,sessions' KPI_DEPENDENTS,
-                'safe_divide(Direct_Sessions,sessions)' KPI_CALC,
-                'safe_divide(Direct_Sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Direct_Sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3690 KPI_ID,
-                1 LAYER,
-                'TikTok_Unpaid_newusers' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'TikTok Unpaid Newusers' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3700 KPI_ID,
-                1 LAYER,
-                'Other_Social_newusers' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Other Social Newusers' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3710 KPI_ID,
-                1 LAYER,
-                'Paid_Search_newusers' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Paid Search Newusers' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3720 KPI_ID,
-                1 LAYER,
-                'Internal_Referral_newusers' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Internal Referral Newusers' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3730 KPI_ID,
-                1 LAYER,
-                'Email_newusers' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Email Newusers' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3740 KPI_ID,
-                1 LAYER,
-                'Organic_Search_newusers' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Organic Search Newusers' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3750 KPI_ID,
-                1 LAYER,
-                'Referral_newusers' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Referral Newusers' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3760 KPI_ID,
-                1 LAYER,
-                'Direct_newusers' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Direct Newusers' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3770 KPI_ID,
-                1 LAYER,
-                'Others_newusers' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Others Newusers' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3780 KPI_ID,
-                3 LAYER,
-                'TikTok_paid_newusers_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'TikTok Paid (%)' KPI_DESCRIPTION,
-                'TikTok_paid_newusers,newuserssourcemedium' KPI_DEPENDENTS,
-                'safe_divide(TikTok_paid_newusers,newuserssourcemedium)' KPI_CALC,
-                'safe_divide(TikTok_paid_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
-                'safe_divide(TikTok_paid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3790 KPI_ID,
-                3 LAYER,
-                'TikTok_Unpaid_newusers_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'TikTok Unpaid (%)' KPI_DESCRIPTION,
-                'TikTok_Unpaid_newusers,newuserssourcemedium' KPI_DEPENDENTS,
-                'safe_divide(TikTok_Unpaid_newusers,newuserssourcemedium)' KPI_CALC,
-                'safe_divide(TikTok_Unpaid_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
-                'safe_divide(TikTok_Unpaid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3800 KPI_ID,
-                3 LAYER,
-                'Other_Social_newusers_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Other Social (%)' KPI_DESCRIPTION,
-                'Other_Social_newusers,newuserssourcemedium' KPI_DEPENDENTS,
-                'safe_divide(Other_Social_newusers,newuserssourcemedium)' KPI_CALC,
-                'safe_divide(Other_Social_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Other_Social_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3810 KPI_ID,
-                3 LAYER,
-                'Paid_Search_newusers_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Paid Search (%)' KPI_DESCRIPTION,
-                'Paid_Search_newusers,newuserssourcemedium' KPI_DEPENDENTS,
-                'safe_divide(Paid_Search_newusers,newuserssourcemedium)' KPI_CALC,
-                'safe_divide(Paid_Search_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Paid_Search_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3820 KPI_ID,
-                3 LAYER,
-                'Internal_Referral_newusers_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Internal Referral (%)' KPI_DESCRIPTION,
-                'Internal_Referral_newusers,newuserssourcemedium' KPI_DEPENDENTS,
-                'safe_divide(Internal_Referral_newusers,newuserssourcemedium)' KPI_CALC,
-                'safe_divide(Internal_Referral_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Internal_Referral_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3830 KPI_ID,
-                3 LAYER,
-                'Email_newusers_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Email (%)' KPI_DESCRIPTION,
-                'Email_newusers,newuserssourcemedium' KPI_DEPENDENTS,
-                'safe_divide(Email_newusers,newuserssourcemedium)' KPI_CALC,
-                'safe_divide(Email_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Email_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3840 KPI_ID,
-                3 LAYER,
-                'Organic_Search_newusers_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Organic Search (%)' KPI_DESCRIPTION,
-                'Organic_Search_newusers,newuserssourcemedium' KPI_DEPENDENTS,
-                'safe_divide(Organic_Search_newusers,newuserssourcemedium)' KPI_CALC,
-                'safe_divide(Organic_Search_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Organic_Search_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3850 KPI_ID,
-                3 LAYER,
-                'Referral_newusers_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Referral (%)' KPI_DESCRIPTION,
-                'Referral_newusers,newuserssourcemedium' KPI_DEPENDENTS,
-                'safe_divide(Referral_newusers,newuserssourcemedium)' KPI_CALC,
-                'safe_divide(Referral_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Referral_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3860 KPI_ID,
-                3 LAYER,
-                'Direct_newusers_per' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Direct (%)' KPI_DESCRIPTION,
-                'Direct_newusers,newuserssourcemedium' KPI_DEPENDENTS,
-                'safe_divide(Direct_newusers,newuserssourcemedium)' KPI_CALC,
-                'safe_divide(Direct_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Direct_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3870 KPI_ID,
-                1 LAYER,
-                'Rand10_spend_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3880 KPI_ID,
-                1 LAYER,
-                'Satha10_spend_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3890 KPI_ID,
-                1 LAYER,
-                'Wish10_spend_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3900 KPI_ID,
-                1 LAYER,
-                'Rand10_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3910 KPI_ID,
-                1 LAYER,
-                'Satha10_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3920 KPI_ID,
-                1 LAYER,
-                'Wish10_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3930 KPI_ID,
-                1 LAYER,
-                'Rand10_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3940 KPI_ID,
-                1 LAYER,
-                'Satha10_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3950 KPI_ID,
-                1 LAYER,
-                'Wish10_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3960 KPI_ID,
-                3 LAYER,
-                'CostperorderRand10_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'Rand10_spend_day,Rand10_orders' KPI_DEPENDENTS,
-                'safe_divide(Rand10_spend_day,Rand10_orders)' KPI_CALC,
-                'safe_divide(Rand10_spend_day_prevX,Rand10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Rand10_spend_day_PrevyearsameX,Rand10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3970 KPI_ID,
-                3 LAYER,
-                'CostperorderSatha10_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'Satha10_spend_day,Satha10_orders' KPI_DEPENDENTS,
-                'safe_divide(Satha10_spend_day,Satha10_orders)' KPI_CALC,
-                'safe_divide(Satha10_spend_day_prevX,Satha10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Satha10_spend_day_PrevyearsameX,Satha10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3980 KPI_ID,
-                3 LAYER,
-                'CostperorderWish10_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'Wish10_spend_day,Wish10_orders' KPI_DEPENDENTS,
-                'safe_divide(Wish10_spend_day,Wish10_orders)' KPI_CALC,
-                'safe_divide(Wish10_spend_day_prevX,Wish10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Wish10_spend_day_PrevyearsameX,Wish10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                3990 KPI_ID,
-                3 LAYER,
-                'ATV Customer Acq Rand10' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Rand10_revenue,Rand10_orders' KPI_DEPENDENTS,
-                'safe_divide(Rand10_revenue,Rand10_orders)' KPI_CALC,
-                'safe_divide(Rand10_revenue_prevX,Rand10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Rand10_revenue_PrevyearsameX,Rand10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4000 KPI_ID,
-                3 LAYER,
-                'ATV Customer Acq Satha10' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Satha10_revenue,Satha10_orders' KPI_DEPENDENTS,
-                'safe_divide(Satha10_revenue,Satha10_orders)' KPI_CALC,
-                'safe_divide(Satha10_revenue_prevX,Satha10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Satha10_revenue_PrevyearsameX,Satha10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4010 KPI_ID,
-                3 LAYER,
-                'ATV Customer Acq Wish10' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Wish10_revenue,Wish10_orders' KPI_DEPENDENTS,
-                'safe_divide(Wish10_revenue,Wish10_orders)' KPI_CALC,
-                'safe_divide(Wish10_revenue_prevX,Wish10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Wish10_revenue_PrevyearsameX,Wish10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4020 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per Rand10' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Rand10_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Rand10_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Rand10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Rand10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4030 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per Satha10' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Satha10_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Satha10_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Satha10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Satha10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4040 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per Wish10' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Wish10_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Wish10_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Wish10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Wish10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4050 KPI_ID,
-                1 LAYER,
-                'target' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Target Sales Value (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4060 KPI_ID,
-                1 LAYER,
-                'total_time_to_confirm' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Time to Confirm (in Days)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4070 KPI_ID,
-                1 LAYER,
-                'total_time_to_ship' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Time to Ship (in Days)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4080 KPI_ID,
-                1 LAYER,
-                'total_time_to_deliver' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Time to Deliver (in Days)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4090 KPI_ID,
-                1 LAYER,
-                'total_time_to_fulfill' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Time to Deliver (in Days)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4100 KPI_ID,
-                1 LAYER,
-                'orders_created' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Orders Created' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4120 KPI_ID,
-                1 LAYER,
-                'orders_confirmed' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Orders Confirmed' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4130 KPI_ID,
-                1 LAYER,
-                'orders_shipped' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Orders Shipped' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4140 KPI_ID,
-                1 LAYER,
-                'orders_delivered' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Orders Delivered' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4150 KPI_ID,
-                3 LAYER,
-                'confirmation_rate' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Confirmation Rate (%)' KPI_DESCRIPTION,
-                'orders_confirmed,orders_created' KPI_DEPENDENTS,
-                'safe_divide(orders_confirmed,orders_created)' KPI_CALC,
-                'safe_divide(orders_confirmed_prevX,orders_created_prevX)' KPI_CALC_PREVX,
-                'safe_divide(orders_confirmed_PrevyearsameX,orders_created_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4160 KPI_ID,
-                3 LAYER,
-                'shipment_rate' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Shipment Rate (%)' KPI_DESCRIPTION,
-                'orders_shipped,orders_confirmed' KPI_DEPENDENTS,
-                'safe_divide(orders_shipped,orders_confirmed)' KPI_CALC,
-                'safe_divide(orders_shipped_prevX,orders_confirmed_prevX)' KPI_CALC_PREVX,
-                'safe_divide(orders_shipped_PrevyearsameX,orders_confirmed_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4170 KPI_ID,
-                3 LAYER,
-                'delivery_rate' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Delivery Rate (%)' KPI_DESCRIPTION,
-                'orders_delivered,orders_shipped' KPI_DEPENDENTS,
-                'safe_divide(orders_delivered,orders_shipped)' KPI_CALC,
-                'safe_divide(orders_delivered_prevX,orders_shipped_prevX)' KPI_CALC_PREVX,
-                'safe_divide(orders_delivered_PrevyearsameX,orders_shipped_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
                 4180 KPI_ID,
-                3 LAYER,
-                'fulfilment_rate' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Delivery Rate (%)' KPI_DESCRIPTION,
-                'orders_delivered,orders_confirmed' KPI_DEPENDENTS,
-                'safe_divide(orders_delivered,orders_confirmed)' KPI_CALC,
-                'safe_divide(orders_delivered_prevX,orders_confirmed_prevX)' KPI_CALC_PREVX,
-                'safe_divide(orders_delivered_PrevyearsameX,orders_confirmed_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4190 KPI_ID,
-                1 LAYER,
-                'Yasmine10_spend_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4200 KPI_ID,
-                1 LAYER,
-                'Yasmine10_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4210 KPI_ID,
-                1 LAYER,
-                'Yasmine10_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4220 KPI_ID,
-                3 LAYER,
-                'CostperorderYasmine10_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'Yasmine10_spend_day,Yasmine10_orders' KPI_DEPENDENTS,
-                'safe_divide(Yasmine10_spend_day,Yasmine10_orders)' KPI_CALC,
-                'safe_divide(Yasmine10_spend_day_prevX,Yasmine10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Yasmine10_spend_day_PrevyearsameX,Yasmine10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4230 KPI_ID,
-                3 LAYER,
-                'ATV Customer Acq Yasmine10' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Yasmine10_revenue,Yasmine10_orders' KPI_DEPENDENTS,
-                'safe_divide(Yasmine10_revenue,Yasmine10_orders)' KPI_CALC,
-                'safe_divide(Yasmine10_revenue_prevX,Yasmine10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Yasmine10_revenue_PrevyearsameX,Yasmine10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4240 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per Yasmine10' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Yasmine10_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Yasmine10_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Yasmine10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Yasmine10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4250 KPI_ID,
-                1 LAYER,
-                'Fatma10_spend_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4260 KPI_ID,
-                1 LAYER,
-                'Fatma10_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4270 KPI_ID,
-                1 LAYER,
-                'Fatma10_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4280 KPI_ID,
-                3 LAYER,
-                'CostperorderFatma10_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'Fatma10_spend_day,Fatma10_orders' KPI_DEPENDENTS,
-                'safe_divide(Fatma10_spend_day,Fatma10_orders)' KPI_CALC,
-                'safe_divide(Fatma10_spend_day_prevX,Fatma10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Fatma10_spend_day_PrevyearsameX,Fatma10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4290 KPI_ID,
-                3 LAYER,
-                'ATV Customer Acq Fatma10' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'Fatma10_revenue,Fatma10_orders' KPI_DEPENDENTS,
-                'safe_divide(Fatma10_revenue,Fatma10_orders)' KPI_CALC,
-                'safe_divide(Fatma10_revenue_prevX,Fatma10_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Fatma10_revenue_PrevyearsameX,Fatma10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4300 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per Fatma10' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'Fatma10_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(Fatma10_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(Fatma10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(Fatma10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4310 KPI_ID,
-                1 LAYER,
-                'target_spend' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Target Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4320 KPI_ID,
-                1 LAYER,
-                'facebook_target_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Target Spend (in SAR) - Facebook & Instagram' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4330 KPI_ID,
-                1 LAYER,
-                'adwords_target_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Target Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4340 KPI_ID,
-                1 LAYER,
-                'snapchat_target_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Target Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4350 KPI_ID,
-                1 LAYER,
-                'on_time_shipments' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number of Shipments Delivered On Time' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4360 KPI_ID,
-                1 LAYER,
-                'delayed_shipments' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number of Shipments Delayed' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4370 KPI_ID,
-                1 LAYER,
-                'refused_shipments' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number of Shipments Refused (by Customers)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4380 KPI_ID,
-                1 LAYER,
-                'total_attempts' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Delivery Attempts' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4390 KPI_ID,
-                1 LAYER,
-                'total_tickets_created' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number of Tickets Created' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4400 KPI_ID,
-                1 LAYER,
-                'facebook_tickets' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Facebook' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4410 KPI_ID,
-                1 LAYER,
-                'chat_tickets' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Chat' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4420 KPI_ID,
-                1 LAYER,
-                'email_tickets' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Email' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4430 KPI_ID,
-                1 LAYER,
-                'twitter_tickets' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Twitter' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4440 KPI_ID,
-                1 LAYER,
-                'web_tickets' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Web' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4450 KPI_ID,
-                1 LAYER,
-                'other_cases' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Others' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4460 KPI_ID,
-                1 LAYER,
-                'total_days_to_close' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Time Taken To Close' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4470 KPI_ID,
-                1 LAYER,
-                'new_tickets' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'New' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4480 KPI_ID,
-                1 LAYER,
-                'open_tickets' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Open' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4490 KPI_ID,
-                1 LAYER,
-                'closed_tickets' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Closed' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4500 KPI_ID,
-                1 LAYER,
-                'pending_tickets' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Pending' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4510 KPI_ID,
-                1 LAYER,
-                'solved_tickets' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Solved' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4520 KPI_ID,
-                1 LAYER,
-                'deleted_tickets' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Deleted' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4530 KPI_ID,
-                1 LAYER,
-                'general_query' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'General Query' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4540 KPI_ID,
-                1 LAYER,
-                'return' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Return/Refund' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4550 KPI_ID,
-                1 LAYER,
-                'exchange' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Exchange' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4560 KPI_ID,
-                1 LAYER,
-                'order_delay' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Delay in Delivery' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4570 KPI_ID,
-                1 LAYER,
-                'wrong_order' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Wrong Order' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4580 KPI_ID,
-                1 LAYER,
-                'manufacturing' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Manufacturing' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4590 KPI_ID,
-                1 LAYER,
-                'website_issue' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Website Problems' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4600 KPI_ID,
-                3 LAYER,
-                'total_days_to_close_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Time Taken (in Days) to Close' KPI_DESCRIPTION,
-                'total_days_to_close,closed_tickets' KPI_DEPENDENTS,
-                'safe_divide(total_days_to_close,closed_tickets)' KPI_CALC,
-                'safe_divide(total_days_to_close_prevX,closed_tickets_prevX)' KPI_CALC_PREVX,
-                'safe_divide(total_days_to_close_PrevyearsameX,closed_tickets_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4610 KPI_ID,
-                3 LAYER,
-                'total_time_to_confirm_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Time Taken (in Days) to Confirm (by CRM)' KPI_DESCRIPTION,
-                'total_time_to_confirm,orders_confirmed' KPI_DEPENDENTS,
-                'safe_divide(total_time_to_confirm,orders_confirmed)' KPI_CALC,
-                'safe_divide(total_time_to_confirm_prevX,orders_confirmed_prevX)' KPI_CALC_PREVX,
-                'safe_divide(total_time_to_confirm_PrevyearsameX,orders_confirmed_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4620 KPI_ID,
-                3 LAYER,
-                'total_time_to_ship_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Time Taken (in Days) to Ship (After Confirmation)' KPI_DESCRIPTION,
-                'total_time_to_ship,orders_shipped' KPI_DEPENDENTS,
-                'safe_divide(total_time_to_ship,orders_shipped)' KPI_CALC,
-                'safe_divide(total_time_to_ship_prevX,orders_shipped_prevX)' KPI_CALC_PREVX,
-                'safe_divide(total_time_to_ship_PrevyearsameX,orders_shipped_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4630 KPI_ID,
-                3 LAYER,
-                'total_time_to_deliver_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Time Taken (in Days) to Deliver (After Shippment)' KPI_DESCRIPTION,
-                'total_time_to_deliver,orders_delivered' KPI_DEPENDENTS,
-                'safe_divide(total_time_to_deliver,orders_delivered)' KPI_CALC,
-                'safe_divide(total_time_to_deliver_prevX,orders_delivered_prevX)' KPI_CALC_PREVX,
-                'safe_divide(total_time_to_deliver_PrevyearsameX,orders_delivered_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4640 KPI_ID,
-                3 LAYER,
-                'total_time_to_fulfill_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Time Taken (in Days) to Deliver (After Confirmation)' KPI_DESCRIPTION,
-                'total_time_to_fulfill,orders_delivered' KPI_DEPENDENTS,
-                'safe_divide(total_time_to_fulfill,orders_delivered)' KPI_CALC,
-                'safe_divide(total_time_to_fulfill_prevX,orders_delivered_prevX)' KPI_CALC_PREVX,
-                'safe_divide(total_time_to_fulfill_PrevyearsameX,orders_delivered_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4650 KPI_ID,
-                3 LAYER,
-                'total_attempts_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Delivery Attempts' KPI_DESCRIPTION,
-                'total_attempts,shipments' KPI_DEPENDENTS,
-                'safe_divide(total_attempts,shipments)' KPI_CALC,
-                'safe_divide(total_attempts_prevX,shipments_prevX)' KPI_CALC_PREVX,
-                'safe_divide(total_attempts_PrevyearsameX,shipments_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4660 KPI_ID,
-                1 LAYER,
-                'shipments' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Shipments' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4670 KPI_ID,
-                1 LAYER,
-                'missl2u_spend_day' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4680 KPI_ID,
-                1 LAYER,
-                'missl2u_orders' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Number Of Successful Orders' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4690 KPI_ID,
-                1 LAYER,
-                'missl2u_revenue' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4700 KPI_ID,
-                3 LAYER,
-                'Costperordermissl2u_per' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
-                'missl2u_spend_day,missl2u_orders' KPI_DEPENDENTS,
-                'safe_divide(missl2u_spend_day,missl2u_orders)' KPI_CALC,
-                'safe_divide(missl2u_spend_day_prevX,missl2u_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(missl2u_spend_day_PrevyearsameX,missl2u_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4710 KPI_ID,
-                3 LAYER,
-                'ATV Customer Acq missl2u' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
-                'missl2u_revenue,missl2u_orders' KPI_DEPENDENTS,
-                'safe_divide(missl2u_revenue,missl2u_orders)' KPI_CALC,
-                'safe_divide(missl2u_revenue_prevX,missl2u_orders_prevX)' KPI_CALC_PREVX,
-                'safe_divide(missl2u_revenue_PrevyearsameX,missl2u_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4720 KPI_ID,
-                3 LAYER,
-                'Shareofsales_per missl2u' KPI_VARIABLE,
-                'Percentage' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Share Of Sales (%)' KPI_DESCRIPTION,
-                'missl2u_revenue,total_item_price_auth' KPI_DEPENDENTS,
-                'safe_divide(missl2u_revenue,total_item_price_auth)' KPI_CALC,
-                'safe_divide(missl2u_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
-                'safe_divide(missl2u_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4730 KPI_ID,
-                1 LAYER,
-                'Existing_Customers' KPI_VARIABLE,
-                'Integer' KPI_FORMAT,
-                'fKPIs' KPI_SQL,
-                'Returning Customers' KPI_DESCRIPTION,
-                '' KPI_DEPENDENTS,
-                '' KPI_CALC,
-                '' KPI_CALC_PREVX,
-                '' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4740 KPI_ID,
-                3 LAYER,
-                'CAC Total' KPI_VARIABLE,
-                'Decimal' KPI_FORMAT,
-                'fKPIsCalc' KPI_SQL,
-                'Customer Acquisition Cost' KPI_DESCRIPTION,
-                'snapchat_cust_spend,spend,MissL10_spend_day,Husin10_spend_day,Feda10_spend_day,abrar21_spend_day,feda21_spend_day,roh_n2_spend_day,omseba10_spend_day,marwa10_spend_day,maha_140_spend_day,shahad10_spend_day,Rand10_spend_day,Satha10_spend_day,Wish10_spend_day,Yasmine10_spend_day,Fatma10_spend_day,missl2u_spend_day,New_customers' KPI_DEPENDENTS,
-                'safe_divide((snapchat_cust_spend+spend+MissL10_spend_day+Husin10_spend_day+Feda10_spend_day+abrar21_spend_day+feda21_spend_day+roh_n2_spend_day+omseba10_spend_day+marwa10_spend_day+maha_140_spend_day+shahad10_spend_day+Rand10_spend_day+Satha10_spend_day+Wish10_spend_day+Yasmine10_spend_day+Fatma10_spend_day+missl2u_spend_day),New_customers)' KPI_CALC,
-                'safe_divide((snapchat_cust_spend_prevX+spend_prevX+MissL10_spend_day_prevX+Husin10_spend_day_prevX+Feda10_spend_day_prevX+abrar21_spend_day_prevX+feda21_spend_day_prevX+roh_n2_spend_day_prevX+omseba10_spend_day_prevX+marwa10_spend_day_prevX+maha_140_spend_day_prevX+shahad10_spend_day_prevX+Rand10_spend_day_prevX+Satha10_spend_day_prevX+Wish10_spend_day_prevX+Yasmine10_spend_day_prevX+Fatma10_spend_day_prevX+missl2u_spend_day),New_customers)' KPI_CALC_PREVX,
-                'safe_divide((snapchat_cust_spend_PrevyearsameX+spend_PrevyearsameX+MissL10_spend_day_PrevyearsameX+Husin10_spend_day_PrevyearsameX+Feda10_spend_day_PrevyearsameX+abrar21_spend_day_PrevyearsameX+feda21_spend_day_PrevyearsameX+roh_n2_spend_day_PrevyearsameX+omseba10_spend_day_PrevyearsameX+marwa10_spend_day_PrevyearsameX+maha_140_spend_day_PrevyearsameX+shahad10_spend_day_PrevyearsameX+Rand10_spend_day_PrevyearsameX+Satha10_spend_day_PrevyearsameX+Wish10_spend_day_PrevyearsameX+Yasmine10_spend_day_PrevyearsameX+Fatma10_spend_day_PrevyearsameX+missl2u_spend_day),New_customers)' KPI_CALC_PREVYEARSAMEX
-            
-                union all
-            
-        
-                select
-                4750 KPI_ID,
                 1 LAYER,
                 'Youtube_cust_traffic' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -7097,7 +4262,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4760 KPI_ID,
+                4190 KPI_ID,
                 1 LAYER,
                 'Tiktok_cust_traffic' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -7112,7 +4277,67 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4770 KPI_ID,
+                2850 KPI_ID,
+                1 LAYER,
+                'Facebook_cust_orders' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number Of Successful Orders' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2860 KPI_ID,
+                1 LAYER,
+                'Instagram_cust_orders' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number Of Successful Orders' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2870 KPI_ID,
+                1 LAYER,
+                'Adwords_cust_orders' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number Of Successful Orders' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2880 KPI_ID,
+                1 LAYER,
+                'Roi_hunter_cust_orders' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number Of Successful Orders' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4200 KPI_ID,
                 1 LAYER,
                 'Youtube_cust_orders' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -7127,7 +4352,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4780 KPI_ID,
+                4210 KPI_ID,
                 1 LAYER,
                 'Tiktok_cust_orders' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -7142,12 +4367,72 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4790 KPI_ID,
+                2890 KPI_ID,
+                1 LAYER,
+                'Facebook_cust_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2900 KPI_ID,
+                1 LAYER,
+                'Instagram_cust_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2910 KPI_ID,
+                1 LAYER,
+                'Adwords_cust_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2920 KPI_ID,
+                1 LAYER,
+                'Roi_hunter_cust_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4220 KPI_ID,
                 1 LAYER,
                 'Tiktok_cust_revenue' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -7157,12 +4442,12 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4800 KPI_ID,
+                4230 KPI_ID,
                 1 LAYER,
                 'Youtube_cust_revenue' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Total Sales Value (With VAT in SAR)' KPI_DESCRIPTION,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -7172,12 +4457,72 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4810 KPI_ID,
+                2930 KPI_ID,
+                1 LAYER,
+                'Facebook_cust_spend' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2940 KPI_ID,
+                1 LAYER,
+                'google_cust_adspend' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2950 KPI_ID,
+                1 LAYER,
+                'Instagram_cust_spend' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2960 KPI_ID,
+                1 LAYER,
+                'roi_hunter_cust_spend' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4240 KPI_ID,
                 1 LAYER,
                 'spend_per_day' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -7187,12 +4532,72 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4820 KPI_ID,
+                2970 KPI_ID,
+                3 LAYER,
+                'Costperorder_Facebook' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'Facebook_cust_spend,Facebook_cust_orders' KPI_DEPENDENTS,
+                'safe_divide(Facebook_cust_spend,Facebook_cust_orders)' KPI_CALC,
+                'safe_divide(Facebook_cust_spend_prevX,Facebook_cust_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Facebook_cust_spend_PrevyearsameX,Facebook_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2980 KPI_ID,
+                3 LAYER,
+                'Costperorder_Instagram' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'Instagram_cust_spend,Instagram_cust_orders' KPI_DEPENDENTS,
+                'safe_divide(Instagram_cust_spend,Instagram_cust_orders)' KPI_CALC,
+                'safe_divide(Instagram_cust_spend_prevX,Instagram_cust_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Instagram_cust_spend_PrevyearsameX,Instagram_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                2990 KPI_ID,
+                3 LAYER,
+                'Costperorder_Adwords' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'google_cust_adspend,Adwords_cust_orders' KPI_DEPENDENTS,
+                'safe_divide(google_cust_adspend,Adwords_cust_orders)' KPI_CALC,
+                'safe_divide(google_cust_adspend_prevX,Adwords_cust_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(google_cust_adspend_PrevyearsameX,Adwords_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3000 KPI_ID,
+                3 LAYER,
+                'Costperorder_roi_hunter' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'roi_hunter_cust_spend,Roi_hunter_cust_orders' KPI_DEPENDENTS,
+                'safe_divide(roi_hunter_cust_spend,Roi_hunter_cust_orders)' KPI_CALC,
+                'safe_divide(roi_hunter_cust_spend_prevX,Roi_hunter_cust_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(roi_hunter_cust_spend_PrevyearsameX,Roi_hunter_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4250 KPI_ID,
                 3 LAYER,
                 'Costperorder_youtube' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
+                'CPO (in AED)' KPI_DESCRIPTION,
                 'spend_per_day,Youtube_cust_orders' KPI_DEPENDENTS,
                 'safe_divide(spend_per_day,Youtube_cust_orders)' KPI_CALC,
                 'safe_divide(spend_per_day_prevX,Youtube_cust_orders_prevX)' KPI_CALC_PREVX,
@@ -7202,12 +4607,72 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4830 KPI_ID,
+                3010 KPI_ID,
+                3 LAYER,
+                'AOV_Facebook' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'Facebook_cust_revenue,Facebook_cust_orders' KPI_DEPENDENTS,
+                'safe_divide(Facebook_cust_revenue,Facebook_cust_orders)' KPI_CALC,
+                'safe_divide(Facebook_cust_revenue_prevX,Facebook_cust_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Facebook_cust_revenue_PrevyearsameX,Facebook_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3020 KPI_ID,
+                3 LAYER,
+                'AOV_Instagram' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'Instagram_cust_revenue,Instagram_cust_orders' KPI_DEPENDENTS,
+                'safe_divide(Instagram_cust_revenue,Instagram_cust_orders)' KPI_CALC,
+                'safe_divide(Instagram_cust_revenue_prevX,Instagram_cust_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Instagram_cust_revenue_PrevyearsameX,Instagram_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3040 KPI_ID,
+                3 LAYER,
+                'AOV_Adwords' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'Adwords_cust_revenue,Adwords_cust_orders' KPI_DEPENDENTS,
+                'safe_divide(Adwords_cust_revenue,Adwords_cust_orders)' KPI_CALC,
+                'safe_divide(Adwords_cust_revenue_prevX,Adwords_cust_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Adwords_cust_revenue_PrevyearsameX,Adwords_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3050 KPI_ID,
+                3 LAYER,
+                'AOV_roi_hunter' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'Roi_hunter_cust_revenue,Roi_hunter_cust_orders' KPI_DEPENDENTS,
+                'safe_divide(Roi_hunter_cust_revenue,Roi_hunter_cust_orders)' KPI_CALC,
+                'safe_divide(Roi_hunter_cust_revenue_prevX,Roi_hunter_cust_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Roi_hunter_cust_revenue_PrevyearsameX,Roi_hunter_cust_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4260 KPI_ID,
                 3 LAYER,
                 'AOV_youtube' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
                 'Youtube_cust_revenue,Youtube_cust_orders' KPI_DEPENDENTS,
                 'safe_divide(Youtube_cust_revenue,Youtube_cust_orders)' KPI_CALC,
                 'safe_divide(Youtube_cust_revenue_prevX,Youtube_cust_orders_prevX)' KPI_CALC_PREVX,
@@ -7217,12 +4682,12 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4840 KPI_ID,
+                4270 KPI_ID,
                 3 LAYER,
                 'AOV_tiktok' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'Average Order Value (in SAR)' KPI_DESCRIPTION,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
                 'Tiktok_cust_revenue,Tiktok_cust_orders' KPI_DEPENDENTS,
                 'safe_divide(Tiktok_cust_revenue,Tiktok_cust_orders)' KPI_CALC,
                 'safe_divide(Tiktok_cust_revenue_prevX,Tiktok_cust_orders_prevX)' KPI_CALC_PREVX,
@@ -7232,7 +4697,67 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4850 KPI_ID,
+                3060 KPI_ID,
+                3 LAYER,
+                'Shareofsales_Facebook' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Share Of Sales (%)' KPI_DESCRIPTION,
+                'Facebook_cust_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(Facebook_cust_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(Facebook_cust_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Facebook_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3070 KPI_ID,
+                3 LAYER,
+                'Shareofsales_Instagram' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Share Of Sales (%)' KPI_DESCRIPTION,
+                'Instagram_cust_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(Instagram_cust_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(Instagram_cust_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Instagram_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3080 KPI_ID,
+                3 LAYER,
+                'Shareofsales_Adwords' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Share Of Sales (%)' KPI_DESCRIPTION,
+                'Adwords_cust_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(Adwords_cust_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(Adwords_cust_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Adwords_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3090 KPI_ID,
+                3 LAYER,
+                'Sahreofsales_roi_hunter' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Share Of Sales (%)' KPI_DESCRIPTION,
+                'Roi_hunter_cust_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(Roi_hunter_cust_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(Roi_hunter_cust_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Roi_hunter_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4280 KPI_ID,
                 3 LAYER,
                 'Shareofsales_youtube' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -7247,7 +4772,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4860 KPI_ID,
+                4290 KPI_ID,
                 3 LAYER,
                 'Shareofsales_tiktok' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -7262,7 +4787,67 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4870 KPI_ID,
+                3100 KPI_ID,
+                3 LAYER,
+                'ConversionRate_Facebook' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Conversion Rate (%)' KPI_DESCRIPTION,
+                'Facebook_cust_orders,Facebook_cust_traffic' KPI_DEPENDENTS,
+                'safe_divide(Facebook_cust_orders,Facebook_cust_traffic)' KPI_CALC,
+                'safe_divide(Facebook_cust_orders_prevX,Facebook_cust_traffic_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Facebook_cust_orders_PrevyearsameX,Facebook_cust_traffic_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3110 KPI_ID,
+                3 LAYER,
+                'ConversionRate_Instagram' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Conversion Rate (%)' KPI_DESCRIPTION,
+                'Instagram_cust_orders,Instagram_cust_traffic' KPI_DEPENDENTS,
+                'safe_divide(Instagram_cust_orders,Instagram_cust_traffic)' KPI_CALC,
+                'safe_divide(Instagram_cust_orders_prevX,Instagram_cust_traffic_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Instagram_cust_orders_PrevyearsameX,Instagram_cust_traffic_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3120 KPI_ID,
+                3 LAYER,
+                'ConversionRate_Adwords' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Conversion Rate (%)' KPI_DESCRIPTION,
+                'Adwords_cust_orders,Adwords_cust_traffic' KPI_DEPENDENTS,
+                'safe_divide(Adwords_cust_orders,Adwords_cust_traffic)' KPI_CALC,
+                'safe_divide(Adwords_cust_orders_prevX,Adwords_cust_traffic_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Adwords_cust_orders_PrevyearsameX,Adwords_cust_traffic_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3130 KPI_ID,
+                3 LAYER,
+                'ConversionRate_roi_hunter' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Conversion Rate (%)' KPI_DESCRIPTION,
+                'Roi_hunter_cust_orders,Roi_hunter_cust_traffic' KPI_DEPENDENTS,
+                'safe_divide(Roi_hunter_cust_orders,Roi_hunter_cust_traffic)' KPI_CALC,
+                'safe_divide(Roi_hunter_cust_orders_prevX,Roi_hunter_cust_traffic_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Roi_hunter_cust_orders_PrevyearsameX,Roi_hunter_cust_traffic_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4300 KPI_ID,
                 3 LAYER,
                 'ConversionRate_youtube' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -7277,7 +4862,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4880 KPI_ID,
+                4310 KPI_ID,
                 3 LAYER,
                 'ConversionRate_tiktok' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -7292,7 +4877,1552 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4890 KPI_ID,
+                3140 KPI_ID,
+                1 LAYER,
+                'Instagram_Unpaid_sessions' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Instagram Unpaid Sessions' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3150 KPI_ID,
+                1 LAYER,
+                'TikTok_paid_sessions' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'TikTok Paid Sessions' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3160 KPI_ID,
+                1 LAYER,
+                'TikTok_Unpaid_sessions' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'TikTok Unpaid Sessions' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3170 KPI_ID,
+                1 LAYER,
+                'Other_Social_sessions' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Other Social Sessions' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3180 KPI_ID,
+                1 LAYER,
+                'Paid_Search_sessions' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Paid Search Sessions' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3190 KPI_ID,
+                1 LAYER,
+                'Internal_Referral_sessions' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Internal Referral Sessions' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3200 KPI_ID,
+                1 LAYER,
+                'Email_sessions' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Email Sessions' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3210 KPI_ID,
+                1 LAYER,
+                'Organic_Search_Sessions' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Organic Search Sessions' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3220 KPI_ID,
+                1 LAYER,
+                'Referral_Sessions' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Referral Sessions' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3230 KPI_ID,
+                1 LAYER,
+                'Direct_Sessions' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Direct Sessions' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3240 KPI_ID,
+                3 LAYER,
+                'Other_Social_sessions_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Other Social (%)' KPI_DESCRIPTION,
+                'Other_Social_sessions,sessions' KPI_DEPENDENTS,
+                'safe_divide(Other_Social_sessions,sessions)' KPI_CALC,
+                'safe_divide(Other_Social_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Other_Social_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3250 KPI_ID,
+                3 LAYER,
+                'Paid_Search_sessions_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Paid Search (%)' KPI_DESCRIPTION,
+                'Paid_Search_sessions,sessions' KPI_DEPENDENTS,
+                'safe_divide(Paid_Search_sessions,sessions)' KPI_CALC,
+                'safe_divide(Paid_Search_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Paid_Search_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3260 KPI_ID,
+                3 LAYER,
+                'Internal_Referral_sessions_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Internal Referral (%)' KPI_DESCRIPTION,
+                'Internal_Referral_sessions,sessions' KPI_DEPENDENTS,
+                'safe_divide(Internal_Referral_sessions,sessions)' KPI_CALC,
+                'safe_divide(Internal_Referral_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Internal_Referral_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3270 KPI_ID,
+                3 LAYER,
+                'Email_sessions_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Email (%)' KPI_DESCRIPTION,
+                'Email_sessions,sessions' KPI_DEPENDENTS,
+                'safe_divide(Email_sessions,sessions)' KPI_CALC,
+                'safe_divide(Email_sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Email_sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3280 KPI_ID,
+                3 LAYER,
+                'Organic_Search_Sessions_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Organic Search (%)' KPI_DESCRIPTION,
+                'Organic_Search_Sessions,sessions' KPI_DEPENDENTS,
+                'safe_divide(Organic_Search_Sessions,sessions)' KPI_CALC,
+                'safe_divide(Organic_Search_Sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Organic_Search_Sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3290 KPI_ID,
+                3 LAYER,
+                'Referral_Sessions_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Referral (%)' KPI_DESCRIPTION,
+                'Referral_Sessions,sessions' KPI_DEPENDENTS,
+                'safe_divide(Referral_Sessions,sessions)' KPI_CALC,
+                'safe_divide(Referral_Sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Referral_Sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3300 KPI_ID,
+                3 LAYER,
+                'Direct_Sessions_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Direct (%)' KPI_DESCRIPTION,
+                'Direct_Sessions,sessions' KPI_DEPENDENTS,
+                'safe_divide(Direct_Sessions,sessions)' KPI_CALC,
+                'safe_divide(Direct_Sessions_prevX,sessions_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Direct_Sessions_PrevyearsameX,sessions_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3310 KPI_ID,
+                1 LAYER,
+                'TikTok_paid_newusers' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'TikTok Paid Newusers' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3320 KPI_ID,
+                1 LAYER,
+                'TikTok_Unpaid_newusers' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'TikTok Unpaid Newusers' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3330 KPI_ID,
+                1 LAYER,
+                'Other_Social_newusers' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Other Social Newusers' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3340 KPI_ID,
+                1 LAYER,
+                'Paid_Search_newusers' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Paid Search Newusers' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3350 KPI_ID,
+                1 LAYER,
+                'Internal_Referral_newusers' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Internal Referral Newusers' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3360 KPI_ID,
+                1 LAYER,
+                'Email_newusers' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Email Newusers' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3370 KPI_ID,
+                1 LAYER,
+                'Organic_Search_newusers' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Organic Search Newusers' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3380 KPI_ID,
+                1 LAYER,
+                'Referral_newusers' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Referral Newusers' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3390 KPI_ID,
+                1 LAYER,
+                'Direct_newusers' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Direct Newusers' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3400 KPI_ID,
+                3 LAYER,
+                'TikTok_paid_newusers_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'TikTok Paid (%)' KPI_DESCRIPTION,
+                'TikTok_paid_newusers,newuserssourcemedium' KPI_DEPENDENTS,
+                'safe_divide(TikTok_paid_newusers,newuserssourcemedium)' KPI_CALC,
+                'safe_divide(TikTok_paid_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
+                'safe_divide(TikTok_paid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3410 KPI_ID,
+                3 LAYER,
+                'TikTok_Unpaid_newusers_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'TikTok Unpaid (%)' KPI_DESCRIPTION,
+                'TikTok_Unpaid_newusers,newuserssourcemedium' KPI_DEPENDENTS,
+                'safe_divide(TikTok_Unpaid_newusers,newuserssourcemedium)' KPI_CALC,
+                'safe_divide(TikTok_Unpaid_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
+                'safe_divide(TikTok_Unpaid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3420 KPI_ID,
+                3 LAYER,
+                'Other_Social_newusers_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Other Social (%)' KPI_DESCRIPTION,
+                'Other_Social_newusers,newuserssourcemedium' KPI_DEPENDENTS,
+                'safe_divide(Other_Social_newusers,newuserssourcemedium)' KPI_CALC,
+                'safe_divide(Other_Social_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Other_Social_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3430 KPI_ID,
+                3 LAYER,
+                'Paid_Search_newusers_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Paid Search (%)' KPI_DESCRIPTION,
+                'Paid_Search_newusers,newuserssourcemedium' KPI_DEPENDENTS,
+                'safe_divide(Paid_Search_newusers,newuserssourcemedium)' KPI_CALC,
+                'safe_divide(Paid_Search_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Paid_Search_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3440 KPI_ID,
+                3 LAYER,
+                'Internal_Referral_newusers_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Internal Referral (%)' KPI_DESCRIPTION,
+                'Internal_Referral_newusers,newuserssourcemedium' KPI_DEPENDENTS,
+                'safe_divide(Internal_Referral_newusers,newuserssourcemedium)' KPI_CALC,
+                'safe_divide(Internal_Referral_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Internal_Referral_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3450 KPI_ID,
+                3 LAYER,
+                'Email_newusers_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Email (%)' KPI_DESCRIPTION,
+                'Email_newusers,newuserssourcemedium' KPI_DEPENDENTS,
+                'safe_divide(Email_newusers,newuserssourcemedium)' KPI_CALC,
+                'safe_divide(Email_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Email_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3460 KPI_ID,
+                3 LAYER,
+                'Organic_Search_newusers_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Organic Search (%)' KPI_DESCRIPTION,
+                'Organic_Search_newusers,newuserssourcemedium' KPI_DEPENDENTS,
+                'safe_divide(Organic_Search_newusers,newuserssourcemedium)' KPI_CALC,
+                'safe_divide(Organic_Search_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Organic_Search_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3470 KPI_ID,
+                3 LAYER,
+                'Referral_newusers_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Referral (%)' KPI_DESCRIPTION,
+                'Referral_newusers,newuserssourcemedium' KPI_DEPENDENTS,
+                'safe_divide(Referral_newusers,newuserssourcemedium)' KPI_CALC,
+                'safe_divide(Referral_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Referral_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3480 KPI_ID,
+                3 LAYER,
+                'Direct_newusers_per' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Direct (%)' KPI_DESCRIPTION,
+                'Direct_newusers,newuserssourcemedium' KPI_DEPENDENTS,
+                'safe_divide(Direct_newusers,newuserssourcemedium)' KPI_CALC,
+                'safe_divide(Direct_newusers_prevX,newuserssourcemedium_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Direct_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3490 KPI_ID,
+                1 LAYER,
+                'Ola10_spend_day' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3500 KPI_ID,
+                1 LAYER,
+                'Farah10_spend_day' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3510 KPI_ID,
+                1 LAYER,
+                'Ola10_orders' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number Of Successful Orders' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3520 KPI_ID,
+                1 LAYER,
+                'Farah10_orders' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number Of Successful Orders' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3530 KPI_ID,
+                1 LAYER,
+                'Ola10_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3540 KPI_ID,
+                1 LAYER,
+                'Farah10_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3550 KPI_ID,
+                3 LAYER,
+                'Costperorder_Ola10' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'Ola10_spend_day,Ola10_orders' KPI_DEPENDENTS,
+                'safe_divide(Ola10_spend_day,Ola10_orders)' KPI_CALC,
+                'safe_divide(Ola10_spend_day_prevX,Ola10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Ola10_spend_day_PrevyearsameX,Ola10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3560 KPI_ID,
+                3 LAYER,
+                'Costperorder_Farah10' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'Farah10_spend_day,Farah10_orders' KPI_DEPENDENTS,
+                'safe_divide(Farah10_spend_day,Farah10_orders)' KPI_CALC,
+                'safe_divide(Farah10_spend_day_prevX,Farah10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Farah10_spend_day_PrevyearsameX,Farah10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3570 KPI_ID,
+                3 LAYER,
+                'ATV_Ola10' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'Ola10_revenue,Ola10_orders' KPI_DEPENDENTS,
+                'safe_divide(Ola10_revenue,Ola10_orders)' KPI_CALC,
+                'safe_divide(Ola10_revenue_prevX,Ola10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Ola10_revenue_PrevyearsameX,Ola10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3580 KPI_ID,
+                3 LAYER,
+                'ATV_Farah10' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'Farah10_revenue,Farah10_orders' KPI_DEPENDENTS,
+                'safe_divide(Farah10_revenue,Farah10_orders)' KPI_CALC,
+                'safe_divide(Farah10_revenue_prevX,Farah10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Farah10_revenue_PrevyearsameX,Farah10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3590 KPI_ID,
+                3 LAYER,
+                'Shareofsales_Ola10' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Share Of Sales (%)' KPI_DESCRIPTION,
+                'Ola10_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(Ola10_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(Ola10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Ola10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3600 KPI_ID,
+                3 LAYER,
+                'Shareofsales_Farah10' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Share Of Sales (%)' KPI_DESCRIPTION,
+                'Farah10_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(Farah10_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(Farah10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Farah10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3610 KPI_ID,
+                1 LAYER,
+                'target' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Target Sales Value (in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3620 KPI_ID,
+                1 LAYER,
+                'total_time_to_confirm' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Time to Confirm (in Days)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3630 KPI_ID,
+                1 LAYER,
+                'total_time_to_ship' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Time to Ship (in Days)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3640 KPI_ID,
+                1 LAYER,
+                'total_time_to_deliver' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Time to Deliver (in Days)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3650 KPI_ID,
+                1 LAYER,
+                'total_time_to_fulfill' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Time to Fulfill (in Days)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3660 KPI_ID,
+                1 LAYER,
+                'orders_created' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Orders Created' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3670 KPI_ID,
+                1 LAYER,
+                'orders_confirmed' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Orders Confirmed' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3680 KPI_ID,
+                1 LAYER,
+                'orders_shipped' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Orders Shipped' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3690 KPI_ID,
+                1 LAYER,
+                'orders_delivered' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Orders Delivered' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3700 KPI_ID,
+                3 LAYER,
+                'confirmation_rate' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Confirmation Rate (%)' KPI_DESCRIPTION,
+                'orders_confirmed,orders_created' KPI_DEPENDENTS,
+                'safe_divide(orders_confirmed,orders_created)' KPI_CALC,
+                'safe_divide(orders_confirmed_prevX,orders_created_prevX)' KPI_CALC_PREVX,
+                'safe_divide(orders_confirmed_PrevyearsameX,orders_created_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3710 KPI_ID,
+                3 LAYER,
+                'shipment_rate' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Shipment Rate (%)' KPI_DESCRIPTION,
+                'orders_shipped,orders_confirmed' KPI_DEPENDENTS,
+                'safe_divide(orders_shipped,orders_confirmed)' KPI_CALC,
+                'safe_divide(orders_shipped_prevX,orders_confirmed_prevX)' KPI_CALC_PREVX,
+                'safe_divide(orders_shipped_PrevyearsameX,orders_confirmed_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3720 KPI_ID,
+                3 LAYER,
+                'delivery_rate' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Delivery Rate (%)' KPI_DESCRIPTION,
+                'orders_delivered,orders_shipped' KPI_DEPENDENTS,
+                'safe_divide(orders_delivered,orders_shipped)' KPI_CALC,
+                'safe_divide(orders_delivered_prevX,orders_shipped_prevX)' KPI_CALC_PREVX,
+                'safe_divide(orders_delivered_PrevyearsameX,orders_shipped_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3730 KPI_ID,
+                3 LAYER,
+                'fulfilment_rate' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Delivery Rate (%)' KPI_DESCRIPTION,
+                'orders_delivered,orders_confirmed' KPI_DEPENDENTS,
+                'safe_divide(orders_delivered,orders_confirmed)' KPI_CALC,
+                'safe_divide(orders_delivered_prevX,orders_confirmed_prevX)' KPI_CALC_PREVX,
+                'safe_divide(orders_delivered_PrevyearsameX,orders_confirmed_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3740 KPI_ID,
+                1 LAYER,
+                'Emma10_spend_day' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3750 KPI_ID,
+                1 LAYER,
+                'Emma10_orders' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number Of Successful Orders' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3760 KPI_ID,
+                1 LAYER,
+                'Emma10_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3770 KPI_ID,
+                3 LAYER,
+                'Costperorder_Emma10' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'Emma10_spend_day,Emma10_orders' KPI_DEPENDENTS,
+                'safe_divide(Emma10_spend_day,Emma10_orders)' KPI_CALC,
+                'safe_divide(Emma10_spend_day_prevX,Emma10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Emma10_spend_day_PrevyearsameX,Emma10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3780 KPI_ID,
+                3 LAYER,
+                'ATV_Emma10' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'Emma10_revenue,Emma10_orders' KPI_DEPENDENTS,
+                'safe_divide(Emma10_revenue,Emma10_orders)' KPI_CALC,
+                'safe_divide(Emma10_revenue_prevX,Emma10_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Emma10_revenue_PrevyearsameX,Emma10_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3790 KPI_ID,
+                3 LAYER,
+                'Shareofsales_Emma10' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Share Of Sales (%)' KPI_DESCRIPTION,
+                'Emma10_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(Emma10_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(Emma10_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(Emma10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3800 KPI_ID,
+                1 LAYER,
+                'target_spend' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Target Spend (in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3810 KPI_ID,
+                1 LAYER,
+                'facebook_target_day' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Target Spend (in AED) - Facebook & Instagram' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3820 KPI_ID,
+                1 LAYER,
+                'adwords_target_day' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Target Spend (in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3830 KPI_ID,
+                1 LAYER,
+                'total_tickets_created' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number of Tickets Created' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3840 KPI_ID,
+                1 LAYER,
+                'facebook_tickets' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Facebook' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3850 KPI_ID,
+                1 LAYER,
+                'chat_tickets' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Chat' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3860 KPI_ID,
+                1 LAYER,
+                'email_tickets' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Email' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3870 KPI_ID,
+                1 LAYER,
+                'twitter_tickets' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Twitter' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3880 KPI_ID,
+                1 LAYER,
+                'web_tickets' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Web' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3890 KPI_ID,
+                1 LAYER,
+                'other_cases' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Others' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3900 KPI_ID,
+                1 LAYER,
+                'total_days_to_close' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Time Taken To Close' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3910 KPI_ID,
+                1 LAYER,
+                'new_tickets' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'New' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3920 KPI_ID,
+                1 LAYER,
+                'open_tickets' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Open' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3930 KPI_ID,
+                1 LAYER,
+                'closed_tickets' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Closed' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3940 KPI_ID,
+                1 LAYER,
+                'pending_tickets' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Pending' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3950 KPI_ID,
+                1 LAYER,
+                'solved_tickets' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Solved' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3960 KPI_ID,
+                1 LAYER,
+                'deleted_tickets' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Deleted' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3970 KPI_ID,
+                1 LAYER,
+                'general_query' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'General Query' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3980 KPI_ID,
+                1 LAYER,
+                'return' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Return/Refund' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                3990 KPI_ID,
+                1 LAYER,
+                'exchange' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Exchange' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4000 KPI_ID,
+                1 LAYER,
+                'order_delay' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Delay in Delivery' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4010 KPI_ID,
+                1 LAYER,
+                'wrong_order' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Wrong Order' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4020 KPI_ID,
+                1 LAYER,
+                'manufacturing' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Manufacturing' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4030 KPI_ID,
+                1 LAYER,
+                'website_issue' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Website Problems' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4040 KPI_ID,
+                3 LAYER,
+                'total_days_to_close_per' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Time Taken (in Days) to Close' KPI_DESCRIPTION,
+                'total_days_to_close,closed_tickets' KPI_DEPENDENTS,
+                'safe_divide(total_days_to_close,closed_tickets)' KPI_CALC,
+                'safe_divide(total_days_to_close_prevX,closed_tickets_prevX)' KPI_CALC_PREVX,
+                'safe_divide(total_days_to_close_PrevyearsameX,closed_tickets_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4050 KPI_ID,
+                3 LAYER,
+                'total_time_to_confirm_per' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Time Taken (in Days) to Confirm (By CRM)' KPI_DESCRIPTION,
+                'total_time_to_confirm,orders_confirmed' KPI_DEPENDENTS,
+                'safe_divide(total_time_to_confirm,orders_confirmed)' KPI_CALC,
+                'safe_divide(total_time_to_confirm_prevX,orders_confirmed_prevX)' KPI_CALC_PREVX,
+                'safe_divide(total_time_to_confirm_PrevyearsameX,orders_confirmed_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4060 KPI_ID,
+                3 LAYER,
+                'total_time_to_ship_per' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Time Taken (in Days) to Ship (After Confirmation)' KPI_DESCRIPTION,
+                'total_time_to_ship,orders_shipped' KPI_DEPENDENTS,
+                'safe_divide(total_time_to_ship,orders_shipped)' KPI_CALC,
+                'safe_divide(total_time_to_ship_prevX,orders_shipped_prevX)' KPI_CALC_PREVX,
+                'safe_divide(total_time_to_ship_PrevyearsameX,orders_shipped_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4070 KPI_ID,
+                3 LAYER,
+                'total_time_to_deliver_per' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Time Taken (in Days) to Deliver (After Shipped)' KPI_DESCRIPTION,
+                'total_time_to_deliver,orders_delivered' KPI_DEPENDENTS,
+                'safe_divide(total_time_to_deliver,orders_delivered)' KPI_CALC,
+                'safe_divide(total_time_to_deliver_prevX,orders_delivered_prevX)' KPI_CALC_PREVX,
+                'safe_divide(total_time_to_deliver_PrevyearsameX,orders_delivered_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4080 KPI_ID,
+                3 LAYER,
+                'total_time_to_fulfill_per' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Time Taken (in Days) to Deliver (After Confirmation)' KPI_DESCRIPTION,
+                'total_time_to_fulfill,orders_delivered' KPI_DEPENDENTS,
+                'safe_divide(total_time_to_fulfill,orders_delivered)' KPI_CALC,
+                'safe_divide(total_time_to_fulfill_prevX,orders_delivered_prevX)' KPI_CALC_PREVX,
+                'safe_divide(total_time_to_fulfill_PrevyearsameX,orders_delivered_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4090 KPI_ID,
+                1 LAYER,
+                'Existing_Customers' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Returning Customers' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4100 KPI_ID,
+                1 LAYER,
+                'missl2u_spend_day' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4110 KPI_ID,
+                1 LAYER,
+                'missl2u_orders' KPI_VARIABLE,
+                'Integer' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Number Of Successful Orders' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4120 KPI_ID,
+                1 LAYER,
+                'missl2u_revenue' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIs' KPI_SQL,
+                'Total Sales Value (With VAT in AED)' KPI_DESCRIPTION,
+                '' KPI_DEPENDENTS,
+                '' KPI_CALC,
+                '' KPI_CALC_PREVX,
+                '' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4130 KPI_ID,
+                3 LAYER,
+                'Costperordermissl2u_per' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'CPO (in AED)' KPI_DESCRIPTION,
+                'missl2u_spend_day,missl2u_orders' KPI_DEPENDENTS,
+                'safe_divide(missl2u_spend_day,missl2u_orders)' KPI_CALC,
+                'safe_divide(missl2u_spend_day_prevX,missl2u_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(missl2u_spend_day_PrevyearsameX,missl2u_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4140 KPI_ID,
+                3 LAYER,
+                'ATV Customer Acq missl2u' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Average Order Value (in AED)' KPI_DESCRIPTION,
+                'missl2u_revenue,missl2u_orders' KPI_DEPENDENTS,
+                'safe_divide(missl2u_revenue,missl2u_orders)' KPI_CALC,
+                'safe_divide(missl2u_revenue_prevX,missl2u_orders_prevX)' KPI_CALC_PREVX,
+                'safe_divide(missl2u_revenue_PrevyearsameX,missl2u_orders_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4150 KPI_ID,
+                3 LAYER,
+                'Shareofsales_per missl2u' KPI_VARIABLE,
+                'Percentage' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Share Of Sales (%)' KPI_DESCRIPTION,
+                'missl2u_revenue,total_item_price_auth' KPI_DEPENDENTS,
+                'safe_divide(missl2u_revenue,total_item_price_auth)' KPI_CALC,
+                'safe_divide(missl2u_revenue_prevX,total_item_price_auth_prevX)' KPI_CALC_PREVX,
+                'safe_divide(missl2u_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4170 KPI_ID,
+                3 LAYER,
+                'CAC Total' KPI_VARIABLE,
+                'Decimal' KPI_FORMAT,
+                'fKPIsCalc' KPI_SQL,
+                'Customer Acquisition Cost' KPI_DESCRIPTION,
+                'spend,MissL10_spend_day,Fozaza2u_spend_day,Alia10_spend_day,Ingy10_spend_day,Sahar10_spend_day,Ola10_spend_day,Farah10_spend_day,Emma10_spend_day,missl2u_spend_day,New_customers' KPI_DEPENDENTS,
+                'safe_divide((spend+MissL10_spend_day+Fozaza2u_spend_day+Alia10_spend_day+Ingy10_spend_day+Sahar10_spend_day+Ola10_spend_day+Farah10_spend_day+Emma10_spend_day+missl2u_spend_day),New_customers)' KPI_CALC,
+                'safe_divide((spend_prevX+MissL10_spend_day_prevX+Fozaza2u_spend_day_prevX+Alia10_spend_day_prevX+Ingy10_spend_day_prevX+Sahar10_spend_day_prevX+Ola10_spend_day_prevX+Farah10_spend_day_prevX+Emma10_spend_day_prevX+missl2u_spend_day),New_customers_prevX)' KPI_CALC_PREVX,
+                'safe_divide((spend_PrevyearsameX+MissL10_spend_day_PrevyearsameX+Fozaza2u_spend_day_PrevyearsameX+Alia10_spend_day_PrevyearsameX+Ingy10_spend_day_PrevyearsameX+Sahar10_spend_day_PrevyearsameX+Ola10_spend_day_PrevyearsameX+Farah10_spend_day_PrevyearsameX+Emma10_spend_day_PrevyearsameX+missl2u_spend_day),New_customers_PrevyearsameX)' KPI_CALC_PREVYEARSAMEX
+            
+                union all
+            
+        
+                select
+                4320 KPI_ID,
                 1 LAYER,
                 'sku_more_than_six' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -7307,7 +6437,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4900 KPI_ID,
+                4330 KPI_ID,
                 1 LAYER,
                 'sku_more_than_three' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -7322,7 +6452,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4910 KPI_ID,
+                4340 KPI_ID,
                 1 LAYER,
                 'sku_less_than_three' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -7337,7 +6467,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4920 KPI_ID,
+                4350 KPI_ID,
                 1 LAYER,
                 'num_of_skus' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -7352,7 +6482,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4930 KPI_ID,
+                4360 KPI_ID,
                 1 LAYER,
                 'skus_80_20' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -7367,7 +6497,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4940 KPI_ID,
+                4370 KPI_ID,
                 3 LAYER,
                 'skus_80_20_per' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -7382,7 +6512,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4950 KPI_ID,
+                4380 KPI_ID,
                 1 LAYER,
                 'no_launched' KPI_VARIABLE,
                 'Integer' KPI_FORMAT,
@@ -7397,7 +6527,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4960 KPI_ID,
+                4390 KPI_ID,
                 3 LAYER,
                 'New_customer_Revenue_per' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -7412,7 +6542,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4970 KPI_ID,
+                4400 KPI_ID,
                 3 LAYER,
                 'Existing_customer_Revenue_per' KPI_VARIABLE,
                 'Percentage' KPI_FORMAT,
@@ -7427,12 +6557,12 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4980 KPI_ID,
+                4410 KPI_ID,
                 1 LAYER,
                 'tiktok_target_day' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Target Spend (in SAR)' KPI_DESCRIPTION,
+                'Target Spend (in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -7442,12 +6572,12 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                4990 KPI_ID,
+                4420 KPI_ID,
                 1 LAYER,
                 'tiktok_cust_spend' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Total Spend (in SAR)' KPI_DESCRIPTION,
+                'Total Spend (in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -7457,12 +6587,12 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                5000 KPI_ID,
+                4430 KPI_ID,
                 3 LAYER,
                 'Costperorder_Tiktok' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIsCalc' KPI_SQL,
-                'CPO (in SAR)' KPI_DESCRIPTION,
+                'CPO (in AED)' KPI_DESCRIPTION,
                 'tiktok_cust_spend,Tiktok_cust_orders' KPI_DEPENDENTS,
                 'safe_divide(tiktok_cust_spend,Tiktok_cust_orders)' KPI_CALC,
                 'safe_divide(tiktok_cust_spend_prevX,Tiktok_cust_orders_prevX)' KPI_CALC_PREVX,
@@ -7472,7 +6602,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                5010 KPI_ID,
+                4440 KPI_ID,
                 3 LAYER,
                 'ROAS_1' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
@@ -7487,12 +6617,12 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                5020 KPI_ID,
+                4450 KPI_ID,
                 1 LAYER,
                 'youtube_target_day' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
                 'fKPIs' KPI_SQL,
-                'Target Spend (in SAR)' KPI_DESCRIPTION,
+                'Target Spend (in AED)' KPI_DESCRIPTION,
                 '' KPI_DEPENDENTS,
                 '' KPI_CALC,
                 '' KPI_CALC_PREVX,
@@ -7502,7 +6632,7 @@ select *,'MissL' Halo_Country from
             
         
                 select
-                5030 KPI_ID,
+                4460 KPI_ID,
                 3 LAYER,
                 'ROAS_2' KPI_VARIABLE,
                 'Decimal' KPI_FORMAT,
@@ -7514,4 +6644,5 @@ select *,'MissL' Halo_Country from
                 'safe_divide(NetRevenue_prevyearsameX,spend_prevyearsameX)' KPI_CALC_PREVYEARSAMEX
             
         
+
 )

@@ -1,4 +1,3 @@
-
 select ta.*,
 concat(format_date('%d %b %y',parse_date('%Y-%m-%d',Startdate)),' - ',format_date('%d %b %y',parse_date('%Y-%m-%d',Enddate))) Value_DateRange,
 concat(format_date('%d %b %y',parse_date('%Y-%m-%d',PrevX_Startdate)),' - ',format_date('%d %b %y',parse_date('%Y-%m-%d',PrevX_Enddate))) PrevValue_DateRange,
@@ -9,6 +8,8 @@ tb.KPI_ID,
 tb.KPI_FORMAT
 from
 (
+
+
 select
 Halo_country,
 'AOV' KPI,
@@ -32,12 +33,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='orders_auth' then prevyearvalue else null end ) orders_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'conversion_rate_per' KPI,
@@ -61,12 +63,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'ROAS' KPI,
@@ -90,12 +93,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='spend' then prevyearvalue else null end ) spend_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'CAC' KPI,
@@ -119,12 +123,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='New_customers' then prevyearvalue else null end ) New_customers_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'productviews_cart_per' KPI,
@@ -148,12 +153,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Productviews' then prevyearvalue else null end ) Productviews_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'cart_checkout_per' KPI,
@@ -177,12 +183,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Addstocart' then prevyearvalue else null end ) Addstocart_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'checkout_conversion_per' KPI,
@@ -206,12 +213,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Checkout' then prevyearvalue else null end ) Checkout_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'login_shipping_per' KPI,
@@ -235,12 +243,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Checkout' then prevyearvalue else null end ) Checkout_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'shipping_payment_per' KPI,
@@ -264,12 +273,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Shipping' then prevyearvalue else null end ) Shipping_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'payment_txn_per' KPI,
@@ -293,12 +303,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='PaymentClick' then prevyearvalue else null end ) PaymentClick_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'bounce_rate_per' KPI,
@@ -322,12 +333,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'paid_conversion_rate_per' KPI,
@@ -351,12 +363,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Paid_sessions' then prevyearvalue else null end ) Paid_sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'unpaid_conversion_rate_per' KPI,
@@ -380,12 +393,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Non_Paid_sessions' then prevyearvalue else null end ) Non_Paid_sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'margin_per' KPI,
@@ -409,12 +423,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='NonDiscountedSales' then prevyearvalue else null end ) NonDiscountedSales_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'OtherOrders' KPI,
@@ -438,12 +453,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Transactions' then prevyearvalue else null end ) Transactions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'AOV_F' KPI,
@@ -467,12 +483,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Transactions_F' then prevyearvalue else null end ) Transactions_F_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'conversion_rate_F_per' KPI,
@@ -496,12 +513,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Sessions_F' then prevyearvalue else null end ) Sessions_F_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'ROAS_F' KPI,
@@ -525,12 +543,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Spend_F' then prevyearvalue else null end ) Spend_F_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'CTR_F_per' KPI,
@@ -554,12 +573,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Impressions_F' then prevyearvalue else null end ) Impressions_F_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'add_to_cart_ratio_F_per' KPI,
@@ -583,12 +603,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Sessions_F' then prevyearvalue else null end ) Sessions_F_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'cost_per_click_F' KPI,
@@ -612,12 +633,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Adclicks_F' then prevyearvalue else null end ) Adclicks_F_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'CostPerSession_F' KPI,
@@ -641,12 +663,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Sessions_F' then prevyearvalue else null end ) Sessions_F_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'CostPerTransaction_F' KPI,
@@ -670,12 +693,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Transactions_F' then prevyearvalue else null end ) Transactions_F_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'bounce_rate_F_per' KPI,
@@ -699,12 +723,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Sessions_F' then prevyearvalue else null end ) Sessions_F_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'AOV_G' KPI,
@@ -728,12 +753,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Transactions_G' then prevyearvalue else null end ) Transactions_G_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'conversion_rate_G_per' KPI,
@@ -757,41 +783,43 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Sessions_G' then prevyearvalue else null end ) Sessions_G_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'ROAS_G' KPI,
 date, XTD,
-ifnull(safe_divide(google_cust_revenue,google_cust_spend),0) value,
-ifnull(safe_divide(google_cust_revenue_prevX,google_cust_spend_prevX),0) prevvalue,
-ifnull(safe_divide(google_cust_revenue_PrevyearsameX,google_cust_spend_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(Revenue_G,Spend_G),0) value,
+ifnull(safe_divide(Revenue_G_prevX,Spend_G_prevX),0) prevvalue,
+ifnull(safe_divide(Revenue_G_PrevyearsameX,Spend_G_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='google_cust_revenue' then Value else null end ) google_cust_revenue,
-           max(case when KPI='google_cust_revenue' then prevValue else null end ) google_cust_revenue_PrevX,
-           max(case when KPI='google_cust_revenue' then prevyearvalue else null end ) google_cust_revenue_PrevyearsameX
+           max(case when KPI='Revenue_G' then Value else null end ) Revenue_G,
+           max(case when KPI='Revenue_G' then prevValue else null end ) Revenue_G_PrevX,
+           max(case when KPI='Revenue_G' then prevyearvalue else null end ) Revenue_G_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='google_cust_spend' then Value else null end ) google_cust_spend,
-           max(case when KPI='google_cust_spend' then prevValue else null end ) google_cust_spend_PrevX,
-           max(case when KPI='google_cust_spend' then prevyearvalue else null end ) google_cust_spend_PrevyearsameX
+           max(case when KPI='Spend_G' then Value else null end ) Spend_G,
+           max(case when KPI='Spend_G' then prevValue else null end ) Spend_G_PrevX,
+           max(case when KPI='Spend_G' then prevyearvalue else null end ) Spend_G_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'CTR_G_PER' KPI,
@@ -815,12 +843,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Impressions_G' then prevyearvalue else null end ) Impressions_G_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'add_to_cart_ratio_G_per' KPI,
@@ -844,12 +873,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Sessions_G' then prevyearvalue else null end ) Sessions_G_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'CostPerClick_G' KPI,
@@ -873,12 +903,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Adclicks_G' then prevyearvalue else null end ) Adclicks_G_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'CostPerSession_G' KPI,
@@ -902,12 +933,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Sessions_G' then prevyearvalue else null end ) Sessions_G_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'CostPerTransaction_G' KPI,
@@ -931,12 +963,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Transactions_G' then prevyearvalue else null end ) Transactions_G_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'bounce_rate_G_per' KPI,
@@ -960,12 +993,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Sessions_G' then prevyearvalue else null end ) Sessions_G_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'dilution' KPI,
@@ -989,12 +1023,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='NetRevenue' then prevyearvalue else null end ) NetRevenue_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'ATV' KPI,
@@ -1018,12 +1053,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='orders_auth' then prevyearvalue else null end ) orders_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'UPT' KPI,
@@ -1047,12 +1083,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='orders_auth' then prevyearvalue else null end ) orders_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'returns_volume_per' KPI,
@@ -1076,12 +1113,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='total_product_quantity_auth' then prevyearvalue else null end ) total_product_quantity_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'returns_value_per' KPI,
@@ -1105,12 +1143,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='NetRevenue' then prevyearvalue else null end ) NetRevenue_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'cancellation_per' KPI,
@@ -1134,12 +1173,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='total_product_quantity' then prevyearvalue else null end ) total_product_quantity_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'atv_first_purchase' KPI,
@@ -1163,12 +1203,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='New_Customer_Orders' then prevyearvalue else null end ) New_Customer_Orders_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'atv_repeat_purchase' KPI,
@@ -1192,12 +1233,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Existing_Customer_Orders' then prevyearvalue else null end ) Existing_Customer_Orders_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Promotion_Dilution_Per' KPI,
@@ -1221,12 +1263,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='GrossRevenue' then prevyearvalue else null end ) GrossRevenue_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Return_Dilution_Per' KPI,
@@ -1250,12 +1293,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='GrossRevenue' then prevyearvalue else null end ) GrossRevenue_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'AUR' KPI,
@@ -1279,12 +1323,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='total_product_quantity_auth' then prevyearvalue else null end ) total_product_quantity_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'CTR_Per' KPI,
@@ -1308,12 +1353,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Impressions' then prevyearvalue else null end ) Impressions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Cart_to_Detail_Per' KPI,
@@ -1337,12 +1383,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='ProductDetailViews' then prevyearvalue else null end ) ProductDetailViews_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Buy_to_Detail_Per' KPI,
@@ -1366,12 +1413,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='ProductDetailViews' then prevyearvalue else null end ) ProductDetailViews_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Cart_to_Login' KPI,
@@ -1395,12 +1443,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='AddstocartPage' then prevyearvalue else null end ) AddstocartPage_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Login_to_Shipping' KPI,
@@ -1424,12 +1473,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='LogginPage' then prevyearvalue else null end ) LogginPage_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'shipping_to_payment' KPI,
@@ -1453,12 +1503,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='ShippingPage' then prevyearvalue else null end ) ShippingPage_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Payment_to_transcation' KPI,
@@ -1482,12 +1533,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='PaymentPage' then prevyearvalue else null end ) PaymentPage_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'ExitRate' KPI,
@@ -1511,12 +1563,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'sessions_to_Productviews' KPI,
@@ -1540,12 +1593,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'LP_bounceRate' KPI,
@@ -1569,12 +1623,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='LP_Lan_Sessions' then prevyearvalue else null end ) LP_Lan_Sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'LP_ConvRate' KPI,
@@ -1598,12 +1653,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='LP_Lan_Sessions' then prevyearvalue else null end ) LP_Lan_Sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'H_bounceRate' KPI,
@@ -1627,12 +1683,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='H_Lan_Sessions' then prevyearvalue else null end ) H_Lan_Sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'H_ConvRate' KPI,
@@ -1656,12 +1713,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='H_Lan_transactions' then prevyearvalue else null end ) H_Lan_transactions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'P_bounceRate' KPI,
@@ -1685,12 +1743,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='P_Sessions' then prevyearvalue else null end ) P_Sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'P_ConvRate' KPI,
@@ -1714,12 +1773,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='P_Sessions' then prevyearvalue else null end ) P_Sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'H_bounce_rate' KPI,
@@ -1743,12 +1803,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='H_Lan_Sessions' then prevyearvalue else null end ) H_Lan_Sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'H_Non_Bounce_Sessions' KPI,
@@ -1772,12 +1833,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='H_Bounces' then prevyearvalue else null end ) H_Bounces_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'H_Conv_Rate' KPI,
@@ -1801,12 +1863,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='H_Lan_transactions' then prevyearvalue else null end ) H_Lan_transactions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'LP_PvtoCart' KPI,
@@ -1830,12 +1893,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='LP_productDetailViews' then prevyearvalue else null end ) LP_productDetailViews_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Checkout_Conversion_Rate' KPI,
@@ -1859,12 +1923,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Checkout' then prevyearvalue else null end ) Checkout_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Total_Sales_Value_Without_VAT' KPI,
@@ -1888,12 +1953,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='tax_amount' then prevyearvalue else null end ) tax_amount_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'cancellation_order_per' KPI,
@@ -1917,12 +1983,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='orders' then prevyearvalue else null end ) orders_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'cod_per' KPI,
@@ -1946,12 +2013,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='orders_auth' then prevyearvalue else null end ) orders_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'cc_per' KPI,
@@ -1975,12 +2043,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='orders_auth' then prevyearvalue else null end ) orders_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'tabby_per' KPI,
@@ -2004,12 +2073,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='orders_auth' then prevyearvalue else null end ) orders_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'returned_orders_per' KPI,
@@ -2033,12 +2103,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='orders' then prevyearvalue else null end ) orders_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'sessions_per_visitors' KPI,
@@ -2062,12 +2133,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='day_level_users' then prevyearvalue else null end ) day_level_users_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'pages_per_sessions' KPI,
@@ -2091,12 +2163,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'mobile_per' KPI,
@@ -2120,12 +2193,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'tablet_per' KPI,
@@ -2149,12 +2223,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'desktop_per' KPI,
@@ -2178,12 +2253,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'age_18_24_per' KPI,
@@ -2207,12 +2283,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='age_new_users' then prevyearvalue else null end ) age_new_users_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'age_25_34_per' KPI,
@@ -2236,12 +2313,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='age_new_users' then prevyearvalue else null end ) age_new_users_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'age_35_44_per' KPI,
@@ -2265,12 +2343,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='age_new_users' then prevyearvalue else null end ) age_new_users_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'age_above_45_per' KPI,
@@ -2294,12 +2373,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='age_new_users' then prevyearvalue else null end ) age_new_users_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'gender_male_newusers_per' KPI,
@@ -2323,12 +2403,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='gender_new_users' then prevyearvalue else null end ) gender_new_users_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'gender_female_newusers_per' KPI,
@@ -2352,12 +2433,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='gender_new_users' then prevyearvalue else null end ) gender_new_users_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'new_visitor_sessions_per' KPI,
@@ -2381,12 +2463,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'returning_visitor_sessions_per' KPI,
@@ -2410,12 +2493,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Snapchat_paid_sessions_per' KPI,
@@ -2439,12 +2523,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Snapchat_unpaid_sessions_per' KPI,
@@ -2468,12 +2553,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Facebook_Inhouse_Paid_sessions_per' KPI,
@@ -2497,12 +2583,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Facebook_Dynamic_Remarketing_sessions_per' KPI,
@@ -2526,12 +2613,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Facebook_Unpaid_sessions_per' KPI,
@@ -2555,12 +2643,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Instagram_paid_sessions_per' KPI,
@@ -2584,2071 +2673,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
-select
-Halo_country,
-'Others_Sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(Others_Sessions,sessions),0) value,
-ifnull(safe_divide(Others_Sessions_prevX,sessions_prevX),0) prevvalue,
-ifnull(safe_divide(Others_Sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Others_Sessions' then Value else null end ) Others_Sessions,
-           max(case when KPI='Others_Sessions' then prevValue else null end ) Others_Sessions_PrevX,
-           max(case when KPI='Others_Sessions' then prevyearvalue else null end ) Others_Sessions_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='sessions' then Value else null end ) sessions,
-           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
-           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Influencers_codes_per' KPI,
-date, XTD,
-ifnull(safe_divide(influencersrevenue,total_item_price_auth),0) value,
-ifnull(safe_divide(influencersrevenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(influencersrevenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='influencersrevenue' then Value else null end ) influencersrevenue,
-           max(case when KPI='influencersrevenue' then prevValue else null end ) influencersrevenue_PrevX,
-           max(case when KPI='influencersrevenue' then prevyearvalue else null end ) influencersrevenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Unique_Visitors' KPI,
-date, XTD,
-ifnull(visitors-new_visitor_users,0) value,
-ifnull(visitors_prevX-new_visitor_users_prevX,0) prevvalue,
-ifnull(visitors_PrevyearsameX-new_visitor_users_PrevyearsameX,0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='visitors' then Value else null end ) visitors,
-           max(case when KPI='visitors' then prevValue else null end ) visitors_PrevX,
-           max(case when KPI='visitors' then prevyearvalue else null end ) visitors_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='new_visitor_users' then Value else null end ) new_visitor_users,
-           max(case when KPI='new_visitor_users' then prevValue else null end ) new_visitor_users_PrevX,
-           max(case when KPI='new_visitor_users' then prevyearvalue else null end ) new_visitor_users_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'avgSessionDuration1' KPI,
-date, XTD,
-ifnull(safe_divide(SessionDuration,sessions),0) value,
-ifnull(safe_divide(SessionDuration_prevX,sessions_prevX),0) prevvalue,
-ifnull(safe_divide(SessionDuration_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='SessionDuration' then Value else null end ) SessionDuration,
-           max(case when KPI='SessionDuration' then prevValue else null end ) SessionDuration_PrevX,
-           max(case when KPI='SessionDuration' then prevyearvalue else null end ) SessionDuration_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='sessions' then Value else null end ) sessions,
-           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
-           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'avgdailysales' KPI,
-date, XTD,
-ifnull(safe_divide(total_item_price_auth,daylevel),0) value,
-ifnull(safe_divide(total_item_price_auth_prevX,daylevel_prevX),0) prevvalue,
-ifnull(safe_divide(total_item_price_auth_PrevyearsameX,daylevel_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='daylevel' then Value else null end ) daylevel,
-           max(case when KPI='daylevel' then prevValue else null end ) daylevel_PrevX,
-           max(case when KPI='daylevel' then prevyearvalue else null end ) daylevel_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'avgdailyunits' KPI,
-date, XTD,
-ifnull(safe_divide(total_product_quantity_auth,daylevel),0) value,
-ifnull(safe_divide(total_product_quantity_auth_prevX,daylevel_prevX),0) prevvalue,
-ifnull(safe_divide(total_product_quantity_auth_PrevyearsameX,daylevel_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='total_product_quantity_auth' then Value else null end ) total_product_quantity_auth,
-           max(case when KPI='total_product_quantity_auth' then prevValue else null end ) total_product_quantity_auth_PrevX,
-           max(case when KPI='total_product_quantity_auth' then prevyearvalue else null end ) total_product_quantity_auth_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='daylevel' then Value else null end ) daylevel,
-           max(case when KPI='daylevel' then prevValue else null end ) daylevel_PrevX,
-           max(case when KPI='daylevel' then prevyearvalue else null end ) daylevel_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'influencersorders_per' KPI,
-date, XTD,
-ifnull(safe_divide(influencersorders,orders_auth),0) value,
-ifnull(safe_divide(influencersorders_prevX,orders_auth_prevX),0) prevvalue,
-ifnull(safe_divide(influencersorders_PrevyearsameX,orders_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='influencersorders' then Value else null end ) influencersorders,
-           max(case when KPI='influencersorders' then prevValue else null end ) influencersorders_PrevX,
-           max(case when KPI='influencersorders' then prevyearvalue else null end ) influencersorders_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='orders_auth' then Value else null end ) orders_auth,
-           max(case when KPI='orders_auth' then prevValue else null end ) orders_auth_PrevX,
-           max(case when KPI='orders_auth' then prevyearvalue else null end ) orders_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'age_18_24_sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(sessions_with_age_18_24,age_sessions),0) value,
-ifnull(safe_divide(sessions_with_age_18_24_prevX,age_sessions_prevX),0) prevvalue,
-ifnull(safe_divide(sessions_with_age_18_24_PrevyearsameX,age_sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='sessions_with_age_18_24' then Value else null end ) sessions_with_age_18_24,
-           max(case when KPI='sessions_with_age_18_24' then prevValue else null end ) sessions_with_age_18_24_PrevX,
-           max(case when KPI='sessions_with_age_18_24' then prevyearvalue else null end ) sessions_with_age_18_24_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='age_sessions' then Value else null end ) age_sessions,
-           max(case when KPI='age_sessions' then prevValue else null end ) age_sessions_PrevX,
-           max(case when KPI='age_sessions' then prevyearvalue else null end ) age_sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'age_25_34_sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(sessions_with_age_25_34,age_sessions),0) value,
-ifnull(safe_divide(sessions_with_age_25_34_prevX,age_sessions_prevX),0) prevvalue,
-ifnull(safe_divide(sessions_with_age_25_34_PrevyearsameX,age_sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='sessions_with_age_25_34' then Value else null end ) sessions_with_age_25_34,
-           max(case when KPI='sessions_with_age_25_34' then prevValue else null end ) sessions_with_age_25_34_PrevX,
-           max(case when KPI='sessions_with_age_25_34' then prevyearvalue else null end ) sessions_with_age_25_34_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='age_sessions' then Value else null end ) age_sessions,
-           max(case when KPI='age_sessions' then prevValue else null end ) age_sessions_PrevX,
-           max(case when KPI='age_sessions' then prevyearvalue else null end ) age_sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'age_35_44_sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(sessions_with_age_35_44,age_sessions),0) value,
-ifnull(safe_divide(sessions_with_age_35_44_prevX,age_sessions_prevX),0) prevvalue,
-ifnull(safe_divide(sessions_with_age_35_44_PrevyearsameX,age_sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='sessions_with_age_35_44' then Value else null end ) sessions_with_age_35_44,
-           max(case when KPI='sessions_with_age_35_44' then prevValue else null end ) sessions_with_age_35_44_PrevX,
-           max(case when KPI='sessions_with_age_35_44' then prevyearvalue else null end ) sessions_with_age_35_44_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='age_sessions' then Value else null end ) age_sessions,
-           max(case when KPI='age_sessions' then prevValue else null end ) age_sessions_PrevX,
-           max(case when KPI='age_sessions' then prevyearvalue else null end ) age_sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'age_above_45_sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(sessions_with_age_above_45,age_sessions),0) value,
-ifnull(safe_divide(sessions_with_age_above_45_prevX,age_sessions_prevX),0) prevvalue,
-ifnull(safe_divide(sessions_with_age_above_45_PrevyearsameX,age_sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='sessions_with_age_above_45' then Value else null end ) sessions_with_age_above_45,
-           max(case when KPI='sessions_with_age_above_45' then prevValue else null end ) sessions_with_age_above_45_PrevX,
-           max(case when KPI='sessions_with_age_above_45' then prevyearvalue else null end ) sessions_with_age_above_45_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='age_sessions' then Value else null end ) age_sessions,
-           max(case when KPI='age_sessions' then prevValue else null end ) age_sessions_PrevX,
-           max(case when KPI='age_sessions' then prevyearvalue else null end ) age_sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'gender_male_sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(sessions_with_gender_male,gender_sessions),0) value,
-ifnull(safe_divide(sessions_with_gender_male_prevX,gender_sessions_prevX),0) prevvalue,
-ifnull(safe_divide(sessions_with_gender_male_PrevyearsameX,gender_sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='sessions_with_gender_male' then Value else null end ) sessions_with_gender_male,
-           max(case when KPI='sessions_with_gender_male' then prevValue else null end ) sessions_with_gender_male_PrevX,
-           max(case when KPI='sessions_with_gender_male' then prevyearvalue else null end ) sessions_with_gender_male_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='gender_sessions' then Value else null end ) gender_sessions,
-           max(case when KPI='gender_sessions' then prevValue else null end ) gender_sessions_PrevX,
-           max(case when KPI='gender_sessions' then prevyearvalue else null end ) gender_sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'gender_female_sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(sessions_with_gender_female,gender_sessions),0) value,
-ifnull(safe_divide(sessions_with_gender_female_prevX,gender_sessions_prevX),0) prevvalue,
-ifnull(safe_divide(sessions_with_gender_female_PrevyearsameX,gender_sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='sessions_with_gender_female' then Value else null end ) sessions_with_gender_female,
-           max(case when KPI='sessions_with_gender_female' then prevValue else null end ) sessions_with_gender_female_PrevX,
-           max(case when KPI='sessions_with_gender_female' then prevyearvalue else null end ) sessions_with_gender_female_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='gender_sessions' then Value else null end ) gender_sessions,
-           max(case when KPI='gender_sessions' then prevValue else null end ) gender_sessions_PrevX,
-           max(case when KPI='gender_sessions' then prevyearvalue else null end ) gender_sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Snapchat_paid_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Snapchat_paid_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Snapchat_paid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Snapchat_paid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Snapchat_paid_newusers' then Value else null end ) Snapchat_paid_newusers,
-           max(case when KPI='Snapchat_paid_newusers' then prevValue else null end ) Snapchat_paid_newusers_PrevX,
-           max(case when KPI='Snapchat_paid_newusers' then prevyearvalue else null end ) Snapchat_paid_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Snapchat_unpaid_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Snapchat_unpaid_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Snapchat_unpaid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Snapchat_unpaid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Snapchat_unpaid_newusers' then Value else null end ) Snapchat_unpaid_newusers,
-           max(case when KPI='Snapchat_unpaid_newusers' then prevValue else null end ) Snapchat_unpaid_newusers_PrevX,
-           max(case when KPI='Snapchat_unpaid_newusers' then prevyearvalue else null end ) Snapchat_unpaid_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Facebook_Inhouse_Paid_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Facebook_Inhouse_Paid_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Facebook_Inhouse_Paid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Facebook_Inhouse_Paid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Facebook_Inhouse_Paid_newusers' then Value else null end ) Facebook_Inhouse_Paid_newusers,
-           max(case when KPI='Facebook_Inhouse_Paid_newusers' then prevValue else null end ) Facebook_Inhouse_Paid_newusers_PrevX,
-           max(case when KPI='Facebook_Inhouse_Paid_newusers' then prevyearvalue else null end ) Facebook_Inhouse_Paid_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Facebook_Dynamic_Remarketing_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Facebook_Dynamic_Remarketing_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Facebook_Dynamic_Remarketing_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Facebook_Dynamic_Remarketing_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Facebook_Dynamic_Remarketing_newusers' then Value else null end ) Facebook_Dynamic_Remarketing_newusers,
-           max(case when KPI='Facebook_Dynamic_Remarketing_newusers' then prevValue else null end ) Facebook_Dynamic_Remarketing_newusers_PrevX,
-           max(case when KPI='Facebook_Dynamic_Remarketing_newusers' then prevyearvalue else null end ) Facebook_Dynamic_Remarketing_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Facebook_Unpaid_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Facebook_Unpaid_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Facebook_Unpaid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Facebook_Unpaid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Facebook_Unpaid_newusers' then Value else null end ) Facebook_Unpaid_newusers,
-           max(case when KPI='Facebook_Unpaid_newusers' then prevValue else null end ) Facebook_Unpaid_newusers_PrevX,
-           max(case when KPI='Facebook_Unpaid_newusers' then prevyearvalue else null end ) Facebook_Unpaid_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Instagram_paid_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Instagram_paid_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Instagram_paid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Instagram_paid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Instagram_paid_newusers' then Value else null end ) Instagram_paid_newusers,
-           max(case when KPI='Instagram_paid_newusers' then prevValue else null end ) Instagram_paid_newusers_PrevX,
-           max(case when KPI='Instagram_paid_newusers' then prevyearvalue else null end ) Instagram_paid_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Instagram_Unpaid_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Instagram_Unpaid_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Instagram_Unpaid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Instagram_Unpaid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Instagram_Unpaid_newusers' then Value else null end ) Instagram_Unpaid_newusers,
-           max(case when KPI='Instagram_Unpaid_newusers' then prevValue else null end ) Instagram_Unpaid_newusers_PrevX,
-           max(case when KPI='Instagram_Unpaid_newusers' then prevyearvalue else null end ) Instagram_Unpaid_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Others_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Others_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Others_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Others_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Others_newusers' then Value else null end ) Others_newusers,
-           max(case when KPI='Others_newusers' then prevValue else null end ) Others_newusers_PrevX,
-           max(case when KPI='Others_newusers' then prevyearvalue else null end ) Others_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'CostperorderMissL10_per' KPI,
-date, XTD,
-ifnull(safe_divide(MissL10_spend_day,MissL10_orders),0) value,
-ifnull(safe_divide(MissL10_spend_day_prevX,MissL10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(MissL10_spend_day_PrevyearsameX,MissL10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='MissL10_spend_day' then Value else null end ) MissL10_spend_day,
-           max(case when KPI='MissL10_spend_day' then prevValue else null end ) MissL10_spend_day_PrevX,
-           max(case when KPI='MissL10_spend_day' then prevyearvalue else null end ) MissL10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='MissL10_orders' then Value else null end ) MissL10_orders,
-           max(case when KPI='MissL10_orders' then prevValue else null end ) MissL10_orders_PrevX,
-           max(case when KPI='MissL10_orders' then prevyearvalue else null end ) MissL10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'CostperorderHusin10_per' KPI,
-date, XTD,
-ifnull(safe_divide(Husin10_spend_day,Husin10_orders),0) value,
-ifnull(safe_divide(Husin10_spend_day_prevX,Husin10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Husin10_spend_day_PrevyearsameX,Husin10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Husin10_spend_day' then Value else null end ) Husin10_spend_day,
-           max(case when KPI='Husin10_spend_day' then prevValue else null end ) Husin10_spend_day_PrevX,
-           max(case when KPI='Husin10_spend_day' then prevyearvalue else null end ) Husin10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Husin10_orders' then Value else null end ) Husin10_orders,
-           max(case when KPI='Husin10_orders' then prevValue else null end ) Husin10_orders_PrevX,
-           max(case when KPI='Husin10_orders' then prevyearvalue else null end ) Husin10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'CostperorderFeda10_per' KPI,
-date, XTD,
-ifnull(safe_divide(Feda10_spend_day,Feda10_orders),0) value,
-ifnull(safe_divide(Feda10_spend_day_prevX,Feda10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Feda10_spend_day_PrevyearsameX,Feda10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Feda10_spend_day' then Value else null end ) Feda10_spend_day,
-           max(case when KPI='Feda10_spend_day' then prevValue else null end ) Feda10_spend_day_PrevX,
-           max(case when KPI='Feda10_spend_day' then prevyearvalue else null end ) Feda10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Feda10_orders' then Value else null end ) Feda10_orders,
-           max(case when KPI='Feda10_orders' then prevValue else null end ) Feda10_orders_PrevX,
-           max(case when KPI='Feda10_orders' then prevyearvalue else null end ) Feda10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'CostperorderAbrar21_per' KPI,
-date, XTD,
-ifnull(safe_divide(abrar21_spend_day,abrar21_orders),0) value,
-ifnull(safe_divide(abrar21_spend_day_prevX,abrar21_orders_prevX),0) prevvalue,
-ifnull(safe_divide(abrar21_spend_day_PrevyearsameX,abrar21_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='abrar21_spend_day' then Value else null end ) abrar21_spend_day,
-           max(case when KPI='abrar21_spend_day' then prevValue else null end ) abrar21_spend_day_PrevX,
-           max(case when KPI='abrar21_spend_day' then prevyearvalue else null end ) abrar21_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='abrar21_orders' then Value else null end ) abrar21_orders,
-           max(case when KPI='abrar21_orders' then prevValue else null end ) abrar21_orders_PrevX,
-           max(case when KPI='abrar21_orders' then prevyearvalue else null end ) abrar21_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Costperorderfeda21_per' KPI,
-date, XTD,
-ifnull(safe_divide(feda21_spend_day,feda21_orders),0) value,
-ifnull(safe_divide(feda21_spend_day_prevX,feda21_orders_prevX),0) prevvalue,
-ifnull(safe_divide(feda21_spend_day_PrevyearsameX,feda21_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='feda21_spend_day' then Value else null end ) feda21_spend_day,
-           max(case when KPI='feda21_spend_day' then prevValue else null end ) feda21_spend_day_PrevX,
-           max(case when KPI='feda21_spend_day' then prevyearvalue else null end ) feda21_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='feda21_orders' then Value else null end ) feda21_orders,
-           max(case when KPI='feda21_orders' then prevValue else null end ) feda21_orders_PrevX,
-           max(case when KPI='feda21_orders' then prevyearvalue else null end ) feda21_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'CostperorderRohN2_per' KPI,
-date, XTD,
-ifnull(safe_divide(roh_n2_spend_day,roh_n2_orders),0) value,
-ifnull(safe_divide(roh_n2_spend_day_prevX,roh_n2_orders_prevX),0) prevvalue,
-ifnull(safe_divide(roh_n2_spend_day_PrevyearsameX,roh_n2_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='roh_n2_spend_day' then Value else null end ) roh_n2_spend_day,
-           max(case when KPI='roh_n2_spend_day' then prevValue else null end ) roh_n2_spend_day_PrevX,
-           max(case when KPI='roh_n2_spend_day' then prevyearvalue else null end ) roh_n2_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='roh_n2_orders' then Value else null end ) roh_n2_orders,
-           max(case when KPI='roh_n2_orders' then prevValue else null end ) roh_n2_orders_PrevX,
-           max(case when KPI='roh_n2_orders' then prevyearvalue else null end ) roh_n2_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Costperorderomseba10_per' KPI,
-date, XTD,
-ifnull(safe_divide(omseba10_spend_day,omseba10_orders),0) value,
-ifnull(safe_divide(omseba10_spend_day_prevX,omseba10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(omseba10_spend_day_PrevyearsameX,omseba10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='omseba10_spend_day' then Value else null end ) omseba10_spend_day,
-           max(case when KPI='omseba10_spend_day' then prevValue else null end ) omseba10_spend_day_PrevX,
-           max(case when KPI='omseba10_spend_day' then prevyearvalue else null end ) omseba10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='omseba10_orders' then Value else null end ) omseba10_orders,
-           max(case when KPI='omseba10_orders' then prevValue else null end ) omseba10_orders_PrevX,
-           max(case when KPI='omseba10_orders' then prevyearvalue else null end ) omseba10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Costperordermarwa10_per' KPI,
-date, XTD,
-ifnull(safe_divide(marwa10_spend_day,marwa10_orders),0) value,
-ifnull(safe_divide(marwa10_spend_day_prevX,marwa10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(marwa10_spend_day_PrevyearsameX,marwa10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='marwa10_spend_day' then Value else null end ) marwa10_spend_day,
-           max(case when KPI='marwa10_spend_day' then prevValue else null end ) marwa10_spend_day_PrevX,
-           max(case when KPI='marwa10_spend_day' then prevyearvalue else null end ) marwa10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='marwa10_orders' then Value else null end ) marwa10_orders,
-           max(case when KPI='marwa10_orders' then prevValue else null end ) marwa10_orders_PrevX,
-           max(case when KPI='marwa10_orders' then prevyearvalue else null end ) marwa10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'CostperorderMaha140_per' KPI,
-date, XTD,
-ifnull(safe_divide(maha_140_spend_day,maha_140_orders),0) value,
-ifnull(safe_divide(maha_140_spend_day_prevX,maha_140_orders_prevX),0) prevvalue,
-ifnull(safe_divide(maha_140_spend_day_PrevyearsameX,maha_140_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='maha_140_spend_day' then Value else null end ) maha_140_spend_day,
-           max(case when KPI='maha_140_spend_day' then prevValue else null end ) maha_140_spend_day_PrevX,
-           max(case when KPI='maha_140_spend_day' then prevyearvalue else null end ) maha_140_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='maha_140_orders' then Value else null end ) maha_140_orders,
-           max(case when KPI='maha_140_orders' then prevValue else null end ) maha_140_orders_PrevX,
-           max(case when KPI='maha_140_orders' then prevyearvalue else null end ) maha_140_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'CostperorderShahad10_per' KPI,
-date, XTD,
-ifnull(safe_divide(shahad10_spend_day,shahad10_orders),0) value,
-ifnull(safe_divide(shahad10_spend_day_prevX,shahad10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(shahad10_spend_day_PrevyearsameX,shahad10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='shahad10_spend_day' then Value else null end ) shahad10_spend_day,
-           max(case when KPI='shahad10_spend_day' then prevValue else null end ) shahad10_spend_day_PrevX,
-           max(case when KPI='shahad10_spend_day' then prevyearvalue else null end ) shahad10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='shahad10_orders' then Value else null end ) shahad10_orders,
-           max(case when KPI='shahad10_orders' then prevValue else null end ) shahad10_orders_PrevX,
-           max(case when KPI='shahad10_orders' then prevyearvalue else null end ) shahad10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq MissL' KPI,
-date, XTD,
-ifnull(safe_divide(MissL10_revenue,MissL10_orders),0) value,
-ifnull(safe_divide(MissL10_revenue_prevX,MissL10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(MissL10_revenue_PrevyearsameX,MissL10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='MissL10_revenue' then Value else null end ) MissL10_revenue,
-           max(case when KPI='MissL10_revenue' then prevValue else null end ) MissL10_revenue_PrevX,
-           max(case when KPI='MissL10_revenue' then prevyearvalue else null end ) MissL10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='MissL10_orders' then Value else null end ) MissL10_orders,
-           max(case when KPI='MissL10_orders' then prevValue else null end ) MissL10_orders_PrevX,
-           max(case when KPI='MissL10_orders' then prevyearvalue else null end ) MissL10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq Husin10' KPI,
-date, XTD,
-ifnull(safe_divide(Husin10_revenue,Husin10_orders),0) value,
-ifnull(safe_divide(Husin10_revenue_prevX,Husin10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Husin10_revenue_PrevyearsameX,Husin10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Husin10_revenue' then Value else null end ) Husin10_revenue,
-           max(case when KPI='Husin10_revenue' then prevValue else null end ) Husin10_revenue_PrevX,
-           max(case when KPI='Husin10_revenue' then prevyearvalue else null end ) Husin10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Husin10_orders' then Value else null end ) Husin10_orders,
-           max(case when KPI='Husin10_orders' then prevValue else null end ) Husin10_orders_PrevX,
-           max(case when KPI='Husin10_orders' then prevyearvalue else null end ) Husin10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq Feda10' KPI,
-date, XTD,
-ifnull(safe_divide(Feda10_revenue,Feda10_orders),0) value,
-ifnull(safe_divide(Feda10_revenue_prevX,Feda10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Feda10_revenue_PrevyearsameX,Feda10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Feda10_revenue' then Value else null end ) Feda10_revenue,
-           max(case when KPI='Feda10_revenue' then prevValue else null end ) Feda10_revenue_PrevX,
-           max(case when KPI='Feda10_revenue' then prevyearvalue else null end ) Feda10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Feda10_orders' then Value else null end ) Feda10_orders,
-           max(case when KPI='Feda10_orders' then prevValue else null end ) Feda10_orders_PrevX,
-           max(case when KPI='Feda10_orders' then prevyearvalue else null end ) Feda10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq Abrar21' KPI,
-date, XTD,
-ifnull(safe_divide(abrar21_revenue,abrar21_orders),0) value,
-ifnull(safe_divide(abrar21_revenue_prevX,abrar21_orders_prevX),0) prevvalue,
-ifnull(safe_divide(abrar21_revenue_PrevyearsameX,abrar21_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='abrar21_revenue' then Value else null end ) abrar21_revenue,
-           max(case when KPI='abrar21_revenue' then prevValue else null end ) abrar21_revenue_PrevX,
-           max(case when KPI='abrar21_revenue' then prevyearvalue else null end ) abrar21_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='abrar21_orders' then Value else null end ) abrar21_orders,
-           max(case when KPI='abrar21_orders' then prevValue else null end ) abrar21_orders_PrevX,
-           max(case when KPI='abrar21_orders' then prevyearvalue else null end ) abrar21_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq Feda21' KPI,
-date, XTD,
-ifnull(safe_divide(feda21_revenue,feda21_orders),0) value,
-ifnull(safe_divide(feda21_revenue_prevX,feda21_orders_prevX),0) prevvalue,
-ifnull(safe_divide(feda21_revenue_PrevyearsameX,feda21_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='feda21_revenue' then Value else null end ) feda21_revenue,
-           max(case when KPI='feda21_revenue' then prevValue else null end ) feda21_revenue_PrevX,
-           max(case when KPI='feda21_revenue' then prevyearvalue else null end ) feda21_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='feda21_orders' then Value else null end ) feda21_orders,
-           max(case when KPI='feda21_orders' then prevValue else null end ) feda21_orders_PrevX,
-           max(case when KPI='feda21_orders' then prevyearvalue else null end ) feda21_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq RohN2' KPI,
-date, XTD,
-ifnull(safe_divide(roh_n2_revenue,roh_n2_orders),0) value,
-ifnull(safe_divide(roh_n2_revenue_prevX,roh_n2_orders_prevX),0) prevvalue,
-ifnull(safe_divide(roh_n2_revenue_PrevyearsameX,roh_n2_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='roh_n2_revenue' then Value else null end ) roh_n2_revenue,
-           max(case when KPI='roh_n2_revenue' then prevValue else null end ) roh_n2_revenue_PrevX,
-           max(case when KPI='roh_n2_revenue' then prevyearvalue else null end ) roh_n2_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='roh_n2_orders' then Value else null end ) roh_n2_orders,
-           max(case when KPI='roh_n2_orders' then prevValue else null end ) roh_n2_orders_PrevX,
-           max(case when KPI='roh_n2_orders' then prevyearvalue else null end ) roh_n2_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq Omseba10' KPI,
-date, XTD,
-ifnull(safe_divide(omseba10_revenue,omseba10_orders),0) value,
-ifnull(safe_divide(omseba10_revenue_prevX,omseba10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(omseba10_revenue_PrevyearsameX,omseba10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='omseba10_revenue' then Value else null end ) omseba10_revenue,
-           max(case when KPI='omseba10_revenue' then prevValue else null end ) omseba10_revenue_PrevX,
-           max(case when KPI='omseba10_revenue' then prevyearvalue else null end ) omseba10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='omseba10_orders' then Value else null end ) omseba10_orders,
-           max(case when KPI='omseba10_orders' then prevValue else null end ) omseba10_orders_PrevX,
-           max(case when KPI='omseba10_orders' then prevyearvalue else null end ) omseba10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq Marwa10' KPI,
-date, XTD,
-ifnull(safe_divide(marwa10_revenue,marwa10_orders),0) value,
-ifnull(safe_divide(marwa10_revenue_prevX,marwa10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(marwa10_revenue_PrevyearsameX,marwa10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='marwa10_revenue' then Value else null end ) marwa10_revenue,
-           max(case when KPI='marwa10_revenue' then prevValue else null end ) marwa10_revenue_PrevX,
-           max(case when KPI='marwa10_revenue' then prevyearvalue else null end ) marwa10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='marwa10_orders' then Value else null end ) marwa10_orders,
-           max(case when KPI='marwa10_orders' then prevValue else null end ) marwa10_orders_PrevX,
-           max(case when KPI='marwa10_orders' then prevyearvalue else null end ) marwa10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq Maha140' KPI,
-date, XTD,
-ifnull(safe_divide(maha_140_revenue,maha_140_orders),0) value,
-ifnull(safe_divide(maha_140_revenue_prevX,maha_140_orders_prevX),0) prevvalue,
-ifnull(safe_divide(maha_140_revenue_PrevyearsameX,maha_140_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='maha_140_revenue' then Value else null end ) maha_140_revenue,
-           max(case when KPI='maha_140_revenue' then prevValue else null end ) maha_140_revenue_PrevX,
-           max(case when KPI='maha_140_revenue' then prevyearvalue else null end ) maha_140_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='maha_140_orders' then Value else null end ) maha_140_orders,
-           max(case when KPI='maha_140_orders' then prevValue else null end ) maha_140_orders_PrevX,
-           max(case when KPI='maha_140_orders' then prevyearvalue else null end ) maha_140_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq Shahad10' KPI,
-date, XTD,
-ifnull(safe_divide(shahad10_revenue,shahad10_orders),0) value,
-ifnull(safe_divide(shahad10_revenue_prevX,shahad10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(shahad10_revenue_PrevyearsameX,shahad10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='shahad10_revenue' then Value else null end ) shahad10_revenue,
-           max(case when KPI='shahad10_revenue' then prevValue else null end ) shahad10_revenue_PrevX,
-           max(case when KPI='shahad10_revenue' then prevyearvalue else null end ) shahad10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='shahad10_orders' then Value else null end ) shahad10_orders,
-           max(case when KPI='shahad10_orders' then prevValue else null end ) shahad10_orders_PrevX,
-           max(case when KPI='shahad10_orders' then prevyearvalue else null end ) shahad10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per MissL10' KPI,
-date, XTD,
-ifnull(safe_divide(MissL10_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(MissL10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(MissL10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='MissL10_revenue' then Value else null end ) MissL10_revenue,
-           max(case when KPI='MissL10_revenue' then prevValue else null end ) MissL10_revenue_PrevX,
-           max(case when KPI='MissL10_revenue' then prevyearvalue else null end ) MissL10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per Husin10' KPI,
-date, XTD,
-ifnull(safe_divide(Husin10_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Husin10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Husin10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Husin10_revenue' then Value else null end ) Husin10_revenue,
-           max(case when KPI='Husin10_revenue' then prevValue else null end ) Husin10_revenue_PrevX,
-           max(case when KPI='Husin10_revenue' then prevyearvalue else null end ) Husin10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per Feda10' KPI,
-date, XTD,
-ifnull(safe_divide(Feda10_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Feda10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Feda10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Feda10_revenue' then Value else null end ) Feda10_revenue,
-           max(case when KPI='Feda10_revenue' then prevValue else null end ) Feda10_revenue_PrevX,
-           max(case when KPI='Feda10_revenue' then prevyearvalue else null end ) Feda10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per Abrar21' KPI,
-date, XTD,
-ifnull(safe_divide(abrar21_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(abrar21_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(abrar21_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='abrar21_revenue' then Value else null end ) abrar21_revenue,
-           max(case when KPI='abrar21_revenue' then prevValue else null end ) abrar21_revenue_PrevX,
-           max(case when KPI='abrar21_revenue' then prevyearvalue else null end ) abrar21_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per Feda21' KPI,
-date, XTD,
-ifnull(safe_divide(feda21_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(feda21_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(feda21_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='feda21_revenue' then Value else null end ) feda21_revenue,
-           max(case when KPI='feda21_revenue' then prevValue else null end ) feda21_revenue_PrevX,
-           max(case when KPI='feda21_revenue' then prevyearvalue else null end ) feda21_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per RohN2' KPI,
-date, XTD,
-ifnull(safe_divide(roh_n2_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(roh_n2_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(roh_n2_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='roh_n2_revenue' then Value else null end ) roh_n2_revenue,
-           max(case when KPI='roh_n2_revenue' then prevValue else null end ) roh_n2_revenue_PrevX,
-           max(case when KPI='roh_n2_revenue' then prevyearvalue else null end ) roh_n2_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per Omseba10' KPI,
-date, XTD,
-ifnull(safe_divide(omseba10_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(omseba10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(omseba10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='omseba10_revenue' then Value else null end ) omseba10_revenue,
-           max(case when KPI='omseba10_revenue' then prevValue else null end ) omseba10_revenue_PrevX,
-           max(case when KPI='omseba10_revenue' then prevyearvalue else null end ) omseba10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per Marwa10' KPI,
-date, XTD,
-ifnull(safe_divide(marwa10_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(marwa10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(marwa10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='marwa10_revenue' then Value else null end ) marwa10_revenue,
-           max(case when KPI='marwa10_revenue' then prevValue else null end ) marwa10_revenue_PrevX,
-           max(case when KPI='marwa10_revenue' then prevyearvalue else null end ) marwa10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per Maha140' KPI,
-date, XTD,
-ifnull(safe_divide(maha_140_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(maha_140_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(maha_140_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='maha_140_revenue' then Value else null end ) maha_140_revenue,
-           max(case when KPI='maha_140_revenue' then prevValue else null end ) maha_140_revenue_PrevX,
-           max(case when KPI='maha_140_revenue' then prevyearvalue else null end ) maha_140_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per Shahad10' KPI,
-date, XTD,
-ifnull(safe_divide(shahad10_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(shahad10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(shahad10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='shahad10_revenue' then Value else null end ) shahad10_revenue,
-           max(case when KPI='shahad10_revenue' then prevValue else null end ) shahad10_revenue_PrevX,
-           max(case when KPI='shahad10_revenue' then prevyearvalue else null end ) shahad10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Costperorder_Facebook' KPI,
-date, XTD,
-ifnull(safe_divide(Facebook_cust_spend,Facebook_cust_orders),0) value,
-ifnull(safe_divide(Facebook_cust_spend_prevX,Facebook_cust_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Facebook_cust_spend_PrevyearsameX,Facebook_cust_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Facebook_cust_spend' then Value else null end ) Facebook_cust_spend,
-           max(case when KPI='Facebook_cust_spend' then prevValue else null end ) Facebook_cust_spend_PrevX,
-           max(case when KPI='Facebook_cust_spend' then prevyearvalue else null end ) Facebook_cust_spend_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Facebook_cust_orders' then Value else null end ) Facebook_cust_orders,
-           max(case when KPI='Facebook_cust_orders' then prevValue else null end ) Facebook_cust_orders_PrevX,
-           max(case when KPI='Facebook_cust_orders' then prevyearvalue else null end ) Facebook_cust_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Costperorder_Instagram' KPI,
-date, XTD,
-ifnull(safe_divide(Instagram_cust_spend,Instagram_cust_orders),0) value,
-ifnull(safe_divide(Instagram_cust_spend_prevX,Instagram_cust_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Instagram_cust_spend_PrevyearsameX,Instagram_cust_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Instagram_cust_spend' then Value else null end ) Instagram_cust_spend,
-           max(case when KPI='Instagram_cust_spend' then prevValue else null end ) Instagram_cust_spend_PrevX,
-           max(case when KPI='Instagram_cust_spend' then prevyearvalue else null end ) Instagram_cust_spend_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Instagram_cust_orders' then Value else null end ) Instagram_cust_orders,
-           max(case when KPI='Instagram_cust_orders' then prevValue else null end ) Instagram_cust_orders_PrevX,
-           max(case when KPI='Instagram_cust_orders' then prevyearvalue else null end ) Instagram_cust_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Costperorder_Snapchat' KPI,
-date, XTD,
-ifnull(safe_divide(snapchat_cust_spend,Snapchat_cust_orders),0) value,
-ifnull(safe_divide(snapchat_cust_spend_prevX,Snapchat_cust_orders_prevX),0) prevvalue,
-ifnull(safe_divide(snapchat_cust_spend_PrevyearsameX,snapchat_cust_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='snapchat_cust_spend' then Value else null end ) snapchat_cust_spend,
-           max(case when KPI='snapchat_cust_spend' then prevValue else null end ) snapchat_cust_spend_PrevX,
-           max(case when KPI='snapchat_cust_spend' then prevyearvalue else null end ) snapchat_cust_spend_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Snapchat_cust_orders' then Value else null end ) Snapchat_cust_orders,
-           max(case when KPI='Snapchat_cust_orders' then prevValue else null end ) Snapchat_cust_orders_PrevX,
-           max(case when KPI='Snapchat_cust_orders' then prevyearvalue else null end ) Snapchat_cust_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Costperorder_Adwords' KPI,
-date, XTD,
-ifnull(safe_divide(google_cust_adspend,Adwords_cust_orders),0) value,
-ifnull(safe_divide(google_cust_adspend_prevX,Adwords_cust_orders_prevX),0) prevvalue,
-ifnull(safe_divide(google_cust_adspend_PrevyearsameX,Adwords_cust_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='google_cust_adspend' then Value else null end ) google_cust_adspend,
-           max(case when KPI='google_cust_adspend' then prevValue else null end ) google_cust_adspend_PrevX,
-           max(case when KPI='google_cust_adspend' then prevyearvalue else null end ) google_cust_adspend_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Adwords_cust_orders' then Value else null end ) Adwords_cust_orders,
-           max(case when KPI='Adwords_cust_orders' then prevValue else null end ) Adwords_cust_orders_PrevX,
-           max(case when KPI='Adwords_cust_orders' then prevyearvalue else null end ) Adwords_cust_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Costperorder_roi_hunter' KPI,
-date, XTD,
-ifnull(safe_divide(roi_hunter_cust_spend,Roi_hunter_cust_orders),0) value,
-ifnull(safe_divide(roi_hunter_cust_spend_prevX,Roi_hunter_cust_orders_prevX),0) prevvalue,
-ifnull(safe_divide(roi_hunter_cust_spend_PrevyearsameX,Roi_hunter_cust_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='roi_hunter_cust_spend' then Value else null end ) roi_hunter_cust_spend,
-           max(case when KPI='roi_hunter_cust_spend' then prevValue else null end ) roi_hunter_cust_spend_PrevX,
-           max(case when KPI='roi_hunter_cust_spend' then prevyearvalue else null end ) roi_hunter_cust_spend_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Roi_hunter_cust_orders' then Value else null end ) Roi_hunter_cust_orders,
-           max(case when KPI='Roi_hunter_cust_orders' then prevValue else null end ) Roi_hunter_cust_orders_PrevX,
-           max(case when KPI='Roi_hunter_cust_orders' then prevyearvalue else null end ) Roi_hunter_cust_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'AOV_Facebook' KPI,
-date, XTD,
-ifnull(safe_divide(Facebook_cust_revenue,Facebook_cust_orders),0) value,
-ifnull(safe_divide(Facebook_cust_revenue_prevX,Facebook_cust_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Facebook_cust_revenue_PrevyearsameX,Facebook_cust_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Facebook_cust_revenue' then Value else null end ) Facebook_cust_revenue,
-           max(case when KPI='Facebook_cust_revenue' then prevValue else null end ) Facebook_cust_revenue_PrevX,
-           max(case when KPI='Facebook_cust_revenue' then prevyearvalue else null end ) Facebook_cust_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Facebook_cust_orders' then Value else null end ) Facebook_cust_orders,
-           max(case when KPI='Facebook_cust_orders' then prevValue else null end ) Facebook_cust_orders_PrevX,
-           max(case when KPI='Facebook_cust_orders' then prevyearvalue else null end ) Facebook_cust_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'AOV_Instagram' KPI,
-date, XTD,
-ifnull(safe_divide(Instagram_cust_revenue,Instagram_cust_orders),0) value,
-ifnull(safe_divide(Instagram_cust_revenue_prevX,Instagram_cust_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Instagram_cust_revenue_PrevyearsameX,Instagram_cust_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Instagram_cust_revenue' then Value else null end ) Instagram_cust_revenue,
-           max(case when KPI='Instagram_cust_revenue' then prevValue else null end ) Instagram_cust_revenue_PrevX,
-           max(case when KPI='Instagram_cust_revenue' then prevyearvalue else null end ) Instagram_cust_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Instagram_cust_orders' then Value else null end ) Instagram_cust_orders,
-           max(case when KPI='Instagram_cust_orders' then prevValue else null end ) Instagram_cust_orders_PrevX,
-           max(case when KPI='Instagram_cust_orders' then prevyearvalue else null end ) Instagram_cust_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'AOV_Snapchat' KPI,
-date, XTD,
-ifnull(safe_divide(Snapchat_cust_revenue,Snapchat_cust_orders),0) value,
-ifnull(safe_divide(Snapchat_cust_revenue_prevX,Snapchat_cust_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Snapchat_cust_revenue_PrevyearsameX,Snapchat_cust_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Snapchat_cust_revenue' then Value else null end ) Snapchat_cust_revenue,
-           max(case when KPI='Snapchat_cust_revenue' then prevValue else null end ) Snapchat_cust_revenue_PrevX,
-           max(case when KPI='Snapchat_cust_revenue' then prevyearvalue else null end ) Snapchat_cust_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Snapchat_cust_orders' then Value else null end ) Snapchat_cust_orders,
-           max(case when KPI='Snapchat_cust_orders' then prevValue else null end ) Snapchat_cust_orders_PrevX,
-           max(case when KPI='Snapchat_cust_orders' then prevyearvalue else null end ) Snapchat_cust_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'AOV_Adwords' KPI,
-date, XTD,
-ifnull(safe_divide(Adwords_cust_revenue,Adwords_cust_orders),0) value,
-ifnull(safe_divide(Adwords_cust_revenue_prevX,Adwords_cust_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Adwords_cust_revenue_PrevyearsameX,Adwords_cust_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Adwords_cust_revenue' then Value else null end ) Adwords_cust_revenue,
-           max(case when KPI='Adwords_cust_revenue' then prevValue else null end ) Adwords_cust_revenue_PrevX,
-           max(case when KPI='Adwords_cust_revenue' then prevyearvalue else null end ) Adwords_cust_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Adwords_cust_orders' then Value else null end ) Adwords_cust_orders,
-           max(case when KPI='Adwords_cust_orders' then prevValue else null end ) Adwords_cust_orders_PrevX,
-           max(case when KPI='Adwords_cust_orders' then prevyearvalue else null end ) Adwords_cust_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'AOV_roi_hunter' KPI,
-date, XTD,
-ifnull(safe_divide(Roi_hunter_cust_revenue,Roi_hunter_cust_orders),0) value,
-ifnull(safe_divide(Roi_hunter_cust_revenue_prevX,Roi_hunter_cust_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Roi_hunter_cust_revenue_PrevyearsameX,Roi_hunter_cust_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Roi_hunter_cust_revenue' then Value else null end ) Roi_hunter_cust_revenue,
-           max(case when KPI='Roi_hunter_cust_revenue' then prevValue else null end ) Roi_hunter_cust_revenue_PrevX,
-           max(case when KPI='Roi_hunter_cust_revenue' then prevyearvalue else null end ) Roi_hunter_cust_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Roi_hunter_cust_orders' then Value else null end ) Roi_hunter_cust_orders,
-           max(case when KPI='Roi_hunter_cust_orders' then prevValue else null end ) Roi_hunter_cust_orders_PrevX,
-           max(case when KPI='Roi_hunter_cust_orders' then prevyearvalue else null end ) Roi_hunter_cust_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_Facebook' KPI,
-date, XTD,
-ifnull(safe_divide(Facebook_cust_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Facebook_cust_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Facebook_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Facebook_cust_revenue' then Value else null end ) Facebook_cust_revenue,
-           max(case when KPI='Facebook_cust_revenue' then prevValue else null end ) Facebook_cust_revenue_PrevX,
-           max(case when KPI='Facebook_cust_revenue' then prevyearvalue else null end ) Facebook_cust_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_Instagram' KPI,
-date, XTD,
-ifnull(safe_divide(Instagram_cust_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Instagram_cust_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Instagram_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Instagram_cust_revenue' then Value else null end ) Instagram_cust_revenue,
-           max(case when KPI='Instagram_cust_revenue' then prevValue else null end ) Instagram_cust_revenue_PrevX,
-           max(case when KPI='Instagram_cust_revenue' then prevyearvalue else null end ) Instagram_cust_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_Snapchat' KPI,
-date, XTD,
-ifnull(safe_divide(Snapchat_cust_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Snapchat_cust_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Snapchat_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Snapchat_cust_revenue' then Value else null end ) Snapchat_cust_revenue,
-           max(case when KPI='Snapchat_cust_revenue' then prevValue else null end ) Snapchat_cust_revenue_PrevX,
-           max(case when KPI='Snapchat_cust_revenue' then prevyearvalue else null end ) Snapchat_cust_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_Adwords' KPI,
-date, XTD,
-ifnull(safe_divide(Adwords_cust_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Adwords_cust_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Adwords_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Adwords_cust_revenue' then Value else null end ) Adwords_cust_revenue,
-           max(case when KPI='Adwords_cust_revenue' then prevValue else null end ) Adwords_cust_revenue_PrevX,
-           max(case when KPI='Adwords_cust_revenue' then prevyearvalue else null end ) Adwords_cust_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Sahreofsales_roi_hunter' KPI,
-date, XTD,
-ifnull(safe_divide(Roi_hunter_cust_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Roi_hunter_cust_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Roi_hunter_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Roi_hunter_cust_revenue' then Value else null end ) Roi_hunter_cust_revenue,
-           max(case when KPI='Roi_hunter_cust_revenue' then prevValue else null end ) Roi_hunter_cust_revenue_PrevX,
-           max(case when KPI='Roi_hunter_cust_revenue' then prevyearvalue else null end ) Roi_hunter_cust_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ConversionRate_Facebook' KPI,
-date, XTD,
-ifnull(safe_divide(Facebook_cust_orders,Facebook_cust_traffic),0) value,
-ifnull(safe_divide(Facebook_cust_orders_prevX,Facebook_cust_traffic_prevX),0) prevvalue,
-ifnull(safe_divide(Facebook_cust_orders_PrevyearsameX,Facebook_cust_traffic_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Facebook_cust_orders' then Value else null end ) Facebook_cust_orders,
-           max(case when KPI='Facebook_cust_orders' then prevValue else null end ) Facebook_cust_orders_PrevX,
-           max(case when KPI='Facebook_cust_orders' then prevyearvalue else null end ) Facebook_cust_orders_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Facebook_cust_traffic' then Value else null end ) Facebook_cust_traffic,
-           max(case when KPI='Facebook_cust_traffic' then prevValue else null end ) Facebook_cust_traffic_PrevX,
-           max(case when KPI='Facebook_cust_traffic' then prevyearvalue else null end ) Facebook_cust_traffic_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ConversionRate_Instagram' KPI,
-date, XTD,
-ifnull(safe_divide(Instagram_cust_orders,Instagram_cust_traffic),0) value,
-ifnull(safe_divide(Instagram_cust_orders_prevX,Instagram_cust_traffic_prevX),0) prevvalue,
-ifnull(safe_divide(Instagram_cust_orders_PrevyearsameX,Instagram_cust_traffic_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Instagram_cust_orders' then Value else null end ) Instagram_cust_orders,
-           max(case when KPI='Instagram_cust_orders' then prevValue else null end ) Instagram_cust_orders_PrevX,
-           max(case when KPI='Instagram_cust_orders' then prevyearvalue else null end ) Instagram_cust_orders_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Instagram_cust_traffic' then Value else null end ) Instagram_cust_traffic,
-           max(case when KPI='Instagram_cust_traffic' then prevValue else null end ) Instagram_cust_traffic_PrevX,
-           max(case when KPI='Instagram_cust_traffic' then prevyearvalue else null end ) Instagram_cust_traffic_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ConversionRate_Snapchat' KPI,
-date, XTD,
-ifnull(safe_divide(Snapchat_cust_orders,Snapchat_cust_traffic),0) value,
-ifnull(safe_divide(Snapchat_cust_orders_prevX,Snapchat_cust_traffic_prevX),0) prevvalue,
-ifnull(safe_divide(Snapchat_cust_orders_PrevyearsameX,Snapchat_cust_traffic_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Snapchat_cust_orders' then Value else null end ) Snapchat_cust_orders,
-           max(case when KPI='Snapchat_cust_orders' then prevValue else null end ) Snapchat_cust_orders_PrevX,
-           max(case when KPI='Snapchat_cust_orders' then prevyearvalue else null end ) Snapchat_cust_orders_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Snapchat_cust_traffic' then Value else null end ) Snapchat_cust_traffic,
-           max(case when KPI='Snapchat_cust_traffic' then prevValue else null end ) Snapchat_cust_traffic_PrevX,
-           max(case when KPI='Snapchat_cust_traffic' then prevyearvalue else null end ) Snapchat_cust_traffic_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ConversionRate_Adwords' KPI,
-date, XTD,
-ifnull(safe_divide(Adwords_cust_orders,Adwords_cust_traffic),0) value,
-ifnull(safe_divide(Adwords_cust_orders_prevX,Adwords_cust_traffic_prevX),0) prevvalue,
-ifnull(safe_divide(Adwords_cust_orders_PrevyearsameX,Adwords_cust_traffic_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Adwords_cust_orders' then Value else null end ) Adwords_cust_orders,
-           max(case when KPI='Adwords_cust_orders' then prevValue else null end ) Adwords_cust_orders_PrevX,
-           max(case when KPI='Adwords_cust_orders' then prevyearvalue else null end ) Adwords_cust_orders_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Adwords_cust_traffic' then Value else null end ) Adwords_cust_traffic,
-           max(case when KPI='Adwords_cust_traffic' then prevValue else null end ) Adwords_cust_traffic_PrevX,
-           max(case when KPI='Adwords_cust_traffic' then prevyearvalue else null end ) Adwords_cust_traffic_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ConversionRate_roi_hunter' KPI,
-date, XTD,
-ifnull(safe_divide(Roi_hunter_cust_orders,Roi_hunter_cust_traffic),0) value,
-ifnull(safe_divide(Roi_hunter_cust_orders_prevX,Roi_hunter_cust_traffic_prevX),0) prevvalue,
-ifnull(safe_divide(Roi_hunter_cust_orders_PrevyearsameX,Roi_hunter_cust_traffic_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Roi_hunter_cust_orders' then Value else null end ) Roi_hunter_cust_orders,
-           max(case when KPI='Roi_hunter_cust_orders' then prevValue else null end ) Roi_hunter_cust_orders_PrevX,
-           max(case when KPI='Roi_hunter_cust_orders' then prevyearvalue else null end ) Roi_hunter_cust_orders_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Roi_hunter_cust_traffic' then Value else null end ) Roi_hunter_cust_traffic,
-           max(case when KPI='Roi_hunter_cust_traffic' then prevValue else null end ) Roi_hunter_cust_traffic_PrevX,
-           max(case when KPI='Roi_hunter_cust_traffic' then prevyearvalue else null end ) Roi_hunter_cust_traffic_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
+
 select
 Halo_country,
 'Instagram_Unpaid_sessions_per' KPI,
@@ -4672,12 +2703,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'TikTok_paid_sessions_per' KPI,
@@ -4701,12 +2733,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'TikTok_Unpaid_sessions_per' KPI,
@@ -4730,664 +2763,27 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'Other_Social_sessions_per' KPI,
+'Influencers_codes_per' KPI,
 date, XTD,
-ifnull(safe_divide(Other_Social_sessions,sessions),0) value,
-ifnull(safe_divide(Other_Social_sessions_prevX,sessions_prevX),0) prevvalue,
-ifnull(safe_divide(Other_Social_sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(influencersrevenue,total_item_price_auth),0) value,
+ifnull(safe_divide(influencersrevenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(influencersrevenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='Other_Social_sessions' then Value else null end ) Other_Social_sessions,
-           max(case when KPI='Other_Social_sessions' then prevValue else null end ) Other_Social_sessions_PrevX,
-           max(case when KPI='Other_Social_sessions' then prevyearvalue else null end ) Other_Social_sessions_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='sessions' then Value else null end ) sessions,
-           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
-           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Paid_Search_sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(Paid_Search_sessions,sessions),0) value,
-ifnull(safe_divide(Paid_Search_sessions_prevX,sessions_prevX),0) prevvalue,
-ifnull(safe_divide(Paid_Search_sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Paid_Search_sessions' then Value else null end ) Paid_Search_sessions,
-           max(case when KPI='Paid_Search_sessions' then prevValue else null end ) Paid_Search_sessions_PrevX,
-           max(case when KPI='Paid_Search_sessions' then prevyearvalue else null end ) Paid_Search_sessions_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='sessions' then Value else null end ) sessions,
-           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
-           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Internal_Referral_sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(Internal_Referral_sessions,sessions),0) value,
-ifnull(safe_divide(Internal_Referral_sessions_prevX,sessions_prevX),0) prevvalue,
-ifnull(safe_divide(Internal_Referral_sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Internal_Referral_sessions' then Value else null end ) Internal_Referral_sessions,
-           max(case when KPI='Internal_Referral_sessions' then prevValue else null end ) Internal_Referral_sessions_PrevX,
-           max(case when KPI='Internal_Referral_sessions' then prevyearvalue else null end ) Internal_Referral_sessions_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='sessions' then Value else null end ) sessions,
-           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
-           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Email_sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(Email_sessions,sessions),0) value,
-ifnull(safe_divide(Email_sessions_prevX,sessions_prevX),0) prevvalue,
-ifnull(safe_divide(Email_sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Email_sessions' then Value else null end ) Email_sessions,
-           max(case when KPI='Email_sessions' then prevValue else null end ) Email_sessions_PrevX,
-           max(case when KPI='Email_sessions' then prevyearvalue else null end ) Email_sessions_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='sessions' then Value else null end ) sessions,
-           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
-           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Organic_Search_Sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(Organic_Search_Sessions,sessions),0) value,
-ifnull(safe_divide(Organic_Search_Sessions_prevX,sessions_prevX),0) prevvalue,
-ifnull(safe_divide(Organic_Search_Sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Organic_Search_Sessions' then Value else null end ) Organic_Search_Sessions,
-           max(case when KPI='Organic_Search_Sessions' then prevValue else null end ) Organic_Search_Sessions_PrevX,
-           max(case when KPI='Organic_Search_Sessions' then prevyearvalue else null end ) Organic_Search_Sessions_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='sessions' then Value else null end ) sessions,
-           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
-           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Referral_Sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(Referral_Sessions,sessions),0) value,
-ifnull(safe_divide(Referral_Sessions_prevX,sessions_prevX),0) prevvalue,
-ifnull(safe_divide(Referral_Sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Referral_Sessions' then Value else null end ) Referral_Sessions,
-           max(case when KPI='Referral_Sessions' then prevValue else null end ) Referral_Sessions_PrevX,
-           max(case when KPI='Referral_Sessions' then prevyearvalue else null end ) Referral_Sessions_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='sessions' then Value else null end ) sessions,
-           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
-           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Direct_Sessions_per' KPI,
-date, XTD,
-ifnull(safe_divide(Direct_Sessions,sessions),0) value,
-ifnull(safe_divide(Direct_Sessions_prevX,sessions_prevX),0) prevvalue,
-ifnull(safe_divide(Direct_Sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Direct_Sessions' then Value else null end ) Direct_Sessions,
-           max(case when KPI='Direct_Sessions' then prevValue else null end ) Direct_Sessions_PrevX,
-           max(case when KPI='Direct_Sessions' then prevyearvalue else null end ) Direct_Sessions_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='sessions' then Value else null end ) sessions,
-           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
-           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'TikTok_paid_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(TikTok_paid_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(TikTok_paid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(TikTok_paid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='TikTok_paid_newusers' then Value else null end ) TikTok_paid_newusers,
-           max(case when KPI='TikTok_paid_newusers' then prevValue else null end ) TikTok_paid_newusers_PrevX,
-           max(case when KPI='TikTok_paid_newusers' then prevyearvalue else null end ) TikTok_paid_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'TikTok_Unpaid_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(TikTok_Unpaid_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(TikTok_Unpaid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(TikTok_Unpaid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='TikTok_Unpaid_newusers' then Value else null end ) TikTok_Unpaid_newusers,
-           max(case when KPI='TikTok_Unpaid_newusers' then prevValue else null end ) TikTok_Unpaid_newusers_PrevX,
-           max(case when KPI='TikTok_Unpaid_newusers' then prevyearvalue else null end ) TikTok_Unpaid_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Other_Social_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Other_Social_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Other_Social_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Other_Social_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Other_Social_newusers' then Value else null end ) Other_Social_newusers,
-           max(case when KPI='Other_Social_newusers' then prevValue else null end ) Other_Social_newusers_PrevX,
-           max(case when KPI='Other_Social_newusers' then prevyearvalue else null end ) Other_Social_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Paid_Search_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Paid_Search_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Paid_Search_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Paid_Search_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Paid_Search_newusers' then Value else null end ) Paid_Search_newusers,
-           max(case when KPI='Paid_Search_newusers' then prevValue else null end ) Paid_Search_newusers_PrevX,
-           max(case when KPI='Paid_Search_newusers' then prevyearvalue else null end ) Paid_Search_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Internal_Referral_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Internal_Referral_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Internal_Referral_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Internal_Referral_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Internal_Referral_newusers' then Value else null end ) Internal_Referral_newusers,
-           max(case when KPI='Internal_Referral_newusers' then prevValue else null end ) Internal_Referral_newusers_PrevX,
-           max(case when KPI='Internal_Referral_newusers' then prevyearvalue else null end ) Internal_Referral_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Email_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Email_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Email_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Email_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Email_newusers' then Value else null end ) Email_newusers,
-           max(case when KPI='Email_newusers' then prevValue else null end ) Email_newusers_PrevX,
-           max(case when KPI='Email_newusers' then prevyearvalue else null end ) Email_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Organic_Search_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Organic_Search_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Organic_Search_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Organic_Search_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Organic_Search_newusers' then Value else null end ) Organic_Search_newusers,
-           max(case when KPI='Organic_Search_newusers' then prevValue else null end ) Organic_Search_newusers_PrevX,
-           max(case when KPI='Organic_Search_newusers' then prevyearvalue else null end ) Organic_Search_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Referral_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Referral_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Referral_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Referral_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Referral_newusers' then Value else null end ) Referral_newusers,
-           max(case when KPI='Referral_newusers' then prevValue else null end ) Referral_newusers_PrevX,
-           max(case when KPI='Referral_newusers' then prevyearvalue else null end ) Referral_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Direct_newusers_per' KPI,
-date, XTD,
-ifnull(safe_divide(Direct_newusers,newuserssourcemedium),0) value,
-ifnull(safe_divide(Direct_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
-ifnull(safe_divide(Direct_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Direct_newusers' then Value else null end ) Direct_newusers,
-           max(case when KPI='Direct_newusers' then prevValue else null end ) Direct_newusers_PrevX,
-           max(case when KPI='Direct_newusers' then prevyearvalue else null end ) Direct_newusers_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
-           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
-           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'CostperorderRand10_per' KPI,
-date, XTD,
-ifnull(safe_divide(Rand10_spend_day,Rand10_orders),0) value,
-ifnull(safe_divide(Rand10_spend_day_prevX,Rand10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Rand10_spend_day_PrevyearsameX,Rand10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Rand10_spend_day' then Value else null end ) Rand10_spend_day,
-           max(case when KPI='Rand10_spend_day' then prevValue else null end ) Rand10_spend_day_PrevX,
-           max(case when KPI='Rand10_spend_day' then prevyearvalue else null end ) Rand10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Rand10_orders' then Value else null end ) Rand10_orders,
-           max(case when KPI='Rand10_orders' then prevValue else null end ) Rand10_orders_PrevX,
-           max(case when KPI='Rand10_orders' then prevyearvalue else null end ) Rand10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'CostperorderSatha10_per' KPI,
-date, XTD,
-ifnull(safe_divide(Satha10_spend_day,Satha10_orders),0) value,
-ifnull(safe_divide(Satha10_spend_day_prevX,Satha10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Satha10_spend_day_PrevyearsameX,Satha10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Satha10_spend_day' then Value else null end ) Satha10_spend_day,
-           max(case when KPI='Satha10_spend_day' then prevValue else null end ) Satha10_spend_day_PrevX,
-           max(case when KPI='Satha10_spend_day' then prevyearvalue else null end ) Satha10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Satha10_orders' then Value else null end ) Satha10_orders,
-           max(case when KPI='Satha10_orders' then prevValue else null end ) Satha10_orders_PrevX,
-           max(case when KPI='Satha10_orders' then prevyearvalue else null end ) Satha10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'CostperorderWish10_per' KPI,
-date, XTD,
-ifnull(safe_divide(Wish10_spend_day,Wish10_orders),0) value,
-ifnull(safe_divide(Wish10_spend_day_prevX,Wish10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Wish10_spend_day_PrevyearsameX,Wish10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Wish10_spend_day' then Value else null end ) Wish10_spend_day,
-           max(case when KPI='Wish10_spend_day' then prevValue else null end ) Wish10_spend_day_PrevX,
-           max(case when KPI='Wish10_spend_day' then prevyearvalue else null end ) Wish10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Wish10_orders' then Value else null end ) Wish10_orders,
-           max(case when KPI='Wish10_orders' then prevValue else null end ) Wish10_orders_PrevX,
-           max(case when KPI='Wish10_orders' then prevyearvalue else null end ) Wish10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq Rand10' KPI,
-date, XTD,
-ifnull(safe_divide(Rand10_revenue,Rand10_orders),0) value,
-ifnull(safe_divide(Rand10_revenue_prevX,Rand10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Rand10_revenue_PrevyearsameX,Rand10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Rand10_revenue' then Value else null end ) Rand10_revenue,
-           max(case when KPI='Rand10_revenue' then prevValue else null end ) Rand10_revenue_PrevX,
-           max(case when KPI='Rand10_revenue' then prevyearvalue else null end ) Rand10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Rand10_orders' then Value else null end ) Rand10_orders,
-           max(case when KPI='Rand10_orders' then prevValue else null end ) Rand10_orders_PrevX,
-           max(case when KPI='Rand10_orders' then prevyearvalue else null end ) Rand10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq Satha10' KPI,
-date, XTD,
-ifnull(safe_divide(Satha10_revenue,Satha10_orders),0) value,
-ifnull(safe_divide(Satha10_revenue_prevX,Satha10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Satha10_revenue_PrevyearsameX,Satha10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Satha10_revenue' then Value else null end ) Satha10_revenue,
-           max(case when KPI='Satha10_revenue' then prevValue else null end ) Satha10_revenue_PrevX,
-           max(case when KPI='Satha10_revenue' then prevyearvalue else null end ) Satha10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Satha10_orders' then Value else null end ) Satha10_orders,
-           max(case when KPI='Satha10_orders' then prevValue else null end ) Satha10_orders_PrevX,
-           max(case when KPI='Satha10_orders' then prevyearvalue else null end ) Satha10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq Wish10' KPI,
-date, XTD,
-ifnull(safe_divide(Wish10_revenue,Wish10_orders),0) value,
-ifnull(safe_divide(Wish10_revenue_prevX,Wish10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Wish10_revenue_PrevyearsameX,Wish10_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Wish10_revenue' then Value else null end ) Wish10_revenue,
-           max(case when KPI='Wish10_revenue' then prevValue else null end ) Wish10_revenue_PrevX,
-           max(case when KPI='Wish10_revenue' then prevyearvalue else null end ) Wish10_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Wish10_orders' then Value else null end ) Wish10_orders,
-           max(case when KPI='Wish10_orders' then prevValue else null end ) Wish10_orders_PrevX,
-           max(case when KPI='Wish10_orders' then prevyearvalue else null end ) Wish10_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per Rand10' KPI,
-date, XTD,
-ifnull(safe_divide(Rand10_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Rand10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Rand10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='Rand10_revenue' then Value else null end ) Rand10_revenue,
-           max(case when KPI='Rand10_revenue' then prevValue else null end ) Rand10_revenue_PrevX,
-           max(case when KPI='Rand10_revenue' then prevyearvalue else null end ) Rand10_revenue_PrevyearsameX
+           max(case when KPI='influencersrevenue' then Value else null end ) influencersrevenue,
+           max(case when KPI='influencersrevenue' then prevValue else null end ) influencersrevenue_PrevX,
+           max(case when KPI='influencersrevenue' then prevyearvalue else null end ) influencersrevenue_PrevyearsameX
        
                 ,
         
@@ -5397,646 +2793,624 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'Shareofsales_per Satha10' KPI,
+'Others_Sessions_per' KPI,
 date, XTD,
-ifnull(safe_divide(Satha10_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Satha10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Satha10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(Others_Sessions,sessions),0) value,
+ifnull(safe_divide(Others_Sessions_prevX,sessions_prevX),0) prevvalue,
+ifnull(safe_divide(Others_Sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='Satha10_revenue' then Value else null end ) Satha10_revenue,
-           max(case when KPI='Satha10_revenue' then prevValue else null end ) Satha10_revenue_PrevX,
-           max(case when KPI='Satha10_revenue' then prevyearvalue else null end ) Satha10_revenue_PrevyearsameX
+           max(case when KPI='Others_Sessions' then Value else null end ) Others_Sessions,
+           max(case when KPI='Others_Sessions' then prevValue else null end ) Others_Sessions_PrevX,
+           max(case when KPI='Others_Sessions' then prevyearvalue else null end ) Others_Sessions_PrevyearsameX
        
                 ,
         
         
+           max(case when KPI='sessions' then Value else null end ) sessions,
+           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
+           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Unique_Visitors' KPI,
+date, XTD,
+ifnull(visitors-new_visitor_users,0) value,
+ifnull(visitors_prevX-new_visitor_users_prevX,0) prevvalue,
+ifnull(visitors_PrevyearsameX-new_visitor_users_PrevyearsameX,0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='visitors' then Value else null end ) visitors,
+           max(case when KPI='visitors' then prevValue else null end ) visitors_PrevX,
+           max(case when KPI='visitors' then prevyearvalue else null end ) visitors_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='new_visitor_users' then Value else null end ) new_visitor_users,
+           max(case when KPI='new_visitor_users' then prevValue else null end ) new_visitor_users_PrevX,
+           max(case when KPI='new_visitor_users' then prevyearvalue else null end ) new_visitor_users_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'avgSessionDuration1' KPI,
+date, XTD,
+ifnull(safe_divide(SessionDuration,sessions),0) value,
+ifnull(safe_divide(SessionDuration_prevX,sessions_prevX),0) prevvalue,
+ifnull(safe_divide(SessionDuration_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='SessionDuration' then Value else null end ) SessionDuration,
+           max(case when KPI='SessionDuration' then prevValue else null end ) SessionDuration_PrevX,
+           max(case when KPI='SessionDuration' then prevyearvalue else null end ) SessionDuration_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='sessions' then Value else null end ) sessions,
+           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
+           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'avgdailysales' KPI,
+date, XTD,
+ifnull(safe_divide(total_item_price_auth,daylevel),0) value,
+ifnull(safe_divide(total_item_price_auth_prevX,daylevel_prevX),0) prevvalue,
+ifnull(safe_divide(total_item_price_auth_PrevyearsameX,daylevel_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
            max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
            max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
            max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
        
+                ,
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+        
+           max(case when KPI='daylevel' then Value else null end ) daylevel,
+           max(case when KPI='daylevel' then prevValue else null end ) daylevel_PrevX,
+           max(case when KPI='daylevel' then prevyearvalue else null end ) daylevel_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'Shareofsales_per Wish10' KPI,
+'avgdailyunits' KPI,
 date, XTD,
-ifnull(safe_divide(Wish10_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Wish10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Wish10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(total_product_quantity_auth,daylevel),0) value,
+ifnull(safe_divide(total_product_quantity_auth_prevX,daylevel_prevX),0) prevvalue,
+ifnull(safe_divide(total_product_quantity_auth_PrevyearsameX,daylevel_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='Wish10_revenue' then Value else null end ) Wish10_revenue,
-           max(case when KPI='Wish10_revenue' then prevValue else null end ) Wish10_revenue_PrevX,
-           max(case when KPI='Wish10_revenue' then prevyearvalue else null end ) Wish10_revenue_PrevyearsameX
+           max(case when KPI='total_product_quantity_auth' then Value else null end ) total_product_quantity_auth,
+           max(case when KPI='total_product_quantity_auth' then prevValue else null end ) total_product_quantity_auth_PrevX,
+           max(case when KPI='total_product_quantity_auth' then prevyearvalue else null end ) total_product_quantity_auth_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+           max(case when KPI='daylevel' then Value else null end ) daylevel,
+           max(case when KPI='daylevel' then prevValue else null end ) daylevel_PrevX,
+           max(case when KPI='daylevel' then prevyearvalue else null end ) daylevel_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'confirmation_rate' KPI,
+'influencersorders_per' KPI,
 date, XTD,
-ifnull(safe_divide(orders_confirmed,orders_created),0) value,
-ifnull(safe_divide(orders_confirmed_prevX,orders_created_prevX),0) prevvalue,
-ifnull(safe_divide(orders_confirmed_PrevyearsameX,orders_created_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(influencersorders,orders_auth),0) value,
+ifnull(safe_divide(influencersorders_prevX,orders_auth_prevX),0) prevvalue,
+ifnull(safe_divide(influencersorders_PrevyearsameX,orders_auth_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='orders_confirmed' then Value else null end ) orders_confirmed,
-           max(case when KPI='orders_confirmed' then prevValue else null end ) orders_confirmed_PrevX,
-           max(case when KPI='orders_confirmed' then prevyearvalue else null end ) orders_confirmed_PrevyearsameX
+           max(case when KPI='influencersorders' then Value else null end ) influencersorders,
+           max(case when KPI='influencersorders' then prevValue else null end ) influencersorders_PrevX,
+           max(case when KPI='influencersorders' then prevyearvalue else null end ) influencersorders_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='orders_created' then Value else null end ) orders_created,
-           max(case when KPI='orders_created' then prevValue else null end ) orders_created_PrevX,
-           max(case when KPI='orders_created' then prevyearvalue else null end ) orders_created_PrevyearsameX
+           max(case when KPI='orders_auth' then Value else null end ) orders_auth,
+           max(case when KPI='orders_auth' then prevValue else null end ) orders_auth_PrevX,
+           max(case when KPI='orders_auth' then prevyearvalue else null end ) orders_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'shipment_rate' KPI,
+'age_18_24_sessions_per' KPI,
 date, XTD,
-ifnull(safe_divide(orders_shipped,orders_confirmed),0) value,
-ifnull(safe_divide(orders_shipped_prevX,orders_confirmed_prevX),0) prevvalue,
-ifnull(safe_divide(orders_shipped_PrevyearsameX,orders_confirmed_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(sessions_with_age_18_24,age_sessions),0) value,
+ifnull(safe_divide(sessions_with_age_18_24_prevX,age_sessions_prevX),0) prevvalue,
+ifnull(safe_divide(sessions_with_age_18_24_PrevyearsameX,age_sessions_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='orders_shipped' then Value else null end ) orders_shipped,
-           max(case when KPI='orders_shipped' then prevValue else null end ) orders_shipped_PrevX,
-           max(case when KPI='orders_shipped' then prevyearvalue else null end ) orders_shipped_PrevyearsameX
+           max(case when KPI='sessions_with_age_18_24' then Value else null end ) sessions_with_age_18_24,
+           max(case when KPI='sessions_with_age_18_24' then prevValue else null end ) sessions_with_age_18_24_PrevX,
+           max(case when KPI='sessions_with_age_18_24' then prevyearvalue else null end ) sessions_with_age_18_24_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='orders_confirmed' then Value else null end ) orders_confirmed,
-           max(case when KPI='orders_confirmed' then prevValue else null end ) orders_confirmed_PrevX,
-           max(case when KPI='orders_confirmed' then prevyearvalue else null end ) orders_confirmed_PrevyearsameX
+           max(case when KPI='age_sessions' then Value else null end ) age_sessions,
+           max(case when KPI='age_sessions' then prevValue else null end ) age_sessions_PrevX,
+           max(case when KPI='age_sessions' then prevyearvalue else null end ) age_sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'delivery_rate' KPI,
+'age_25_34_sessions_per' KPI,
 date, XTD,
-ifnull(safe_divide(orders_delivered,orders_shipped),0) value,
-ifnull(safe_divide(orders_delivered_prevX,orders_shipped_prevX),0) prevvalue,
-ifnull(safe_divide(orders_delivered_PrevyearsameX,orders_shipped_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(sessions_with_age_25_34,age_sessions),0) value,
+ifnull(safe_divide(sessions_with_age_25_34_prevX,age_sessions_prevX),0) prevvalue,
+ifnull(safe_divide(sessions_with_age_25_34_PrevyearsameX,age_sessions_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='orders_delivered' then Value else null end ) orders_delivered,
-           max(case when KPI='orders_delivered' then prevValue else null end ) orders_delivered_PrevX,
-           max(case when KPI='orders_delivered' then prevyearvalue else null end ) orders_delivered_PrevyearsameX
+           max(case when KPI='sessions_with_age_25_34' then Value else null end ) sessions_with_age_25_34,
+           max(case when KPI='sessions_with_age_25_34' then prevValue else null end ) sessions_with_age_25_34_PrevX,
+           max(case when KPI='sessions_with_age_25_34' then prevyearvalue else null end ) sessions_with_age_25_34_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='orders_shipped' then Value else null end ) orders_shipped,
-           max(case when KPI='orders_shipped' then prevValue else null end ) orders_shipped_PrevX,
-           max(case when KPI='orders_shipped' then prevyearvalue else null end ) orders_shipped_PrevyearsameX
+           max(case when KPI='age_sessions' then Value else null end ) age_sessions,
+           max(case when KPI='age_sessions' then prevValue else null end ) age_sessions_PrevX,
+           max(case when KPI='age_sessions' then prevyearvalue else null end ) age_sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'fulfilment_rate' KPI,
+'age_35_44_sessions_per' KPI,
 date, XTD,
-ifnull(safe_divide(orders_delivered,orders_confirmed),0) value,
-ifnull(safe_divide(orders_delivered_prevX,orders_confirmed_prevX),0) prevvalue,
-ifnull(safe_divide(orders_delivered_PrevyearsameX,orders_confirmed_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(sessions_with_age_35_44,age_sessions),0) value,
+ifnull(safe_divide(sessions_with_age_35_44_prevX,age_sessions_prevX),0) prevvalue,
+ifnull(safe_divide(sessions_with_age_35_44_PrevyearsameX,age_sessions_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='orders_delivered' then Value else null end ) orders_delivered,
-           max(case when KPI='orders_delivered' then prevValue else null end ) orders_delivered_PrevX,
-           max(case when KPI='orders_delivered' then prevyearvalue else null end ) orders_delivered_PrevyearsameX
+           max(case when KPI='sessions_with_age_35_44' then Value else null end ) sessions_with_age_35_44,
+           max(case when KPI='sessions_with_age_35_44' then prevValue else null end ) sessions_with_age_35_44_PrevX,
+           max(case when KPI='sessions_with_age_35_44' then prevyearvalue else null end ) sessions_with_age_35_44_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='orders_confirmed' then Value else null end ) orders_confirmed,
-           max(case when KPI='orders_confirmed' then prevValue else null end ) orders_confirmed_PrevX,
-           max(case when KPI='orders_confirmed' then prevyearvalue else null end ) orders_confirmed_PrevyearsameX
+           max(case when KPI='age_sessions' then Value else null end ) age_sessions,
+           max(case when KPI='age_sessions' then prevValue else null end ) age_sessions_PrevX,
+           max(case when KPI='age_sessions' then prevyearvalue else null end ) age_sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'CostperorderYasmine10_per' KPI,
+'age_above_45_sessions_per' KPI,
 date, XTD,
-ifnull(safe_divide(Yasmine10_spend_day,Yasmine10_orders),0) value,
-ifnull(safe_divide(Yasmine10_spend_day_prevX,Yasmine10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Yasmine10_spend_day_PrevyearsameX,Yasmine10_orders_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(sessions_with_age_above_45,age_sessions),0) value,
+ifnull(safe_divide(sessions_with_age_above_45_prevX,age_sessions_prevX),0) prevvalue,
+ifnull(safe_divide(sessions_with_age_above_45_PrevyearsameX,age_sessions_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='Yasmine10_spend_day' then Value else null end ) Yasmine10_spend_day,
-           max(case when KPI='Yasmine10_spend_day' then prevValue else null end ) Yasmine10_spend_day_PrevX,
-           max(case when KPI='Yasmine10_spend_day' then prevyearvalue else null end ) Yasmine10_spend_day_PrevyearsameX
+           max(case when KPI='sessions_with_age_above_45' then Value else null end ) sessions_with_age_above_45,
+           max(case when KPI='sessions_with_age_above_45' then prevValue else null end ) sessions_with_age_above_45_PrevX,
+           max(case when KPI='sessions_with_age_above_45' then prevyearvalue else null end ) sessions_with_age_above_45_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='Yasmine10_orders' then Value else null end ) Yasmine10_orders,
-           max(case when KPI='Yasmine10_orders' then prevValue else null end ) Yasmine10_orders_PrevX,
-           max(case when KPI='Yasmine10_orders' then prevyearvalue else null end ) Yasmine10_orders_PrevyearsameX
+           max(case when KPI='age_sessions' then Value else null end ) age_sessions,
+           max(case when KPI='age_sessions' then prevValue else null end ) age_sessions_PrevX,
+           max(case when KPI='age_sessions' then prevyearvalue else null end ) age_sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'ATV Customer Acq Yasmine10' KPI,
+'gender_male_sessions_per' KPI,
 date, XTD,
-ifnull(safe_divide(Yasmine10_revenue,Yasmine10_orders),0) value,
-ifnull(safe_divide(Yasmine10_revenue_prevX,Yasmine10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Yasmine10_revenue_PrevyearsameX,Yasmine10_orders_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(sessions_with_gender_male,gender_sessions),0) value,
+ifnull(safe_divide(sessions_with_gender_male_prevX,gender_sessions_prevX),0) prevvalue,
+ifnull(safe_divide(sessions_with_gender_male_PrevyearsameX,gender_sessions_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='Yasmine10_revenue' then Value else null end ) Yasmine10_revenue,
-           max(case when KPI='Yasmine10_revenue' then prevValue else null end ) Yasmine10_revenue_PrevX,
-           max(case when KPI='Yasmine10_revenue' then prevyearvalue else null end ) Yasmine10_revenue_PrevyearsameX
+           max(case when KPI='sessions_with_gender_male' then Value else null end ) sessions_with_gender_male,
+           max(case when KPI='sessions_with_gender_male' then prevValue else null end ) sessions_with_gender_male_PrevX,
+           max(case when KPI='sessions_with_gender_male' then prevyearvalue else null end ) sessions_with_gender_male_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='Yasmine10_orders' then Value else null end ) Yasmine10_orders,
-           max(case when KPI='Yasmine10_orders' then prevValue else null end ) Yasmine10_orders_PrevX,
-           max(case when KPI='Yasmine10_orders' then prevyearvalue else null end ) Yasmine10_orders_PrevyearsameX
+           max(case when KPI='gender_sessions' then Value else null end ) gender_sessions,
+           max(case when KPI='gender_sessions' then prevValue else null end ) gender_sessions_PrevX,
+           max(case when KPI='gender_sessions' then prevyearvalue else null end ) gender_sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'Shareofsales_per Yasmine10' KPI,
+'gender_female_sessions_per' KPI,
 date, XTD,
-ifnull(safe_divide(Yasmine10_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Yasmine10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Yasmine10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(sessions_with_gender_female,gender_sessions),0) value,
+ifnull(safe_divide(sessions_with_gender_female_prevX,gender_sessions_prevX),0) prevvalue,
+ifnull(safe_divide(sessions_with_gender_female_PrevyearsameX,gender_sessions_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='Yasmine10_revenue' then Value else null end ) Yasmine10_revenue,
-           max(case when KPI='Yasmine10_revenue' then prevValue else null end ) Yasmine10_revenue_PrevX,
-           max(case when KPI='Yasmine10_revenue' then prevyearvalue else null end ) Yasmine10_revenue_PrevyearsameX
+           max(case when KPI='sessions_with_gender_female' then Value else null end ) sessions_with_gender_female,
+           max(case when KPI='sessions_with_gender_female' then prevValue else null end ) sessions_with_gender_female_PrevX,
+           max(case when KPI='sessions_with_gender_female' then prevyearvalue else null end ) sessions_with_gender_female_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+           max(case when KPI='gender_sessions' then Value else null end ) gender_sessions,
+           max(case when KPI='gender_sessions' then prevValue else null end ) gender_sessions_PrevX,
+           max(case when KPI='gender_sessions' then prevyearvalue else null end ) gender_sessions_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'CostperorderFatma10_per' KPI,
+'Snapchat_paid_newusers_per' KPI,
 date, XTD,
-ifnull(safe_divide(Fatma10_spend_day,Fatma10_orders),0) value,
-ifnull(safe_divide(Fatma10_spend_day_prevX,Fatma10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Fatma10_spend_day_PrevyearsameX,Fatma10_orders_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(Snapchat_paid_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Snapchat_paid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Snapchat_paid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='Fatma10_spend_day' then Value else null end ) Fatma10_spend_day,
-           max(case when KPI='Fatma10_spend_day' then prevValue else null end ) Fatma10_spend_day_PrevX,
-           max(case when KPI='Fatma10_spend_day' then prevyearvalue else null end ) Fatma10_spend_day_PrevyearsameX
+           max(case when KPI='Snapchat_paid_newusers' then Value else null end ) Snapchat_paid_newusers,
+           max(case when KPI='Snapchat_paid_newusers' then prevValue else null end ) Snapchat_paid_newusers_PrevX,
+           max(case when KPI='Snapchat_paid_newusers' then prevyearvalue else null end ) Snapchat_paid_newusers_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='Fatma10_orders' then Value else null end ) Fatma10_orders,
-           max(case when KPI='Fatma10_orders' then prevValue else null end ) Fatma10_orders_PrevX,
-           max(case when KPI='Fatma10_orders' then prevyearvalue else null end ) Fatma10_orders_PrevyearsameX
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'ATV Customer Acq Fatma10' KPI,
+'Snapchat_unpaid_newusers_per' KPI,
 date, XTD,
-ifnull(safe_divide(Fatma10_revenue,Fatma10_orders),0) value,
-ifnull(safe_divide(Fatma10_revenue_prevX,Fatma10_orders_prevX),0) prevvalue,
-ifnull(safe_divide(Fatma10_revenue_PrevyearsameX,Fatma10_orders_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(Snapchat_unpaid_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Snapchat_unpaid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Snapchat_unpaid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='Fatma10_revenue' then Value else null end ) Fatma10_revenue,
-           max(case when KPI='Fatma10_revenue' then prevValue else null end ) Fatma10_revenue_PrevX,
-           max(case when KPI='Fatma10_revenue' then prevyearvalue else null end ) Fatma10_revenue_PrevyearsameX
+           max(case when KPI='Snapchat_unpaid_newusers' then Value else null end ) Snapchat_unpaid_newusers,
+           max(case when KPI='Snapchat_unpaid_newusers' then prevValue else null end ) Snapchat_unpaid_newusers_PrevX,
+           max(case when KPI='Snapchat_unpaid_newusers' then prevyearvalue else null end ) Snapchat_unpaid_newusers_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='Fatma10_orders' then Value else null end ) Fatma10_orders,
-           max(case when KPI='Fatma10_orders' then prevValue else null end ) Fatma10_orders_PrevX,
-           max(case when KPI='Fatma10_orders' then prevyearvalue else null end ) Fatma10_orders_PrevyearsameX
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'Shareofsales_per Fatma10' KPI,
+'Facebook_Inhouse_Paid_newusers_per' KPI,
 date, XTD,
-ifnull(safe_divide(Fatma10_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(Fatma10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(Fatma10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(Facebook_Inhouse_Paid_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Facebook_Inhouse_Paid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Facebook_Inhouse_Paid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='Fatma10_revenue' then Value else null end ) Fatma10_revenue,
-           max(case when KPI='Fatma10_revenue' then prevValue else null end ) Fatma10_revenue_PrevX,
-           max(case when KPI='Fatma10_revenue' then prevyearvalue else null end ) Fatma10_revenue_PrevyearsameX
+           max(case when KPI='Facebook_Inhouse_Paid_newusers' then Value else null end ) Facebook_Inhouse_Paid_newusers,
+           max(case when KPI='Facebook_Inhouse_Paid_newusers' then prevValue else null end ) Facebook_Inhouse_Paid_newusers_PrevX,
+           max(case when KPI='Facebook_Inhouse_Paid_newusers' then prevyearvalue else null end ) Facebook_Inhouse_Paid_newusers_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'total_days_to_close_per' KPI,
+'Facebook_Dynamic_Remarketing_newusers_per' KPI,
 date, XTD,
-ifnull(safe_divide(total_days_to_close,closed_tickets),0) value,
-ifnull(safe_divide(total_days_to_close_prevX,closed_tickets_prevX),0) prevvalue,
-ifnull(safe_divide(total_days_to_close_PrevyearsameX,closed_tickets_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(Facebook_Dynamic_Remarketing_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Facebook_Dynamic_Remarketing_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Facebook_Dynamic_Remarketing_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='total_days_to_close' then Value else null end ) total_days_to_close,
-           max(case when KPI='total_days_to_close' then prevValue else null end ) total_days_to_close_PrevX,
-           max(case when KPI='total_days_to_close' then prevyearvalue else null end ) total_days_to_close_PrevyearsameX
+           max(case when KPI='Facebook_Dynamic_Remarketing_newusers' then Value else null end ) Facebook_Dynamic_Remarketing_newusers,
+           max(case when KPI='Facebook_Dynamic_Remarketing_newusers' then prevValue else null end ) Facebook_Dynamic_Remarketing_newusers_PrevX,
+           max(case when KPI='Facebook_Dynamic_Remarketing_newusers' then prevyearvalue else null end ) Facebook_Dynamic_Remarketing_newusers_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='closed_tickets' then Value else null end ) closed_tickets,
-           max(case when KPI='closed_tickets' then prevValue else null end ) closed_tickets_PrevX,
-           max(case when KPI='closed_tickets' then prevyearvalue else null end ) closed_tickets_PrevyearsameX
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'total_time_to_confirm_per' KPI,
+'Facebook_Unpaid_newusers_per' KPI,
 date, XTD,
-ifnull(safe_divide(total_time_to_confirm,orders_confirmed),0) value,
-ifnull(safe_divide(total_time_to_confirm_prevX,orders_confirmed_prevX),0) prevvalue,
-ifnull(safe_divide(total_time_to_confirm_PrevyearsameX,orders_confirmed_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(Facebook_Unpaid_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Facebook_Unpaid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Facebook_Unpaid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='total_time_to_confirm' then Value else null end ) total_time_to_confirm,
-           max(case when KPI='total_time_to_confirm' then prevValue else null end ) total_time_to_confirm_PrevX,
-           max(case when KPI='total_time_to_confirm' then prevyearvalue else null end ) total_time_to_confirm_PrevyearsameX
+           max(case when KPI='Facebook_Unpaid_newusers' then Value else null end ) Facebook_Unpaid_newusers,
+           max(case when KPI='Facebook_Unpaid_newusers' then prevValue else null end ) Facebook_Unpaid_newusers_PrevX,
+           max(case when KPI='Facebook_Unpaid_newusers' then prevyearvalue else null end ) Facebook_Unpaid_newusers_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='orders_confirmed' then Value else null end ) orders_confirmed,
-           max(case when KPI='orders_confirmed' then prevValue else null end ) orders_confirmed_PrevX,
-           max(case when KPI='orders_confirmed' then prevyearvalue else null end ) orders_confirmed_PrevyearsameX
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'total_time_to_ship_per' KPI,
+'Instagram_paid_newusers_per' KPI,
 date, XTD,
-ifnull(safe_divide(total_time_to_ship,orders_shipped),0) value,
-ifnull(safe_divide(total_time_to_ship_prevX,orders_shipped_prevX),0) prevvalue,
-ifnull(safe_divide(total_time_to_ship_PrevyearsameX,orders_shipped_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(Instagram_paid_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Instagram_paid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Instagram_paid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='total_time_to_ship' then Value else null end ) total_time_to_ship,
-           max(case when KPI='total_time_to_ship' then prevValue else null end ) total_time_to_ship_PrevX,
-           max(case when KPI='total_time_to_ship' then prevyearvalue else null end ) total_time_to_ship_PrevyearsameX
+           max(case when KPI='Instagram_paid_newusers' then Value else null end ) Instagram_paid_newusers,
+           max(case when KPI='Instagram_paid_newusers' then prevValue else null end ) Instagram_paid_newusers_PrevX,
+           max(case when KPI='Instagram_paid_newusers' then prevyearvalue else null end ) Instagram_paid_newusers_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='orders_shipped' then Value else null end ) orders_shipped,
-           max(case when KPI='orders_shipped' then prevValue else null end ) orders_shipped_PrevX,
-           max(case when KPI='orders_shipped' then prevyearvalue else null end ) orders_shipped_PrevyearsameX
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'total_time_to_deliver_per' KPI,
+'Instagram_Unpaid_newusers_per' KPI,
 date, XTD,
-ifnull(safe_divide(total_time_to_deliver,orders_delivered),0) value,
-ifnull(safe_divide(total_time_to_deliver_prevX,orders_delivered_prevX),0) prevvalue,
-ifnull(safe_divide(total_time_to_deliver_PrevyearsameX,orders_delivered_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(Instagram_Unpaid_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Instagram_Unpaid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Instagram_Unpaid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='total_time_to_deliver' then Value else null end ) total_time_to_deliver,
-           max(case when KPI='total_time_to_deliver' then prevValue else null end ) total_time_to_deliver_PrevX,
-           max(case when KPI='total_time_to_deliver' then prevyearvalue else null end ) total_time_to_deliver_PrevyearsameX
+           max(case when KPI='Instagram_Unpaid_newusers' then Value else null end ) Instagram_Unpaid_newusers,
+           max(case when KPI='Instagram_Unpaid_newusers' then prevValue else null end ) Instagram_Unpaid_newusers_PrevX,
+           max(case when KPI='Instagram_Unpaid_newusers' then prevyearvalue else null end ) Instagram_Unpaid_newusers_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='orders_delivered' then Value else null end ) orders_delivered,
-           max(case when KPI='orders_delivered' then prevValue else null end ) orders_delivered_PrevX,
-           max(case when KPI='orders_delivered' then prevyearvalue else null end ) orders_delivered_PrevyearsameX
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'total_time_to_fulfill_per' KPI,
+'Others_newusers_per' KPI,
 date, XTD,
-ifnull(safe_divide(total_time_to_fulfill,orders_delivered),0) value,
-ifnull(safe_divide(total_time_to_fulfill_prevX,orders_delivered_prevX),0) prevvalue,
-ifnull(safe_divide(total_time_to_fulfill_PrevyearsameX,orders_delivered_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(Others_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Others_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Others_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='total_time_to_fulfill' then Value else null end ) total_time_to_fulfill,
-           max(case when KPI='total_time_to_fulfill' then prevValue else null end ) total_time_to_fulfill_PrevX,
-           max(case when KPI='total_time_to_fulfill' then prevyearvalue else null end ) total_time_to_fulfill_PrevyearsameX
+           max(case when KPI='Others_newusers' then Value else null end ) Others_newusers,
+           max(case when KPI='Others_newusers' then prevValue else null end ) Others_newusers_PrevX,
+           max(case when KPI='Others_newusers' then prevyearvalue else null end ) Others_newusers_PrevyearsameX
        
                 ,
         
         
-           max(case when KPI='orders_delivered' then Value else null end ) orders_delivered,
-           max(case when KPI='orders_delivered' then prevValue else null end ) orders_delivered_PrevX,
-           max(case when KPI='orders_delivered' then prevyearvalue else null end ) orders_delivered_PrevyearsameX
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
-'total_attempts_per' KPI,
+'Costperorder_MissL10' KPI,
 date, XTD,
-ifnull(safe_divide(total_attempts,shipments),0) value,
-ifnull(safe_divide(total_attempts_prevX,shipments_prevX),0) prevvalue,
-ifnull(safe_divide(total_attempts_PrevyearsameX,shipments_PrevyearsameX),0) prevyearvalue,
+ifnull(safe_divide(MissL10_spend_day,MissL10_orders),0) value,
+ifnull(safe_divide(MissL10_spend_day_prevX,MissL10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(MissL10_spend_day_PrevyearsameX,MissL10_orders_PrevyearsameX),0) prevyearvalue,
 Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
 from(
 select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
        
-           max(case when KPI='total_attempts' then Value else null end ) total_attempts,
-           max(case when KPI='total_attempts' then prevValue else null end ) total_attempts_PrevX,
-           max(case when KPI='total_attempts' then prevyearvalue else null end ) total_attempts_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='shipments' then Value else null end ) shipments,
-           max(case when KPI='shipments' then prevValue else null end ) shipments_PrevX,
-           max(case when KPI='shipments' then prevyearvalue else null end ) shipments_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Costperordermissl2u_per' KPI,
-date, XTD,
-ifnull(safe_divide(missl2u_spend_day,missl2u_orders),0) value,
-ifnull(safe_divide(missl2u_spend_day_prevX,missl2u_orders_prevX),0) prevvalue,
-ifnull(safe_divide(missl2u_spend_day_PrevyearsameX,missl2u_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='missl2u_spend_day' then Value else null end ) missl2u_spend_day,
-           max(case when KPI='missl2u_spend_day' then prevValue else null end ) missl2u_spend_day_PrevX,
-           max(case when KPI='missl2u_spend_day' then prevyearvalue else null end ) missl2u_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='missl2u_orders' then Value else null end ) missl2u_orders,
-           max(case when KPI='missl2u_orders' then prevValue else null end ) missl2u_orders_PrevX,
-           max(case when KPI='missl2u_orders' then prevyearvalue else null end ) missl2u_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'ATV Customer Acq missl2u' KPI,
-date, XTD,
-ifnull(safe_divide(missl2u_revenue,missl2u_orders),0) value,
-ifnull(safe_divide(missl2u_revenue_prevX,missl2u_orders_prevX),0) prevvalue,
-ifnull(safe_divide(missl2u_revenue_PrevyearsameX,missl2u_orders_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='missl2u_revenue' then Value else null end ) missl2u_revenue,
-           max(case when KPI='missl2u_revenue' then prevValue else null end ) missl2u_revenue_PrevX,
-           max(case when KPI='missl2u_revenue' then prevyearvalue else null end ) missl2u_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='missl2u_orders' then Value else null end ) missl2u_orders,
-           max(case when KPI='missl2u_orders' then prevValue else null end ) missl2u_orders_PrevX,
-           max(case when KPI='missl2u_orders' then prevyearvalue else null end ) missl2u_orders_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'Shareofsales_per missl2u' KPI,
-date, XTD,
-ifnull(safe_divide(missl2u_revenue,total_item_price_auth),0) value,
-ifnull(safe_divide(missl2u_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
-ifnull(safe_divide(missl2u_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='missl2u_revenue' then Value else null end ) missl2u_revenue,
-           max(case when KPI='missl2u_revenue' then prevValue else null end ) missl2u_revenue_PrevX,
-           max(case when KPI='missl2u_revenue' then prevyearvalue else null end ) missl2u_revenue_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
-           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
-           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
-       
-        
-from `noted-computing-279322.halo_1_1.fKPIs`
-group by 1,2,3,4,5,6,7,8,9
-)
-       
-                union all
-        
-select
-Halo_country,
-'CAC Total' KPI,
-date, XTD,
-ifnull(safe_divide((snapchat_cust_spend+spend+MissL10_spend_day+Husin10_spend_day+Feda10_spend_day+abrar21_spend_day+feda21_spend_day+roh_n2_spend_day+omseba10_spend_day+marwa10_spend_day+maha_140_spend_day+shahad10_spend_day+Rand10_spend_day+Satha10_spend_day+Wish10_spend_day+Yasmine10_spend_day+Fatma10_spend_day+missl2u_spend_day),New_customers),0) value,
-ifnull(safe_divide((snapchat_cust_spend_prevX+spend_prevX+MissL10_spend_day_prevX+Husin10_spend_day_prevX+Feda10_spend_day_prevX+abrar21_spend_day_prevX+feda21_spend_day_prevX+roh_n2_spend_day_prevX+omseba10_spend_day_prevX+marwa10_spend_day_prevX+maha_140_spend_day_prevX+shahad10_spend_day_prevX+Rand10_spend_day_prevX+Satha10_spend_day_prevX+Wish10_spend_day_prevX+Yasmine10_spend_day_prevX+Fatma10_spend_day_prevX+missl2u_spend_day),New_customers),0) prevvalue,
-ifnull(safe_divide((snapchat_cust_spend_PrevyearsameX+spend_PrevyearsameX+MissL10_spend_day_PrevyearsameX+Husin10_spend_day_PrevyearsameX+Feda10_spend_day_PrevyearsameX+abrar21_spend_day_PrevyearsameX+feda21_spend_day_PrevyearsameX+roh_n2_spend_day_PrevyearsameX+omseba10_spend_day_PrevyearsameX+marwa10_spend_day_PrevyearsameX+maha_140_spend_day_PrevyearsameX+shahad10_spend_day_PrevyearsameX+Rand10_spend_day_PrevyearsameX+Satha10_spend_day_PrevyearsameX+Wish10_spend_day_PrevyearsameX+Yasmine10_spend_day_PrevyearsameX+Fatma10_spend_day_PrevyearsameX+missl2u_spend_day),New_customers),0) prevyearvalue,
-Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
-from(
-select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
-       
-           max(case when KPI='snapchat_cust_spend' then Value else null end ) snapchat_cust_spend,
-           max(case when KPI='snapchat_cust_spend' then prevValue else null end ) snapchat_cust_spend_PrevX,
-           max(case when KPI='snapchat_cust_spend' then prevyearvalue else null end ) snapchat_cust_spend_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='spend' then Value else null end ) spend,
-           max(case when KPI='spend' then prevValue else null end ) spend_PrevX,
-           max(case when KPI='spend' then prevyearvalue else null end ) spend_PrevyearsameX
-       
-                ,
-        
-        
            max(case when KPI='MissL10_spend_day' then Value else null end ) MissL10_spend_day,
            max(case when KPI='MissL10_spend_day' then prevValue else null end ) MissL10_spend_day_PrevX,
            max(case when KPI='MissL10_spend_day' then prevyearvalue else null end ) MissL10_spend_day_PrevyearsameX
@@ -6044,122 +3418,558 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
                 ,
         
         
-           max(case when KPI='Husin10_spend_day' then Value else null end ) Husin10_spend_day,
-           max(case when KPI='Husin10_spend_day' then prevValue else null end ) Husin10_spend_day_PrevX,
-           max(case when KPI='Husin10_spend_day' then prevyearvalue else null end ) Husin10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Feda10_spend_day' then Value else null end ) Feda10_spend_day,
-           max(case when KPI='Feda10_spend_day' then prevValue else null end ) Feda10_spend_day_PrevX,
-           max(case when KPI='Feda10_spend_day' then prevyearvalue else null end ) Feda10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='abrar21_spend_day' then Value else null end ) abrar21_spend_day,
-           max(case when KPI='abrar21_spend_day' then prevValue else null end ) abrar21_spend_day_PrevX,
-           max(case when KPI='abrar21_spend_day' then prevyearvalue else null end ) abrar21_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='feda21_spend_day' then Value else null end ) feda21_spend_day,
-           max(case when KPI='feda21_spend_day' then prevValue else null end ) feda21_spend_day_PrevX,
-           max(case when KPI='feda21_spend_day' then prevyearvalue else null end ) feda21_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='roh_n2_spend_day' then Value else null end ) roh_n2_spend_day,
-           max(case when KPI='roh_n2_spend_day' then prevValue else null end ) roh_n2_spend_day_PrevX,
-           max(case when KPI='roh_n2_spend_day' then prevyearvalue else null end ) roh_n2_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='omseba10_spend_day' then Value else null end ) omseba10_spend_day,
-           max(case when KPI='omseba10_spend_day' then prevValue else null end ) omseba10_spend_day_PrevX,
-           max(case when KPI='omseba10_spend_day' then prevyearvalue else null end ) omseba10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='marwa10_spend_day' then Value else null end ) marwa10_spend_day,
-           max(case when KPI='marwa10_spend_day' then prevValue else null end ) marwa10_spend_day_PrevX,
-           max(case when KPI='marwa10_spend_day' then prevyearvalue else null end ) marwa10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='maha_140_spend_day' then Value else null end ) maha_140_spend_day,
-           max(case when KPI='maha_140_spend_day' then prevValue else null end ) maha_140_spend_day_PrevX,
-           max(case when KPI='maha_140_spend_day' then prevyearvalue else null end ) maha_140_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='shahad10_spend_day' then Value else null end ) shahad10_spend_day,
-           max(case when KPI='shahad10_spend_day' then prevValue else null end ) shahad10_spend_day_PrevX,
-           max(case when KPI='shahad10_spend_day' then prevyearvalue else null end ) shahad10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Rand10_spend_day' then Value else null end ) Rand10_spend_day,
-           max(case when KPI='Rand10_spend_day' then prevValue else null end ) Rand10_spend_day_PrevX,
-           max(case when KPI='Rand10_spend_day' then prevyearvalue else null end ) Rand10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Satha10_spend_day' then Value else null end ) Satha10_spend_day,
-           max(case when KPI='Satha10_spend_day' then prevValue else null end ) Satha10_spend_day_PrevX,
-           max(case when KPI='Satha10_spend_day' then prevyearvalue else null end ) Satha10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Wish10_spend_day' then Value else null end ) Wish10_spend_day,
-           max(case when KPI='Wish10_spend_day' then prevValue else null end ) Wish10_spend_day_PrevX,
-           max(case when KPI='Wish10_spend_day' then prevyearvalue else null end ) Wish10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Yasmine10_spend_day' then Value else null end ) Yasmine10_spend_day,
-           max(case when KPI='Yasmine10_spend_day' then prevValue else null end ) Yasmine10_spend_day_PrevX,
-           max(case when KPI='Yasmine10_spend_day' then prevyearvalue else null end ) Yasmine10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='Fatma10_spend_day' then Value else null end ) Fatma10_spend_day,
-           max(case when KPI='Fatma10_spend_day' then prevValue else null end ) Fatma10_spend_day_PrevX,
-           max(case when KPI='Fatma10_spend_day' then prevyearvalue else null end ) Fatma10_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='missl2u_spend_day' then Value else null end ) missl2u_spend_day,
-           max(case when KPI='missl2u_spend_day' then prevValue else null end ) missl2u_spend_day_PrevX,
-           max(case when KPI='missl2u_spend_day' then prevyearvalue else null end ) missl2u_spend_day_PrevyearsameX
-       
-                ,
-        
-        
-           max(case when KPI='New_customers' then Value else null end ) New_customers,
-           max(case when KPI='New_customers' then prevValue else null end ) New_customers_PrevX,
-           max(case when KPI='New_customers' then prevyearvalue else null end ) New_customers_PrevyearsameX
+           max(case when KPI='MissL10_orders' then Value else null end ) MissL10_orders,
+           max(case when KPI='MissL10_orders' then prevValue else null end ) MissL10_orders_PrevX,
+           max(case when KPI='MissL10_orders' then prevyearvalue else null end ) MissL10_orders_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
+select
+Halo_country,
+'Costperorder_Fozaza2u' KPI,
+date, XTD,
+ifnull(safe_divide(Fozaza2u_spend_day,Fozaza2u_orders),0) value,
+ifnull(safe_divide(Fozaza2u_spend_day_prevX,Fozaza2u_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Fozaza2u_spend_day_PrevyearsameX,Fozaza2u_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Fozaza2u_spend_day' then Value else null end ) Fozaza2u_spend_day,
+           max(case when KPI='Fozaza2u_spend_day' then prevValue else null end ) Fozaza2u_spend_day_PrevX,
+           max(case when KPI='Fozaza2u_spend_day' then prevyearvalue else null end ) Fozaza2u_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Fozaza2u_orders' then Value else null end ) Fozaza2u_orders,
+           max(case when KPI='Fozaza2u_orders' then prevValue else null end ) Fozaza2u_orders_PrevX,
+           max(case when KPI='Fozaza2u_orders' then prevyearvalue else null end ) Fozaza2u_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Costperorder_Alia10' KPI,
+date, XTD,
+ifnull(safe_divide(Alia10_spend_day,Alia10_orders),0) value,
+ifnull(safe_divide(Alia10_spend_day_prevX,Alia10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Alia10_spend_day_PrevyearsameX,Alia10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Alia10_spend_day' then Value else null end ) Alia10_spend_day,
+           max(case when KPI='Alia10_spend_day' then prevValue else null end ) Alia10_spend_day_PrevX,
+           max(case when KPI='Alia10_spend_day' then prevyearvalue else null end ) Alia10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Alia10_orders' then Value else null end ) Alia10_orders,
+           max(case when KPI='Alia10_orders' then prevValue else null end ) Alia10_orders_PrevX,
+           max(case when KPI='Alia10_orders' then prevyearvalue else null end ) Alia10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Costperorder_Ingy10' KPI,
+date, XTD,
+ifnull(safe_divide(Ingy10_spend_day,Ingy10_orders),0) value,
+ifnull(safe_divide(Ingy10_spend_day_prevX,Ingy10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Ingy10_spend_day_PrevyearsameX,Ingy10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Ingy10_spend_day' then Value else null end ) Ingy10_spend_day,
+           max(case when KPI='Ingy10_spend_day' then prevValue else null end ) Ingy10_spend_day_PrevX,
+           max(case when KPI='Ingy10_spend_day' then prevyearvalue else null end ) Ingy10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Ingy10_orders' then Value else null end ) Ingy10_orders,
+           max(case when KPI='Ingy10_orders' then prevValue else null end ) Ingy10_orders_PrevX,
+           max(case when KPI='Ingy10_orders' then prevyearvalue else null end ) Ingy10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Costperorder_Sahar10' KPI,
+date, XTD,
+ifnull(safe_divide(Sahar10_spend_day,Sahar10_orders),0) value,
+ifnull(safe_divide(Sahar10_spend_day_prevX,Sahar10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Sahar10_spend_day_PrevyearsameX,Sahar10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Sahar10_spend_day' then Value else null end ) Sahar10_spend_day,
+           max(case when KPI='Sahar10_spend_day' then prevValue else null end ) Sahar10_spend_day_PrevX,
+           max(case when KPI='Sahar10_spend_day' then prevyearvalue else null end ) Sahar10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Sahar10_orders' then Value else null end ) Sahar10_orders,
+           max(case when KPI='Sahar10_orders' then prevValue else null end ) Sahar10_orders_PrevX,
+           max(case when KPI='Sahar10_orders' then prevyearvalue else null end ) Sahar10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ATV_MissL10' KPI,
+date, XTD,
+ifnull(safe_divide(MissL10_revenue,MissL10_orders),0) value,
+ifnull(safe_divide(MissL10_revenue_prevX,MissL10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(MissL10_revenue_PrevyearsameX,MissL10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='MissL10_revenue' then Value else null end ) MissL10_revenue,
+           max(case when KPI='MissL10_revenue' then prevValue else null end ) MissL10_revenue_PrevX,
+           max(case when KPI='MissL10_revenue' then prevyearvalue else null end ) MissL10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='MissL10_orders' then Value else null end ) MissL10_orders,
+           max(case when KPI='MissL10_orders' then prevValue else null end ) MissL10_orders_PrevX,
+           max(case when KPI='MissL10_orders' then prevyearvalue else null end ) MissL10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ATV_Fozaza2u' KPI,
+date, XTD,
+ifnull(safe_divide(Fozaza2u_revenue,Fozaza2u_orders),0) value,
+ifnull(safe_divide(Fozaza2u_revenue_prevX,Fozaza2u_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Fozaza2u_revenue_PrevyearsameX,Fozaza2u_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Fozaza2u_revenue' then Value else null end ) Fozaza2u_revenue,
+           max(case when KPI='Fozaza2u_revenue' then prevValue else null end ) Fozaza2u_revenue_PrevX,
+           max(case when KPI='Fozaza2u_revenue' then prevyearvalue else null end ) Fozaza2u_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Fozaza2u_orders' then Value else null end ) Fozaza2u_orders,
+           max(case when KPI='Fozaza2u_orders' then prevValue else null end ) Fozaza2u_orders_PrevX,
+           max(case when KPI='Fozaza2u_orders' then prevyearvalue else null end ) Fozaza2u_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ATV_Alia10' KPI,
+date, XTD,
+ifnull(safe_divide(Alia10_revenue,Alia10_orders),0) value,
+ifnull(safe_divide(Alia10_revenue_prevX,Alia10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Alia10_revenue_PrevyearsameX,Alia10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Alia10_revenue' then Value else null end ) Alia10_revenue,
+           max(case when KPI='Alia10_revenue' then prevValue else null end ) Alia10_revenue_PrevX,
+           max(case when KPI='Alia10_revenue' then prevyearvalue else null end ) Alia10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Alia10_orders' then Value else null end ) Alia10_orders,
+           max(case when KPI='Alia10_orders' then prevValue else null end ) Alia10_orders_PrevX,
+           max(case when KPI='Alia10_orders' then prevyearvalue else null end ) Alia10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ATV_Ingy10' KPI,
+date, XTD,
+ifnull(safe_divide(Ingy10_revenue,Ingy10_orders),0) value,
+ifnull(safe_divide(Ingy10_revenue_prevX,Ingy10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Ingy10_revenue_PrevyearsameX,Ingy10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Ingy10_revenue' then Value else null end ) Ingy10_revenue,
+           max(case when KPI='Ingy10_revenue' then prevValue else null end ) Ingy10_revenue_PrevX,
+           max(case when KPI='Ingy10_revenue' then prevyearvalue else null end ) Ingy10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Ingy10_orders' then Value else null end ) Ingy10_orders,
+           max(case when KPI='Ingy10_orders' then prevValue else null end ) Ingy10_orders_PrevX,
+           max(case when KPI='Ingy10_orders' then prevyearvalue else null end ) Ingy10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ATV_Sahar10' KPI,
+date, XTD,
+ifnull(safe_divide(Sahar10_revenue,Sahar10_orders),0) value,
+ifnull(safe_divide(Sahar10_revenue_prevX,Sahar10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Sahar10_revenue_PrevyearsameX,Sahar10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Sahar10_revenue' then Value else null end ) Sahar10_revenue,
+           max(case when KPI='Sahar10_revenue' then prevValue else null end ) Sahar10_revenue_PrevX,
+           max(case when KPI='Sahar10_revenue' then prevyearvalue else null end ) Sahar10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Sahar10_orders' then Value else null end ) Sahar10_orders,
+           max(case when KPI='Sahar10_orders' then prevValue else null end ) Sahar10_orders_PrevX,
+           max(case when KPI='Sahar10_orders' then prevyearvalue else null end ) Sahar10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Shareofsales_MissL10' KPI,
+date, XTD,
+ifnull(safe_divide(MissL10_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(MissL10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(MissL10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='MissL10_revenue' then Value else null end ) MissL10_revenue,
+           max(case when KPI='MissL10_revenue' then prevValue else null end ) MissL10_revenue_PrevX,
+           max(case when KPI='MissL10_revenue' then prevyearvalue else null end ) MissL10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Shareofsales_Fozaza2u' KPI,
+date, XTD,
+ifnull(safe_divide(Fozaza2u_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(Fozaza2u_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(Fozaza2u_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Fozaza2u_revenue' then Value else null end ) Fozaza2u_revenue,
+           max(case when KPI='Fozaza2u_revenue' then prevValue else null end ) Fozaza2u_revenue_PrevX,
+           max(case when KPI='Fozaza2u_revenue' then prevyearvalue else null end ) Fozaza2u_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Shareofsales_Alia10' KPI,
+date, XTD,
+ifnull(safe_divide(Alia10_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(Alia10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(Alia10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Alia10_revenue' then Value else null end ) Alia10_revenue,
+           max(case when KPI='Alia10_revenue' then prevValue else null end ) Alia10_revenue_PrevX,
+           max(case when KPI='Alia10_revenue' then prevyearvalue else null end ) Alia10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Shareofsales_Ingy10' KPI,
+date, XTD,
+ifnull(safe_divide(Ingy10_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(Ingy10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(Ingy10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Ingy10_revenue' then Value else null end ) Ingy10_revenue,
+           max(case when KPI='Ingy10_revenue' then prevValue else null end ) Ingy10_revenue_PrevX,
+           max(case when KPI='Ingy10_revenue' then prevyearvalue else null end ) Ingy10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Shareofsales_Sahar10' KPI,
+date, XTD,
+ifnull(safe_divide(Sahar10_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(Sahar10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(Sahar10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Sahar10_revenue' then Value else null end ) Sahar10_revenue,
+           max(case when KPI='Sahar10_revenue' then prevValue else null end ) Sahar10_revenue_PrevX,
+           max(case when KPI='Sahar10_revenue' then prevyearvalue else null end ) Sahar10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Costperorder_Facebook' KPI,
+date, XTD,
+ifnull(safe_divide(Facebook_cust_spend,Facebook_cust_orders),0) value,
+ifnull(safe_divide(Facebook_cust_spend_prevX,Facebook_cust_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Facebook_cust_spend_PrevyearsameX,Facebook_cust_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Facebook_cust_spend' then Value else null end ) Facebook_cust_spend,
+           max(case when KPI='Facebook_cust_spend' then prevValue else null end ) Facebook_cust_spend_PrevX,
+           max(case when KPI='Facebook_cust_spend' then prevyearvalue else null end ) Facebook_cust_spend_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Facebook_cust_orders' then Value else null end ) Facebook_cust_orders,
+           max(case when KPI='Facebook_cust_orders' then prevValue else null end ) Facebook_cust_orders_PrevX,
+           max(case when KPI='Facebook_cust_orders' then prevyearvalue else null end ) Facebook_cust_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Costperorder_Instagram' KPI,
+date, XTD,
+ifnull(safe_divide(Instagram_cust_spend,Instagram_cust_orders),0) value,
+ifnull(safe_divide(Instagram_cust_spend_prevX,Instagram_cust_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Instagram_cust_spend_PrevyearsameX,Instagram_cust_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Instagram_cust_spend' then Value else null end ) Instagram_cust_spend,
+           max(case when KPI='Instagram_cust_spend' then prevValue else null end ) Instagram_cust_spend_PrevX,
+           max(case when KPI='Instagram_cust_spend' then prevyearvalue else null end ) Instagram_cust_spend_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Instagram_cust_orders' then Value else null end ) Instagram_cust_orders,
+           max(case when KPI='Instagram_cust_orders' then prevValue else null end ) Instagram_cust_orders_PrevX,
+           max(case when KPI='Instagram_cust_orders' then prevyearvalue else null end ) Instagram_cust_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Costperorder_Adwords' KPI,
+date, XTD,
+ifnull(safe_divide(google_cust_adspend,Adwords_cust_orders),0) value,
+ifnull(safe_divide(google_cust_adspend_prevX,Adwords_cust_orders_prevX),0) prevvalue,
+ifnull(safe_divide(google_cust_adspend_PrevyearsameX,Adwords_cust_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='google_cust_adspend' then Value else null end ) google_cust_adspend,
+           max(case when KPI='google_cust_adspend' then prevValue else null end ) google_cust_adspend_PrevX,
+           max(case when KPI='google_cust_adspend' then prevyearvalue else null end ) google_cust_adspend_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Adwords_cust_orders' then Value else null end ) Adwords_cust_orders,
+           max(case when KPI='Adwords_cust_orders' then prevValue else null end ) Adwords_cust_orders_PrevX,
+           max(case when KPI='Adwords_cust_orders' then prevyearvalue else null end ) Adwords_cust_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Costperorder_roi_hunter' KPI,
+date, XTD,
+ifnull(safe_divide(roi_hunter_cust_spend,Roi_hunter_cust_orders),0) value,
+ifnull(safe_divide(roi_hunter_cust_spend_prevX,Roi_hunter_cust_orders_prevX),0) prevvalue,
+ifnull(safe_divide(roi_hunter_cust_spend_PrevyearsameX,Roi_hunter_cust_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='roi_hunter_cust_spend' then Value else null end ) roi_hunter_cust_spend,
+           max(case when KPI='roi_hunter_cust_spend' then prevValue else null end ) roi_hunter_cust_spend_PrevX,
+           max(case when KPI='roi_hunter_cust_spend' then prevyearvalue else null end ) roi_hunter_cust_spend_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Roi_hunter_cust_orders' then Value else null end ) Roi_hunter_cust_orders,
+           max(case when KPI='Roi_hunter_cust_orders' then prevValue else null end ) Roi_hunter_cust_orders_PrevX,
+           max(case when KPI='Roi_hunter_cust_orders' then prevyearvalue else null end ) Roi_hunter_cust_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
 select
 Halo_country,
 'Costperorder_youtube' KPI,
@@ -6183,12 +3993,133 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Youtube_cust_orders' then prevyearvalue else null end ) Youtube_cust_orders_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
+select
+Halo_country,
+'AOV_Facebook' KPI,
+date, XTD,
+ifnull(safe_divide(Facebook_cust_revenue,Facebook_cust_orders),0) value,
+ifnull(safe_divide(Facebook_cust_revenue_prevX,Facebook_cust_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Facebook_cust_revenue_PrevyearsameX,Facebook_cust_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Facebook_cust_revenue' then Value else null end ) Facebook_cust_revenue,
+           max(case when KPI='Facebook_cust_revenue' then prevValue else null end ) Facebook_cust_revenue_PrevX,
+           max(case when KPI='Facebook_cust_revenue' then prevyearvalue else null end ) Facebook_cust_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Facebook_cust_orders' then Value else null end ) Facebook_cust_orders,
+           max(case when KPI='Facebook_cust_orders' then prevValue else null end ) Facebook_cust_orders_PrevX,
+           max(case when KPI='Facebook_cust_orders' then prevyearvalue else null end ) Facebook_cust_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'AOV_Instagram' KPI,
+date, XTD,
+ifnull(safe_divide(Instagram_cust_revenue,Instagram_cust_orders),0) value,
+ifnull(safe_divide(Instagram_cust_revenue_prevX,Instagram_cust_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Instagram_cust_revenue_PrevyearsameX,Instagram_cust_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Instagram_cust_revenue' then Value else null end ) Instagram_cust_revenue,
+           max(case when KPI='Instagram_cust_revenue' then prevValue else null end ) Instagram_cust_revenue_PrevX,
+           max(case when KPI='Instagram_cust_revenue' then prevyearvalue else null end ) Instagram_cust_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Instagram_cust_orders' then Value else null end ) Instagram_cust_orders,
+           max(case when KPI='Instagram_cust_orders' then prevValue else null end ) Instagram_cust_orders_PrevX,
+           max(case when KPI='Instagram_cust_orders' then prevyearvalue else null end ) Instagram_cust_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'AOV_Adwords' KPI,
+date, XTD,
+ifnull(safe_divide(Adwords_cust_revenue,Adwords_cust_orders),0) value,
+ifnull(safe_divide(Adwords_cust_revenue_prevX,Adwords_cust_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Adwords_cust_revenue_PrevyearsameX,Adwords_cust_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Adwords_cust_revenue' then Value else null end ) Adwords_cust_revenue,
+           max(case when KPI='Adwords_cust_revenue' then prevValue else null end ) Adwords_cust_revenue_PrevX,
+           max(case when KPI='Adwords_cust_revenue' then prevyearvalue else null end ) Adwords_cust_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Adwords_cust_orders' then Value else null end ) Adwords_cust_orders,
+           max(case when KPI='Adwords_cust_orders' then prevValue else null end ) Adwords_cust_orders_PrevX,
+           max(case when KPI='Adwords_cust_orders' then prevyearvalue else null end ) Adwords_cust_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'AOV_roi_hunter' KPI,
+date, XTD,
+ifnull(safe_divide(Roi_hunter_cust_revenue,Roi_hunter_cust_orders),0) value,
+ifnull(safe_divide(Roi_hunter_cust_revenue_prevX,Roi_hunter_cust_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Roi_hunter_cust_revenue_PrevyearsameX,Roi_hunter_cust_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Roi_hunter_cust_revenue' then Value else null end ) Roi_hunter_cust_revenue,
+           max(case when KPI='Roi_hunter_cust_revenue' then prevValue else null end ) Roi_hunter_cust_revenue_PrevX,
+           max(case when KPI='Roi_hunter_cust_revenue' then prevyearvalue else null end ) Roi_hunter_cust_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Roi_hunter_cust_orders' then Value else null end ) Roi_hunter_cust_orders,
+           max(case when KPI='Roi_hunter_cust_orders' then prevValue else null end ) Roi_hunter_cust_orders_PrevX,
+           max(case when KPI='Roi_hunter_cust_orders' then prevyearvalue else null end ) Roi_hunter_cust_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
 select
 Halo_country,
 'AOV_youtube' KPI,
@@ -6212,12 +4143,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Youtube_cust_orders' then prevyearvalue else null end ) Youtube_cust_orders_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'AOV_tiktok' KPI,
@@ -6241,12 +4173,133 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Tiktok_cust_orders' then prevyearvalue else null end ) Tiktok_cust_orders_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
+select
+Halo_country,
+'Shareofsales_Facebook' KPI,
+date, XTD,
+ifnull(safe_divide(Facebook_cust_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(Facebook_cust_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(Facebook_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Facebook_cust_revenue' then Value else null end ) Facebook_cust_revenue,
+           max(case when KPI='Facebook_cust_revenue' then prevValue else null end ) Facebook_cust_revenue_PrevX,
+           max(case when KPI='Facebook_cust_revenue' then prevyearvalue else null end ) Facebook_cust_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Shareofsales_Instagram' KPI,
+date, XTD,
+ifnull(safe_divide(Instagram_cust_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(Instagram_cust_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(Instagram_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Instagram_cust_revenue' then Value else null end ) Instagram_cust_revenue,
+           max(case when KPI='Instagram_cust_revenue' then prevValue else null end ) Instagram_cust_revenue_PrevX,
+           max(case when KPI='Instagram_cust_revenue' then prevyearvalue else null end ) Instagram_cust_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Shareofsales_Adwords' KPI,
+date, XTD,
+ifnull(safe_divide(Adwords_cust_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(Adwords_cust_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(Adwords_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Adwords_cust_revenue' then Value else null end ) Adwords_cust_revenue,
+           max(case when KPI='Adwords_cust_revenue' then prevValue else null end ) Adwords_cust_revenue_PrevX,
+           max(case when KPI='Adwords_cust_revenue' then prevyearvalue else null end ) Adwords_cust_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Sahreofsales_roi_hunter' KPI,
+date, XTD,
+ifnull(safe_divide(Roi_hunter_cust_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(Roi_hunter_cust_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(Roi_hunter_cust_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Roi_hunter_cust_revenue' then Value else null end ) Roi_hunter_cust_revenue,
+           max(case when KPI='Roi_hunter_cust_revenue' then prevValue else null end ) Roi_hunter_cust_revenue_PrevX,
+           max(case when KPI='Roi_hunter_cust_revenue' then prevyearvalue else null end ) Roi_hunter_cust_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
 select
 Halo_country,
 'Shareofsales_youtube' KPI,
@@ -6270,12 +4323,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Shareofsales_tiktok' KPI,
@@ -6299,12 +4353,133 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
+select
+Halo_country,
+'ConversionRate_Facebook' KPI,
+date, XTD,
+ifnull(safe_divide(Facebook_cust_orders,Facebook_cust_traffic),0) value,
+ifnull(safe_divide(Facebook_cust_orders_prevX,Facebook_cust_traffic_prevX),0) prevvalue,
+ifnull(safe_divide(Facebook_cust_orders_PrevyearsameX,Facebook_cust_traffic_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Facebook_cust_orders' then Value else null end ) Facebook_cust_orders,
+           max(case when KPI='Facebook_cust_orders' then prevValue else null end ) Facebook_cust_orders_PrevX,
+           max(case when KPI='Facebook_cust_orders' then prevyearvalue else null end ) Facebook_cust_orders_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Facebook_cust_traffic' then Value else null end ) Facebook_cust_traffic,
+           max(case when KPI='Facebook_cust_traffic' then prevValue else null end ) Facebook_cust_traffic_PrevX,
+           max(case when KPI='Facebook_cust_traffic' then prevyearvalue else null end ) Facebook_cust_traffic_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ConversionRate_Instagram' KPI,
+date, XTD,
+ifnull(safe_divide(Instagram_cust_orders,Instagram_cust_traffic),0) value,
+ifnull(safe_divide(Instagram_cust_orders_prevX,Instagram_cust_traffic_prevX),0) prevvalue,
+ifnull(safe_divide(Instagram_cust_orders_PrevyearsameX,Instagram_cust_traffic_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Instagram_cust_orders' then Value else null end ) Instagram_cust_orders,
+           max(case when KPI='Instagram_cust_orders' then prevValue else null end ) Instagram_cust_orders_PrevX,
+           max(case when KPI='Instagram_cust_orders' then prevyearvalue else null end ) Instagram_cust_orders_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Instagram_cust_traffic' then Value else null end ) Instagram_cust_traffic,
+           max(case when KPI='Instagram_cust_traffic' then prevValue else null end ) Instagram_cust_traffic_PrevX,
+           max(case when KPI='Instagram_cust_traffic' then prevyearvalue else null end ) Instagram_cust_traffic_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ConversionRate_Adwords' KPI,
+date, XTD,
+ifnull(safe_divide(Adwords_cust_orders,Adwords_cust_traffic),0) value,
+ifnull(safe_divide(Adwords_cust_orders_prevX,Adwords_cust_traffic_prevX),0) prevvalue,
+ifnull(safe_divide(Adwords_cust_orders_PrevyearsameX,Adwords_cust_traffic_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Adwords_cust_orders' then Value else null end ) Adwords_cust_orders,
+           max(case when KPI='Adwords_cust_orders' then prevValue else null end ) Adwords_cust_orders_PrevX,
+           max(case when KPI='Adwords_cust_orders' then prevyearvalue else null end ) Adwords_cust_orders_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Adwords_cust_traffic' then Value else null end ) Adwords_cust_traffic,
+           max(case when KPI='Adwords_cust_traffic' then prevValue else null end ) Adwords_cust_traffic_PrevX,
+           max(case when KPI='Adwords_cust_traffic' then prevyearvalue else null end ) Adwords_cust_traffic_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ConversionRate_roi_hunter' KPI,
+date, XTD,
+ifnull(safe_divide(Roi_hunter_cust_orders,Roi_hunter_cust_traffic),0) value,
+ifnull(safe_divide(Roi_hunter_cust_orders_prevX,Roi_hunter_cust_traffic_prevX),0) prevvalue,
+ifnull(safe_divide(Roi_hunter_cust_orders_PrevyearsameX,Roi_hunter_cust_traffic_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Roi_hunter_cust_orders' then Value else null end ) Roi_hunter_cust_orders,
+           max(case when KPI='Roi_hunter_cust_orders' then prevValue else null end ) Roi_hunter_cust_orders_PrevX,
+           max(case when KPI='Roi_hunter_cust_orders' then prevyearvalue else null end ) Roi_hunter_cust_orders_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Roi_hunter_cust_traffic' then Value else null end ) Roi_hunter_cust_traffic,
+           max(case when KPI='Roi_hunter_cust_traffic' then prevValue else null end ) Roi_hunter_cust_traffic_PrevX,
+           max(case when KPI='Roi_hunter_cust_traffic' then prevyearvalue else null end ) Roi_hunter_cust_traffic_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
 select
 Halo_country,
 'ConversionRate_youtube' KPI,
@@ -6328,12 +4503,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Youtube_cust_traffic' then prevyearvalue else null end ) Youtube_cust_traffic_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'ConversionRate_tiktok' KPI,
@@ -6357,12 +4533,1216 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Tiktok_cust_traffic' then prevyearvalue else null end ) Tiktok_cust_traffic_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
+select
+Halo_country,
+'Other_Social_sessions_per' KPI,
+date, XTD,
+ifnull(safe_divide(Other_Social_sessions,sessions),0) value,
+ifnull(safe_divide(Other_Social_sessions_prevX,sessions_prevX),0) prevvalue,
+ifnull(safe_divide(Other_Social_sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Other_Social_sessions' then Value else null end ) Other_Social_sessions,
+           max(case when KPI='Other_Social_sessions' then prevValue else null end ) Other_Social_sessions_PrevX,
+           max(case when KPI='Other_Social_sessions' then prevyearvalue else null end ) Other_Social_sessions_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='sessions' then Value else null end ) sessions,
+           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
+           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Paid_Search_sessions_per' KPI,
+date, XTD,
+ifnull(safe_divide(Paid_Search_sessions,sessions),0) value,
+ifnull(safe_divide(Paid_Search_sessions_prevX,sessions_prevX),0) prevvalue,
+ifnull(safe_divide(Paid_Search_sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Paid_Search_sessions' then Value else null end ) Paid_Search_sessions,
+           max(case when KPI='Paid_Search_sessions' then prevValue else null end ) Paid_Search_sessions_PrevX,
+           max(case when KPI='Paid_Search_sessions' then prevyearvalue else null end ) Paid_Search_sessions_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='sessions' then Value else null end ) sessions,
+           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
+           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Internal_Referral_sessions_per' KPI,
+date, XTD,
+ifnull(safe_divide(Internal_Referral_sessions,sessions),0) value,
+ifnull(safe_divide(Internal_Referral_sessions_prevX,sessions_prevX),0) prevvalue,
+ifnull(safe_divide(Internal_Referral_sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Internal_Referral_sessions' then Value else null end ) Internal_Referral_sessions,
+           max(case when KPI='Internal_Referral_sessions' then prevValue else null end ) Internal_Referral_sessions_PrevX,
+           max(case when KPI='Internal_Referral_sessions' then prevyearvalue else null end ) Internal_Referral_sessions_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='sessions' then Value else null end ) sessions,
+           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
+           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Email_sessions_per' KPI,
+date, XTD,
+ifnull(safe_divide(Email_sessions,sessions),0) value,
+ifnull(safe_divide(Email_sessions_prevX,sessions_prevX),0) prevvalue,
+ifnull(safe_divide(Email_sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Email_sessions' then Value else null end ) Email_sessions,
+           max(case when KPI='Email_sessions' then prevValue else null end ) Email_sessions_PrevX,
+           max(case when KPI='Email_sessions' then prevyearvalue else null end ) Email_sessions_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='sessions' then Value else null end ) sessions,
+           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
+           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Organic_Search_Sessions_per' KPI,
+date, XTD,
+ifnull(safe_divide(Organic_Search_Sessions,sessions),0) value,
+ifnull(safe_divide(Organic_Search_Sessions_prevX,sessions_prevX),0) prevvalue,
+ifnull(safe_divide(Organic_Search_Sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Organic_Search_Sessions' then Value else null end ) Organic_Search_Sessions,
+           max(case when KPI='Organic_Search_Sessions' then prevValue else null end ) Organic_Search_Sessions_PrevX,
+           max(case when KPI='Organic_Search_Sessions' then prevyearvalue else null end ) Organic_Search_Sessions_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='sessions' then Value else null end ) sessions,
+           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
+           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Referral_Sessions_per' KPI,
+date, XTD,
+ifnull(safe_divide(Referral_Sessions,sessions),0) value,
+ifnull(safe_divide(Referral_Sessions_prevX,sessions_prevX),0) prevvalue,
+ifnull(safe_divide(Referral_Sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Referral_Sessions' then Value else null end ) Referral_Sessions,
+           max(case when KPI='Referral_Sessions' then prevValue else null end ) Referral_Sessions_PrevX,
+           max(case when KPI='Referral_Sessions' then prevyearvalue else null end ) Referral_Sessions_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='sessions' then Value else null end ) sessions,
+           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
+           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Direct_Sessions_per' KPI,
+date, XTD,
+ifnull(safe_divide(Direct_Sessions,sessions),0) value,
+ifnull(safe_divide(Direct_Sessions_prevX,sessions_prevX),0) prevvalue,
+ifnull(safe_divide(Direct_Sessions_PrevyearsameX,sessions_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Direct_Sessions' then Value else null end ) Direct_Sessions,
+           max(case when KPI='Direct_Sessions' then prevValue else null end ) Direct_Sessions_PrevX,
+           max(case when KPI='Direct_Sessions' then prevyearvalue else null end ) Direct_Sessions_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='sessions' then Value else null end ) sessions,
+           max(case when KPI='sessions' then prevValue else null end ) sessions_PrevX,
+           max(case when KPI='sessions' then prevyearvalue else null end ) sessions_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'TikTok_paid_newusers_per' KPI,
+date, XTD,
+ifnull(safe_divide(TikTok_paid_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(TikTok_paid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(TikTok_paid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='TikTok_paid_newusers' then Value else null end ) TikTok_paid_newusers,
+           max(case when KPI='TikTok_paid_newusers' then prevValue else null end ) TikTok_paid_newusers_PrevX,
+           max(case when KPI='TikTok_paid_newusers' then prevyearvalue else null end ) TikTok_paid_newusers_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'TikTok_Unpaid_newusers_per' KPI,
+date, XTD,
+ifnull(safe_divide(TikTok_Unpaid_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(TikTok_Unpaid_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(TikTok_Unpaid_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='TikTok_Unpaid_newusers' then Value else null end ) TikTok_Unpaid_newusers,
+           max(case when KPI='TikTok_Unpaid_newusers' then prevValue else null end ) TikTok_Unpaid_newusers_PrevX,
+           max(case when KPI='TikTok_Unpaid_newusers' then prevyearvalue else null end ) TikTok_Unpaid_newusers_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Other_Social_newusers_per' KPI,
+date, XTD,
+ifnull(safe_divide(Other_Social_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Other_Social_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Other_Social_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Other_Social_newusers' then Value else null end ) Other_Social_newusers,
+           max(case when KPI='Other_Social_newusers' then prevValue else null end ) Other_Social_newusers_PrevX,
+           max(case when KPI='Other_Social_newusers' then prevyearvalue else null end ) Other_Social_newusers_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Paid_Search_newusers_per' KPI,
+date, XTD,
+ifnull(safe_divide(Paid_Search_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Paid_Search_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Paid_Search_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Paid_Search_newusers' then Value else null end ) Paid_Search_newusers,
+           max(case when KPI='Paid_Search_newusers' then prevValue else null end ) Paid_Search_newusers_PrevX,
+           max(case when KPI='Paid_Search_newusers' then prevyearvalue else null end ) Paid_Search_newusers_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Internal_Referral_newusers_per' KPI,
+date, XTD,
+ifnull(safe_divide(Internal_Referral_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Internal_Referral_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Internal_Referral_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Internal_Referral_newusers' then Value else null end ) Internal_Referral_newusers,
+           max(case when KPI='Internal_Referral_newusers' then prevValue else null end ) Internal_Referral_newusers_PrevX,
+           max(case when KPI='Internal_Referral_newusers' then prevyearvalue else null end ) Internal_Referral_newusers_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Email_newusers_per' KPI,
+date, XTD,
+ifnull(safe_divide(Email_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Email_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Email_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Email_newusers' then Value else null end ) Email_newusers,
+           max(case when KPI='Email_newusers' then prevValue else null end ) Email_newusers_PrevX,
+           max(case when KPI='Email_newusers' then prevyearvalue else null end ) Email_newusers_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Organic_Search_newusers_per' KPI,
+date, XTD,
+ifnull(safe_divide(Organic_Search_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Organic_Search_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Organic_Search_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Organic_Search_newusers' then Value else null end ) Organic_Search_newusers,
+           max(case when KPI='Organic_Search_newusers' then prevValue else null end ) Organic_Search_newusers_PrevX,
+           max(case when KPI='Organic_Search_newusers' then prevyearvalue else null end ) Organic_Search_newusers_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Referral_newusers_per' KPI,
+date, XTD,
+ifnull(safe_divide(Referral_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Referral_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Referral_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Referral_newusers' then Value else null end ) Referral_newusers,
+           max(case when KPI='Referral_newusers' then prevValue else null end ) Referral_newusers_PrevX,
+           max(case when KPI='Referral_newusers' then prevyearvalue else null end ) Referral_newusers_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Direct_newusers_per' KPI,
+date, XTD,
+ifnull(safe_divide(Direct_newusers,newuserssourcemedium),0) value,
+ifnull(safe_divide(Direct_newusers_prevX,newuserssourcemedium_prevX),0) prevvalue,
+ifnull(safe_divide(Direct_newusers_PrevyearsameX,newuserssourcemedium_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Direct_newusers' then Value else null end ) Direct_newusers,
+           max(case when KPI='Direct_newusers' then prevValue else null end ) Direct_newusers_PrevX,
+           max(case when KPI='Direct_newusers' then prevyearvalue else null end ) Direct_newusers_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='newuserssourcemedium' then Value else null end ) newuserssourcemedium,
+           max(case when KPI='newuserssourcemedium' then prevValue else null end ) newuserssourcemedium_PrevX,
+           max(case when KPI='newuserssourcemedium' then prevyearvalue else null end ) newuserssourcemedium_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Costperorder_Ola10' KPI,
+date, XTD,
+ifnull(safe_divide(Ola10_spend_day,Ola10_orders),0) value,
+ifnull(safe_divide(Ola10_spend_day_prevX,Ola10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Ola10_spend_day_PrevyearsameX,Ola10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Ola10_spend_day' then Value else null end ) Ola10_spend_day,
+           max(case when KPI='Ola10_spend_day' then prevValue else null end ) Ola10_spend_day_PrevX,
+           max(case when KPI='Ola10_spend_day' then prevyearvalue else null end ) Ola10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Ola10_orders' then Value else null end ) Ola10_orders,
+           max(case when KPI='Ola10_orders' then prevValue else null end ) Ola10_orders_PrevX,
+           max(case when KPI='Ola10_orders' then prevyearvalue else null end ) Ola10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Costperorder_Farah10' KPI,
+date, XTD,
+ifnull(safe_divide(Farah10_spend_day,Farah10_orders),0) value,
+ifnull(safe_divide(Farah10_spend_day_prevX,Farah10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Farah10_spend_day_PrevyearsameX,Farah10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Farah10_spend_day' then Value else null end ) Farah10_spend_day,
+           max(case when KPI='Farah10_spend_day' then prevValue else null end ) Farah10_spend_day_PrevX,
+           max(case when KPI='Farah10_spend_day' then prevyearvalue else null end ) Farah10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Farah10_orders' then Value else null end ) Farah10_orders,
+           max(case when KPI='Farah10_orders' then prevValue else null end ) Farah10_orders_PrevX,
+           max(case when KPI='Farah10_orders' then prevyearvalue else null end ) Farah10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ATV_Ola10' KPI,
+date, XTD,
+ifnull(safe_divide(Ola10_revenue,Ola10_orders),0) value,
+ifnull(safe_divide(Ola10_revenue_prevX,Ola10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Ola10_revenue_PrevyearsameX,Ola10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Ola10_revenue' then Value else null end ) Ola10_revenue,
+           max(case when KPI='Ola10_revenue' then prevValue else null end ) Ola10_revenue_PrevX,
+           max(case when KPI='Ola10_revenue' then prevyearvalue else null end ) Ola10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Ola10_orders' then Value else null end ) Ola10_orders,
+           max(case when KPI='Ola10_orders' then prevValue else null end ) Ola10_orders_PrevX,
+           max(case when KPI='Ola10_orders' then prevyearvalue else null end ) Ola10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ATV_Farah10' KPI,
+date, XTD,
+ifnull(safe_divide(Farah10_revenue,Farah10_orders),0) value,
+ifnull(safe_divide(Farah10_revenue_prevX,Farah10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Farah10_revenue_PrevyearsameX,Farah10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Farah10_revenue' then Value else null end ) Farah10_revenue,
+           max(case when KPI='Farah10_revenue' then prevValue else null end ) Farah10_revenue_PrevX,
+           max(case when KPI='Farah10_revenue' then prevyearvalue else null end ) Farah10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Farah10_orders' then Value else null end ) Farah10_orders,
+           max(case when KPI='Farah10_orders' then prevValue else null end ) Farah10_orders_PrevX,
+           max(case when KPI='Farah10_orders' then prevyearvalue else null end ) Farah10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Shareofsales_Ola10' KPI,
+date, XTD,
+ifnull(safe_divide(Ola10_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(Ola10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(Ola10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Ola10_revenue' then Value else null end ) Ola10_revenue,
+           max(case when KPI='Ola10_revenue' then prevValue else null end ) Ola10_revenue_PrevX,
+           max(case when KPI='Ola10_revenue' then prevyearvalue else null end ) Ola10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Shareofsales_Farah10' KPI,
+date, XTD,
+ifnull(safe_divide(Farah10_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(Farah10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(Farah10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Farah10_revenue' then Value else null end ) Farah10_revenue,
+           max(case when KPI='Farah10_revenue' then prevValue else null end ) Farah10_revenue_PrevX,
+           max(case when KPI='Farah10_revenue' then prevyearvalue else null end ) Farah10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'confirmation_rate' KPI,
+date, XTD,
+ifnull(safe_divide(orders_confirmed,orders_created),0) value,
+ifnull(safe_divide(orders_confirmed_prevX,orders_created_prevX),0) prevvalue,
+ifnull(safe_divide(orders_confirmed_PrevyearsameX,orders_created_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='orders_confirmed' then Value else null end ) orders_confirmed,
+           max(case when KPI='orders_confirmed' then prevValue else null end ) orders_confirmed_PrevX,
+           max(case when KPI='orders_confirmed' then prevyearvalue else null end ) orders_confirmed_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='orders_created' then Value else null end ) orders_created,
+           max(case when KPI='orders_created' then prevValue else null end ) orders_created_PrevX,
+           max(case when KPI='orders_created' then prevyearvalue else null end ) orders_created_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'shipment_rate' KPI,
+date, XTD,
+ifnull(safe_divide(orders_shipped,orders_confirmed),0) value,
+ifnull(safe_divide(orders_shipped_prevX,orders_confirmed_prevX),0) prevvalue,
+ifnull(safe_divide(orders_shipped_PrevyearsameX,orders_confirmed_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='orders_shipped' then Value else null end ) orders_shipped,
+           max(case when KPI='orders_shipped' then prevValue else null end ) orders_shipped_PrevX,
+           max(case when KPI='orders_shipped' then prevyearvalue else null end ) orders_shipped_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='orders_confirmed' then Value else null end ) orders_confirmed,
+           max(case when KPI='orders_confirmed' then prevValue else null end ) orders_confirmed_PrevX,
+           max(case when KPI='orders_confirmed' then prevyearvalue else null end ) orders_confirmed_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'delivery_rate' KPI,
+date, XTD,
+ifnull(safe_divide(orders_delivered,orders_shipped),0) value,
+ifnull(safe_divide(orders_delivered_prevX,orders_shipped_prevX),0) prevvalue,
+ifnull(safe_divide(orders_delivered_PrevyearsameX,orders_shipped_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='orders_delivered' then Value else null end ) orders_delivered,
+           max(case when KPI='orders_delivered' then prevValue else null end ) orders_delivered_PrevX,
+           max(case when KPI='orders_delivered' then prevyearvalue else null end ) orders_delivered_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='orders_shipped' then Value else null end ) orders_shipped,
+           max(case when KPI='orders_shipped' then prevValue else null end ) orders_shipped_PrevX,
+           max(case when KPI='orders_shipped' then prevyearvalue else null end ) orders_shipped_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'fulfilment_rate' KPI,
+date, XTD,
+ifnull(safe_divide(orders_delivered,orders_confirmed),0) value,
+ifnull(safe_divide(orders_delivered_prevX,orders_confirmed_prevX),0) prevvalue,
+ifnull(safe_divide(orders_delivered_PrevyearsameX,orders_confirmed_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='orders_delivered' then Value else null end ) orders_delivered,
+           max(case when KPI='orders_delivered' then prevValue else null end ) orders_delivered_PrevX,
+           max(case when KPI='orders_delivered' then prevyearvalue else null end ) orders_delivered_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='orders_confirmed' then Value else null end ) orders_confirmed,
+           max(case when KPI='orders_confirmed' then prevValue else null end ) orders_confirmed_PrevX,
+           max(case when KPI='orders_confirmed' then prevyearvalue else null end ) orders_confirmed_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Costperorder_Emma10' KPI,
+date, XTD,
+ifnull(safe_divide(Emma10_spend_day,Emma10_orders),0) value,
+ifnull(safe_divide(Emma10_spend_day_prevX,Emma10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Emma10_spend_day_PrevyearsameX,Emma10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Emma10_spend_day' then Value else null end ) Emma10_spend_day,
+           max(case when KPI='Emma10_spend_day' then prevValue else null end ) Emma10_spend_day_PrevX,
+           max(case when KPI='Emma10_spend_day' then prevyearvalue else null end ) Emma10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Emma10_orders' then Value else null end ) Emma10_orders,
+           max(case when KPI='Emma10_orders' then prevValue else null end ) Emma10_orders_PrevX,
+           max(case when KPI='Emma10_orders' then prevyearvalue else null end ) Emma10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ATV_Emma10' KPI,
+date, XTD,
+ifnull(safe_divide(Emma10_revenue,Emma10_orders),0) value,
+ifnull(safe_divide(Emma10_revenue_prevX,Emma10_orders_prevX),0) prevvalue,
+ifnull(safe_divide(Emma10_revenue_PrevyearsameX,Emma10_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Emma10_revenue' then Value else null end ) Emma10_revenue,
+           max(case when KPI='Emma10_revenue' then prevValue else null end ) Emma10_revenue_PrevX,
+           max(case when KPI='Emma10_revenue' then prevyearvalue else null end ) Emma10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Emma10_orders' then Value else null end ) Emma10_orders,
+           max(case when KPI='Emma10_orders' then prevValue else null end ) Emma10_orders_PrevX,
+           max(case when KPI='Emma10_orders' then prevyearvalue else null end ) Emma10_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Shareofsales_Emma10' KPI,
+date, XTD,
+ifnull(safe_divide(Emma10_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(Emma10_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(Emma10_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='Emma10_revenue' then Value else null end ) Emma10_revenue,
+           max(case when KPI='Emma10_revenue' then prevValue else null end ) Emma10_revenue_PrevX,
+           max(case when KPI='Emma10_revenue' then prevyearvalue else null end ) Emma10_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'total_days_to_close_per' KPI,
+date, XTD,
+ifnull(safe_divide(total_days_to_close,closed_tickets),0) value,
+ifnull(safe_divide(total_days_to_close_prevX,closed_tickets_prevX),0) prevvalue,
+ifnull(safe_divide(total_days_to_close_PrevyearsameX,closed_tickets_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='total_days_to_close' then Value else null end ) total_days_to_close,
+           max(case when KPI='total_days_to_close' then prevValue else null end ) total_days_to_close_PrevX,
+           max(case when KPI='total_days_to_close' then prevyearvalue else null end ) total_days_to_close_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='closed_tickets' then Value else null end ) closed_tickets,
+           max(case when KPI='closed_tickets' then prevValue else null end ) closed_tickets_PrevX,
+           max(case when KPI='closed_tickets' then prevyearvalue else null end ) closed_tickets_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'total_time_to_confirm_per' KPI,
+date, XTD,
+ifnull(safe_divide(total_time_to_confirm,orders_confirmed),0) value,
+ifnull(safe_divide(total_time_to_confirm_prevX,orders_confirmed_prevX),0) prevvalue,
+ifnull(safe_divide(total_time_to_confirm_PrevyearsameX,orders_confirmed_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='total_time_to_confirm' then Value else null end ) total_time_to_confirm,
+           max(case when KPI='total_time_to_confirm' then prevValue else null end ) total_time_to_confirm_PrevX,
+           max(case when KPI='total_time_to_confirm' then prevyearvalue else null end ) total_time_to_confirm_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='orders_confirmed' then Value else null end ) orders_confirmed,
+           max(case when KPI='orders_confirmed' then prevValue else null end ) orders_confirmed_PrevX,
+           max(case when KPI='orders_confirmed' then prevyearvalue else null end ) orders_confirmed_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'total_time_to_ship_per' KPI,
+date, XTD,
+ifnull(safe_divide(total_time_to_ship,orders_shipped),0) value,
+ifnull(safe_divide(total_time_to_ship_prevX,orders_shipped_prevX),0) prevvalue,
+ifnull(safe_divide(total_time_to_ship_PrevyearsameX,orders_shipped_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='total_time_to_ship' then Value else null end ) total_time_to_ship,
+           max(case when KPI='total_time_to_ship' then prevValue else null end ) total_time_to_ship_PrevX,
+           max(case when KPI='total_time_to_ship' then prevyearvalue else null end ) total_time_to_ship_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='orders_shipped' then Value else null end ) orders_shipped,
+           max(case when KPI='orders_shipped' then prevValue else null end ) orders_shipped_PrevX,
+           max(case when KPI='orders_shipped' then prevyearvalue else null end ) orders_shipped_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'total_time_to_deliver_per' KPI,
+date, XTD,
+ifnull(safe_divide(total_time_to_deliver,orders_delivered),0) value,
+ifnull(safe_divide(total_time_to_deliver_prevX,orders_delivered_prevX),0) prevvalue,
+ifnull(safe_divide(total_time_to_deliver_PrevyearsameX,orders_delivered_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='total_time_to_deliver' then Value else null end ) total_time_to_deliver,
+           max(case when KPI='total_time_to_deliver' then prevValue else null end ) total_time_to_deliver_PrevX,
+           max(case when KPI='total_time_to_deliver' then prevyearvalue else null end ) total_time_to_deliver_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='orders_delivered' then Value else null end ) orders_delivered,
+           max(case when KPI='orders_delivered' then prevValue else null end ) orders_delivered_PrevX,
+           max(case when KPI='orders_delivered' then prevyearvalue else null end ) orders_delivered_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'total_time_to_fulfill_per' KPI,
+date, XTD,
+ifnull(safe_divide(total_time_to_fulfill,orders_delivered),0) value,
+ifnull(safe_divide(total_time_to_fulfill_prevX,orders_delivered_prevX),0) prevvalue,
+ifnull(safe_divide(total_time_to_fulfill_PrevyearsameX,orders_delivered_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='total_time_to_fulfill' then Value else null end ) total_time_to_fulfill,
+           max(case when KPI='total_time_to_fulfill' then prevValue else null end ) total_time_to_fulfill_PrevX,
+           max(case when KPI='total_time_to_fulfill' then prevyearvalue else null end ) total_time_to_fulfill_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='orders_delivered' then Value else null end ) orders_delivered,
+           max(case when KPI='orders_delivered' then prevValue else null end ) orders_delivered_PrevX,
+           max(case when KPI='orders_delivered' then prevyearvalue else null end ) orders_delivered_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Costperordermissl2u_per' KPI,
+date, XTD,
+ifnull(safe_divide(missl2u_spend_day,missl2u_orders),0) value,
+ifnull(safe_divide(missl2u_spend_day_prevX,missl2u_orders_prevX),0) prevvalue,
+ifnull(safe_divide(missl2u_spend_day_PrevyearsameX,missl2u_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='missl2u_spend_day' then Value else null end ) missl2u_spend_day,
+           max(case when KPI='missl2u_spend_day' then prevValue else null end ) missl2u_spend_day_PrevX,
+           max(case when KPI='missl2u_spend_day' then prevyearvalue else null end ) missl2u_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='missl2u_orders' then Value else null end ) missl2u_orders,
+           max(case when KPI='missl2u_orders' then prevValue else null end ) missl2u_orders_PrevX,
+           max(case when KPI='missl2u_orders' then prevyearvalue else null end ) missl2u_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'ATV Customer Acq missl2u' KPI,
+date, XTD,
+ifnull(safe_divide(missl2u_revenue,missl2u_orders),0) value,
+ifnull(safe_divide(missl2u_revenue_prevX,missl2u_orders_prevX),0) prevvalue,
+ifnull(safe_divide(missl2u_revenue_PrevyearsameX,missl2u_orders_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='missl2u_revenue' then Value else null end ) missl2u_revenue,
+           max(case when KPI='missl2u_revenue' then prevValue else null end ) missl2u_revenue_PrevX,
+           max(case when KPI='missl2u_revenue' then prevyearvalue else null end ) missl2u_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='missl2u_orders' then Value else null end ) missl2u_orders,
+           max(case when KPI='missl2u_orders' then prevValue else null end ) missl2u_orders_PrevX,
+           max(case when KPI='missl2u_orders' then prevyearvalue else null end ) missl2u_orders_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'Shareofsales_per missl2u' KPI,
+date, XTD,
+ifnull(safe_divide(missl2u_revenue,total_item_price_auth),0) value,
+ifnull(safe_divide(missl2u_revenue_prevX,total_item_price_auth_prevX),0) prevvalue,
+ifnull(safe_divide(missl2u_revenue_PrevyearsameX,total_item_price_auth_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='missl2u_revenue' then Value else null end ) missl2u_revenue,
+           max(case when KPI='missl2u_revenue' then prevValue else null end ) missl2u_revenue_PrevX,
+           max(case when KPI='missl2u_revenue' then prevyearvalue else null end ) missl2u_revenue_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='total_item_price_auth' then Value else null end ) total_item_price_auth,
+           max(case when KPI='total_item_price_auth' then prevValue else null end ) total_item_price_auth_PrevX,
+           max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
+select
+Halo_country,
+'CAC Total' KPI,
+date, XTD,
+ifnull(safe_divide((spend+MissL10_spend_day+Fozaza2u_spend_day+Alia10_spend_day+Ingy10_spend_day+Sahar10_spend_day+Ola10_spend_day+Farah10_spend_day+Emma10_spend_day+missl2u_spend_day),New_customers),0) value,
+ifnull(safe_divide((spend_prevX+MissL10_spend_day_prevX+Fozaza2u_spend_day_prevX+Alia10_spend_day_prevX+Ingy10_spend_day_prevX+Sahar10_spend_day_prevX+Ola10_spend_day_prevX+Farah10_spend_day_prevX+Emma10_spend_day_prevX+missl2u_spend_day),New_customers_prevX),0) prevvalue,
+ifnull(safe_divide((spend_PrevyearsameX+MissL10_spend_day_PrevyearsameX+Fozaza2u_spend_day_PrevyearsameX+Alia10_spend_day_PrevyearsameX+Ingy10_spend_day_PrevyearsameX+Sahar10_spend_day_PrevyearsameX+Ola10_spend_day_PrevyearsameX+Farah10_spend_day_PrevyearsameX+Emma10_spend_day_PrevyearsameX+missl2u_spend_day),New_customers_PrevyearsameX),0) prevyearvalue,
+Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate
+from(
+select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,PrevYearX_Startdate,PrevYearX_Enddate,
+       
+           max(case when KPI='spend' then Value else null end ) spend,
+           max(case when KPI='spend' then prevValue else null end ) spend_PrevX,
+           max(case when KPI='spend' then prevyearvalue else null end ) spend_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='MissL10_spend_day' then Value else null end ) MissL10_spend_day,
+           max(case when KPI='MissL10_spend_day' then prevValue else null end ) MissL10_spend_day_PrevX,
+           max(case when KPI='MissL10_spend_day' then prevyearvalue else null end ) MissL10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Fozaza2u_spend_day' then Value else null end ) Fozaza2u_spend_day,
+           max(case when KPI='Fozaza2u_spend_day' then prevValue else null end ) Fozaza2u_spend_day_PrevX,
+           max(case when KPI='Fozaza2u_spend_day' then prevyearvalue else null end ) Fozaza2u_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Alia10_spend_day' then Value else null end ) Alia10_spend_day,
+           max(case when KPI='Alia10_spend_day' then prevValue else null end ) Alia10_spend_day_PrevX,
+           max(case when KPI='Alia10_spend_day' then prevyearvalue else null end ) Alia10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Ingy10_spend_day' then Value else null end ) Ingy10_spend_day,
+           max(case when KPI='Ingy10_spend_day' then prevValue else null end ) Ingy10_spend_day_PrevX,
+           max(case when KPI='Ingy10_spend_day' then prevyearvalue else null end ) Ingy10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Sahar10_spend_day' then Value else null end ) Sahar10_spend_day,
+           max(case when KPI='Sahar10_spend_day' then prevValue else null end ) Sahar10_spend_day_PrevX,
+           max(case when KPI='Sahar10_spend_day' then prevyearvalue else null end ) Sahar10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Ola10_spend_day' then Value else null end ) Ola10_spend_day,
+           max(case when KPI='Ola10_spend_day' then prevValue else null end ) Ola10_spend_day_PrevX,
+           max(case when KPI='Ola10_spend_day' then prevyearvalue else null end ) Ola10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Farah10_spend_day' then Value else null end ) Farah10_spend_day,
+           max(case when KPI='Farah10_spend_day' then prevValue else null end ) Farah10_spend_day_PrevX,
+           max(case when KPI='Farah10_spend_day' then prevyearvalue else null end ) Farah10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='Emma10_spend_day' then Value else null end ) Emma10_spend_day,
+           max(case when KPI='Emma10_spend_day' then prevValue else null end ) Emma10_spend_day_PrevX,
+           max(case when KPI='Emma10_spend_day' then prevyearvalue else null end ) Emma10_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='missl2u_spend_day' then Value else null end ) missl2u_spend_day,
+           max(case when KPI='missl2u_spend_day' then prevValue else null end ) missl2u_spend_day_PrevX,
+           max(case when KPI='missl2u_spend_day' then prevyearvalue else null end ) missl2u_spend_day_PrevyearsameX
+       
+                ,
+        
+        
+           max(case when KPI='New_customers' then Value else null end ) New_customers,
+           max(case when KPI='New_customers' then prevValue else null end ) New_customers_PrevX,
+           max(case when KPI='New_customers' then prevyearvalue else null end ) New_customers_PrevyearsameX
+       
+        
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
+group by 1,2,3,4,5,6,7,8,9
+)
+       
+                union all
+        
+
 select
 Halo_country,
 'skus_80_20_per' KPI,
@@ -6386,12 +5766,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='num_of_skus' then prevyearvalue else null end ) num_of_skus_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'New_customer_Revenue_per' KPI,
@@ -6415,12 +5796,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Existing_customer_Revenue_per' KPI,
@@ -6444,12 +5826,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='total_item_price_auth' then prevyearvalue else null end ) total_item_price_auth_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'Costperorder_Tiktok' KPI,
@@ -6473,12 +5856,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='Tiktok_cust_orders' then prevyearvalue else null end ) Tiktok_cust_orders_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'ROAS_1' KPI,
@@ -6502,12 +5886,13 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='spend' then prevyearvalue else null end ) spend_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
                 union all
         
+
 select
 Halo_country,
 'ROAS_2' KPI,
@@ -6531,10 +5916,12 @@ select Halo_country,date,XTD,Startdate,Enddate,PrevX_Startdate,PrevX_Enddate,Pre
            max(case when KPI='spend' then prevyearvalue else null end ) spend_PrevyearsameX
        
         
-from `noted-computing-279322.halo_1_1.fKPIs`
+from `noted-computing-279322.halo_1_1_UAE.fKPIs`
 group by 1,2,3,4,5,6,7,8,9
 )
        
+
+
 ) ta,
-`noted-computing-279322.halo_1_1.refKPI` tb
+`noted-computing-279322.halo_1_1_UAE.refKPI` tb
 where ta.KPI = tb.KPI_VARIABLE

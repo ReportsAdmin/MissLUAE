@@ -1,5 +1,5 @@
 
-select a.user_id,b.cust_segment_id,a.is_active,a.is_lapsed,a.is_churned,a.First_pur_date,a.last_pur_date,'MissL' Halo_Country
+select a.user_id,b.cust_segment_id,a.is_active,a.is_lapsed,a.is_churned,a.First_pur_date,a.last_pur_date,'MissLUAE' Halo_Country
 from
 (select user_id,
             case
@@ -25,9 +25,9 @@ from
 select *,date_diff(current_date(),last_pur_date,day) DaysSincePurchase,(Revenue)/(sum(revenue) over ())*100 PercentRevenue,
        case when orders=1 then 'SinglePurchase'
        else 'RepeatPurchase' end Cust_type
-from `noted-computing-279322.halo_1_1.fCustInsights`
+from `noted-computing-279322.halo_1_1_UAE.fCustInsights`
 order by Revenue desc
 )
 )) a,
-`noted-computing-279322.halo_1_1.refCustSegments` b
+`noted-computing-279322.halo_1_1_UAE.refCustSegments` b
 where a.cust_segment=b.cust_segment

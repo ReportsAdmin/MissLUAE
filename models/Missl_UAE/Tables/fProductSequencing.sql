@@ -1,17 +1,17 @@
-select *,row_number() over (partition by category_L1 order by RevPerImpression desc) DesiredPositioning,'MissL' Halo_Country
+select *,row_number() over (partition by category_L1 order by RevPerImpression desc) DesiredPositioning,'MissLUAE' Halo_Country
 from(
 select distinct * from (
 select a.*,b.product_title,b.product_sku,b.category_L1,c.CatlogSequence,safe_divide(Revenue,Impressions) RevPerImpression
 from
 (
 (select distinct product_id,sum(impressions) Impressions,sum(orders) Orders,sum(units) Units,sum(revenue) Revenue
-from `noted-computing-279322.halo_1_1.fProductInsights`
+from `noted-computing-279322.halo_1_1_UAE.fProductInsights`
 where date_start between date_sub(current_date(),Interval 1 Month) and current_date()
 group by 1) a
 
 inner join
 
-`noted-computing-279322.halo_1_1.refProducts` b
+`noted-computing-279322.halo_1_1_UAE.refProducts` b
 on  a.product_id=b.product_id
 
 left  join

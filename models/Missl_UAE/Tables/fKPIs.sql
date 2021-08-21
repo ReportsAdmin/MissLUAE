@@ -1,4 +1,3 @@
-
 select ta.*,
 concat(format_date('%d %b %y',parse_date('%Y-%m-%d',Startdate)),' - ',format_date('%d %b %y',parse_date('%Y-%m-%d',Enddate))) Value_DateRange,
 concat(format_date('%d %b %y',parse_date('%Y-%m-%d',PrevX_Startdate)),' - ',format_date('%d %b %y',parse_date('%Y-%m-%d',PrevX_Enddate))) PrevValue_DateRange,
@@ -591,7 +590,7 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('Instagram_Unpaid_sessions' as Metric, Instagram_Unpaid_sessions as Data)
+                STRUCT('Others_Sessions' as Metric, Others_Sessions as Data)
             
               ,
             
@@ -716,22 +715,12 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('TikTok_paid_newusers' as Metric, TikTok_paid_newusers as Data)
+                STRUCT('Others_newusers' as Metric, Others_newusers as Data)
             
               ,
             
         
                 STRUCT('newuserssourcemedium' as Metric, newuserssourcemedium as Data)
-            
-              ,
-            
-        
-                STRUCT('MissL10_spend_day' as Metric, MissL10_spend_day as Data)
-            
-              ,
-            
-        
-                STRUCT('Husin10_spend_day' as Metric, Husin10_spend_day as Data)
             
               ,
             
@@ -746,42 +735,27 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('Feda10_spend_day' as Metric, Feda10_spend_day as Data)
+                STRUCT('MissL10_spend_day' as Metric, MissL10_spend_day as Data)
             
               ,
             
         
-                STRUCT('abrar21_spend_day' as Metric, abrar21_spend_day as Data)
+                STRUCT('Fozaza2u_spend_day' as Metric, Fozaza2u_spend_day as Data)
             
               ,
             
         
-                STRUCT('feda21_spend_day' as Metric, feda21_spend_day as Data)
+                STRUCT('Alia10_spend_day' as Metric, Alia10_spend_day as Data)
             
               ,
             
         
-                STRUCT('roh_n2_spend_day' as Metric, roh_n2_spend_day as Data)
+                STRUCT('Ingy10_spend_day' as Metric, Ingy10_spend_day as Data)
             
               ,
             
         
-                STRUCT('omseba10_spend_day' as Metric, omseba10_spend_day as Data)
-            
-              ,
-            
-        
-                STRUCT('marwa10_spend_day' as Metric, marwa10_spend_day as Data)
-            
-              ,
-            
-        
-                STRUCT('maha_140_spend_day' as Metric, maha_140_spend_day as Data)
-            
-              ,
-            
-        
-                STRUCT('shahad10_spend_day' as Metric, shahad10_spend_day as Data)
+                STRUCT('Sahar10_spend_day' as Metric, Sahar10_spend_day as Data)
             
               ,
             
@@ -791,47 +765,22 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('Husin10_orders' as Metric, Husin10_orders as Data)
+                STRUCT('Fozaza2u_orders' as Metric, Fozaza2u_orders as Data)
             
               ,
             
         
-                STRUCT('Feda10_orders' as Metric, Feda10_orders as Data)
+                STRUCT('Alia10_orders' as Metric, Alia10_orders as Data)
             
               ,
             
         
-                STRUCT('abrar21_orders' as Metric, abrar21_orders as Data)
+                STRUCT('Ingy10_orders' as Metric, Ingy10_orders as Data)
             
               ,
             
         
-                STRUCT('feda21_orders' as Metric, feda21_orders as Data)
-            
-              ,
-            
-        
-                STRUCT('roh_n2_orders' as Metric, roh_n2_orders as Data)
-            
-              ,
-            
-        
-                STRUCT('omseba10_orders' as Metric, omseba10_orders as Data)
-            
-              ,
-            
-        
-                STRUCT('marwa10_orders' as Metric, marwa10_orders as Data)
-            
-              ,
-            
-        
-                STRUCT('maha_140_orders' as Metric, maha_140_orders as Data)
-            
-              ,
-            
-        
-                STRUCT('shahad10_orders' as Metric, shahad10_orders as Data)
+                STRUCT('Sahar10_orders' as Metric, Sahar10_orders as Data)
             
               ,
             
@@ -841,47 +790,22 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('Husin10_revenue' as Metric, Husin10_revenue as Data)
+                STRUCT('Fozaza2u_revenue' as Metric, Fozaza2u_revenue as Data)
             
               ,
             
         
-                STRUCT('Feda10_revenue' as Metric, Feda10_revenue as Data)
+                STRUCT('Alia10_revenue' as Metric, Alia10_revenue as Data)
             
               ,
             
         
-                STRUCT('abrar21_revenue' as Metric, abrar21_revenue as Data)
+                STRUCT('Ingy10_revenue' as Metric, Ingy10_revenue as Data)
             
               ,
             
         
-                STRUCT('feda21_revenue' as Metric, feda21_revenue as Data)
-            
-              ,
-            
-        
-                STRUCT('roh_n2_revenue' as Metric, roh_n2_revenue as Data)
-            
-              ,
-            
-        
-                STRUCT('omseba10_revenue' as Metric, omseba10_revenue as Data)
-            
-              ,
-            
-        
-                STRUCT('marwa10_revenue' as Metric, marwa10_revenue as Data)
-            
-              ,
-            
-        
-                STRUCT('maha_140_revenue' as Metric, maha_140_revenue as Data)
-            
-              ,
-            
-        
-                STRUCT('shahad10_revenue' as Metric, shahad10_revenue as Data)
+                STRUCT('Sahar10_revenue' as Metric, Sahar10_revenue as Data)
             
               ,
             
@@ -896,17 +820,22 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('Snapchat_cust_traffic' as Metric, Snapchat_cust_traffic as Data)
-            
-              ,
-            
-        
                 STRUCT('Adwords_cust_traffic' as Metric, Adwords_cust_traffic as Data)
             
               ,
             
         
                 STRUCT('Roi_hunter_cust_traffic' as Metric, Roi_hunter_cust_traffic as Data)
+            
+              ,
+            
+        
+                STRUCT('Youtube_cust_traffic' as Metric, Youtube_cust_traffic as Data)
+            
+              ,
+            
+        
+                STRUCT('Tiktok_cust_traffic' as Metric, Tiktok_cust_traffic as Data)
             
               ,
             
@@ -921,17 +850,22 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('Snapchat_cust_orders' as Metric, Snapchat_cust_orders as Data)
-            
-              ,
-            
-        
                 STRUCT('Adwords_cust_orders' as Metric, Adwords_cust_orders as Data)
             
               ,
             
         
                 STRUCT('Roi_hunter_cust_orders' as Metric, Roi_hunter_cust_orders as Data)
+            
+              ,
+            
+        
+                STRUCT('Youtube_cust_orders' as Metric, Youtube_cust_orders as Data)
+            
+              ,
+            
+        
+                STRUCT('Tiktok_cust_orders' as Metric, Tiktok_cust_orders as Data)
             
               ,
             
@@ -946,17 +880,22 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('Snapchat_cust_revenue' as Metric, Snapchat_cust_revenue as Data)
-            
-              ,
-            
-        
                 STRUCT('Adwords_cust_revenue' as Metric, Adwords_cust_revenue as Data)
             
               ,
             
         
                 STRUCT('Roi_hunter_cust_revenue' as Metric, Roi_hunter_cust_revenue as Data)
+            
+              ,
+            
+        
+                STRUCT('Tiktok_cust_revenue' as Metric, Tiktok_cust_revenue as Data)
+            
+              ,
+            
+        
+                STRUCT('Youtube_cust_revenue' as Metric, Youtube_cust_revenue as Data)
             
               ,
             
@@ -971,11 +910,6 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('google_cust_revenue' as Metric, google_cust_revenue as Data)
-            
-              ,
-            
-        
                 STRUCT('Instagram_cust_spend' as Metric, Instagram_cust_spend as Data)
             
               ,
@@ -986,7 +920,12 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('snapchat_cust_spend' as Metric, snapchat_cust_spend as Data)
+                STRUCT('spend_per_day' as Metric, spend_per_day as Data)
+            
+              ,
+            
+        
+                STRUCT('Instagram_Unpaid_sessions' as Metric, Instagram_Unpaid_sessions as Data)
             
               ,
             
@@ -1036,7 +975,7 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('Others_Sessions' as Metric, Others_Sessions as Data)
+                STRUCT('TikTok_paid_newusers' as Metric, TikTok_paid_newusers as Data)
             
               ,
             
@@ -1081,52 +1020,32 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('Others_newusers' as Metric, Others_newusers as Data)
+                STRUCT('Ola10_spend_day' as Metric, Ola10_spend_day as Data)
             
               ,
             
         
-                STRUCT('Rand10_spend_day' as Metric, Rand10_spend_day as Data)
+                STRUCT('Farah10_spend_day' as Metric, Farah10_spend_day as Data)
             
               ,
             
         
-                STRUCT('Satha10_spend_day' as Metric, Satha10_spend_day as Data)
+                STRUCT('Ola10_orders' as Metric, Ola10_orders as Data)
             
               ,
             
         
-                STRUCT('Wish10_spend_day' as Metric, Wish10_spend_day as Data)
+                STRUCT('Farah10_orders' as Metric, Farah10_orders as Data)
             
               ,
             
         
-                STRUCT('Rand10_orders' as Metric, Rand10_orders as Data)
+                STRUCT('Ola10_revenue' as Metric, Ola10_revenue as Data)
             
               ,
             
         
-                STRUCT('Satha10_orders' as Metric, Satha10_orders as Data)
-            
-              ,
-            
-        
-                STRUCT('Wish10_orders' as Metric, Wish10_orders as Data)
-            
-              ,
-            
-        
-                STRUCT('Rand10_revenue' as Metric, Rand10_revenue as Data)
-            
-              ,
-            
-        
-                STRUCT('Satha10_revenue' as Metric, Satha10_revenue as Data)
-            
-              ,
-            
-        
-                STRUCT('Wish10_revenue' as Metric, Wish10_revenue as Data)
+                STRUCT('Farah10_revenue' as Metric, Farah10_revenue as Data)
             
               ,
             
@@ -1176,32 +1095,17 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('Yasmine10_spend_day' as Metric, Yasmine10_spend_day as Data)
+                STRUCT('Emma10_spend_day' as Metric, Emma10_spend_day as Data)
             
               ,
             
         
-                STRUCT('Yasmine10_orders' as Metric, Yasmine10_orders as Data)
+                STRUCT('Emma10_orders' as Metric, Emma10_orders as Data)
             
               ,
             
         
-                STRUCT('Yasmine10_revenue' as Metric, Yasmine10_revenue as Data)
-            
-              ,
-            
-        
-                STRUCT('Fatma10_spend_day' as Metric, Fatma10_spend_day as Data)
-            
-              ,
-            
-        
-                STRUCT('Fatma10_orders' as Metric, Fatma10_orders as Data)
-            
-              ,
-            
-        
-                STRUCT('Fatma10_revenue' as Metric, Fatma10_revenue as Data)
+                STRUCT('Emma10_revenue' as Metric, Emma10_revenue as Data)
             
               ,
             
@@ -1217,31 +1121,6 @@ select Halo_Country,date,
             
         
                 STRUCT('adwords_target_day' as Metric, adwords_target_day as Data)
-            
-              ,
-            
-        
-                STRUCT('snapchat_target_day' as Metric, snapchat_target_day as Data)
-            
-              ,
-            
-        
-                STRUCT('on_time_shipments' as Metric, on_time_shipments as Data)
-            
-              ,
-            
-        
-                STRUCT('delayed_shipments' as Metric, delayed_shipments as Data)
-            
-              ,
-            
-        
-                STRUCT('refused_shipments' as Metric, refused_shipments as Data)
-            
-              ,
-            
-        
-                STRUCT('total_attempts' as Metric, total_attempts as Data)
             
               ,
             
@@ -1351,7 +1230,7 @@ select Halo_Country,date,
               ,
             
         
-                STRUCT('shipments' as Metric, shipments as Data)
+                STRUCT('Existing_Customers' as Metric, Existing_Customers as Data)
             
               ,
             
@@ -1367,46 +1246,6 @@ select Halo_Country,date,
             
         
                 STRUCT('missl2u_revenue' as Metric, missl2u_revenue as Data)
-            
-              ,
-            
-        
-                STRUCT('Existing_Customers' as Metric, Existing_Customers as Data)
-            
-              ,
-            
-        
-                STRUCT('Youtube_cust_traffic' as Metric, Youtube_cust_traffic as Data)
-            
-              ,
-            
-        
-                STRUCT('Tiktok_cust_traffic' as Metric, Tiktok_cust_traffic as Data)
-            
-              ,
-            
-        
-                STRUCT('Youtube_cust_orders' as Metric, Youtube_cust_orders as Data)
-            
-              ,
-            
-        
-                STRUCT('Tiktok_cust_orders' as Metric, Tiktok_cust_orders as Data)
-            
-              ,
-            
-        
-                STRUCT('Tiktok_cust_revenue' as Metric, Tiktok_cust_revenue as Data)
-            
-              ,
-            
-        
-                STRUCT('Youtube_cust_revenue' as Metric, Youtube_cust_revenue as Data)
-            
-              ,
-            
-        
-                STRUCT('spend_per_day' as Metric, spend_per_day as Data)
             
               ,
             
@@ -1456,7 +1295,7 @@ select Halo_Country,date,
         
         ] Metrics_data
         from (
-        select * from `noted-computing-279322.halo_1_1.fDailyAgg`)
+        select * from `noted-computing-279322.halo_1_1_UAE.fDailyAgg`)
         )
 cross join
 unnest(Metrics_data) as Metrics_data
@@ -1466,6 +1305,6 @@ group by rollup(Halo_country, KPI, dateyear, datequarter, datemonth, dateweek, d
 and coalesce(date,dateweek,datemonth,datequarter,dateyear) is not null
 ) where week_rno = 1
 ) ta,
-`noted-computing-279322.halo_1_1.refKPI` tb
+`noted-computing-279322.halo_1_1_UAE.refKPI` tb
 where ta.KPI = tb.KPI_VARIABLE
 

@@ -1,4 +1,5 @@
-select row_number() over() cust_segment_id,cust_segment,'MissL' Halo_Country
+
+select row_number() over() cust_segment_id,cust_segment,'MissLUAE' Halo_Country
 from
 (
 select 'High Value Active' cust_segment

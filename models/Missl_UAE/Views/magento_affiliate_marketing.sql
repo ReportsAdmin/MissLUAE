@@ -11,4 +11,4 @@ _sdc_extracted_at,
 code,
 __sdc_spreadsheet_id
 from `noted-computing-279322.affiliate_codes_1.Affiliate_Marketing_Codes`
-where lower(country__ksa_egypt_) = 'ksa' or lower(country__ksa_egypt_) = 'both'
+where lower(country__ksa_egypt_) = 'uae' or lower(country__ksa_egypt_) = 'both'
